@@ -1,0 +1,231 @@
+{
+  "recordings": [
+    {
+      "case": "day1_consultation03",
+      "audio_sha256": "5e766040519848ab856de3bd57aaf0e254c0168ab6154b50d7127d2c354af28f",
+      "audio_duration_s": 542.299,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day1_consultation05",
+      "audio_sha256": "8864900f1bab41472493532460146566d8da2a5a55370dff41697cf1753c5003",
+      "audio_duration_s": 576.178,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day1_consultation07",
+      "audio_sha256": "31a8d5e20447612c82fc1bfb9932f19331957fc2f53e315c4c8108244731767e",
+      "audio_duration_s": 855.562,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day1_consultation10",
+      "audio_sha256": "6a46b57eb3217f77453e433e4b5b1b3a0981c71939e6580fda3740ad65c0c081",
+      "audio_duration_s": 616.678,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day1_consultation11",
+      "audio_sha256": "61623c6c33f8cb4ae2b246c55ce8dc04ad580f0dc016fd838782a7d16e5ff76b",
+      "audio_duration_s": 801.531,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day2_consultation04",
+      "audio_sha256": "26a65551f65f0380f8c9eab7f674e387b5f45d23cb24597bba0ad8026acdd911",
+      "audio_duration_s": 576.835,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day2_consultation05",
+      "audio_sha256": "a6288c030f8faff2c12050d31b7f31b7ecfb43b3411b950145799315bed7d51d",
+      "audio_duration_s": 634.555,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day2_consultation06",
+      "audio_sha256": "4e9ec9dc08cabbeb2e1c138b957fe0ad1d890dae6f3226492fd25e094a65b9fc",
+      "audio_duration_s": 597.05,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day3_consultation04",
+      "audio_sha256": "ff60e188181df0580f1718a3cb21cb94391863def66c43c91f58d9f08eb6f93e",
+      "audio_duration_s": 431.924,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day3_consultation09",
+      "audio_sha256": "3322cc52a461432bf0b754db490aa8b5d6311fcdb6e854273c043b1ecb32b6bc",
+      "audio_duration_s": 710.939,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day4_consultation02",
+      "audio_sha256": "e66e9a5caff0aaed4b832c38bd6e8c1d7556a652d79e643528674e3cc7e2275d",
+      "audio_duration_s": 502.755,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day4_consultation03",
+      "audio_sha256": "fdaa3585f8c0d067331b2dc817aec87a448651db0012d73a36291fd1ea910ddd",
+      "audio_duration_s": 380.107,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day4_consultation04",
+      "audio_sha256": "3a98abec416149fdfacf0ba663c75729df6bfdf36d8af6fb8ff4666c2ba1d969",
+      "audio_duration_s": 393.3,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day5_consultation07",
+      "audio_sha256": "f1d9ade1fad6a373e1ac4b87d57e0662f9900c75a699c494f116cab4eee52d14",
+      "audio_duration_s": 489.239,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    },
+    {
+      "case": "day5_consultation10",
+      "audio_sha256": "5645e606e05b703043d59c477ab420ad3b57a13806ae28bc7f1a381a66bec384",
+      "audio_duration_s": 585.712,
+      "sample_rate_hz": 16000,
+      "channels": 1
+    }
+  ],
+  "common_intervals": [
+    {
+      "case": "day1_consultation03",
+      "source_case": "day1_consultation03",
+      "offset_s": 0,
+      "duration_s": 542.299
+    },
+    {
+      "case": "day1_consultation05",
+      "source_case": "day1_consultation05",
+      "offset_s": 0,
+      "duration_s": 576.178
+    },
+    {
+      "case": "day1_consultation07__part01",
+      "source_case": "day1_consultation07",
+      "offset_s": 0.0,
+      "duration_s": 600.0
+    },
+    {
+      "case": "day1_consultation07__part02",
+      "source_case": "day1_consultation07",
+      "offset_s": 600.0,
+      "duration_s": 255.562
+    },
+    {
+      "case": "day1_consultation10__part01",
+      "source_case": "day1_consultation10",
+      "offset_s": 0.0,
+      "duration_s": 600.0
+    },
+    {
+      "case": "day1_consultation10__part02",
+      "source_case": "day1_consultation10",
+      "offset_s": 600.0,
+      "duration_s": 16.678
+    },
+    {
+      "case": "day1_consultation11__part01",
+      "source_case": "day1_consultation11",
+      "offset_s": 0.0,
+      "duration_s": 600.0
+    },
+    {
+      "case": "day1_consultation11__part02",
+      "source_case": "day1_consultation11",
+      "offset_s": 600.0,
+      "duration_s": 201.531
+    },
+    {
+      "case": "day2_consultation04",
+      "source_case": "day2_consultation04",
+      "offset_s": 0,
+      "duration_s": 576.835
+    },
+    {
+      "case": "day2_consultation05__part01",
+      "source_case": "day2_consultation05",
+      "offset_s": 0.0,
+      "duration_s": 600.0
+    },
+    {
+      "case": "day2_consultation05__part02",
+      "source_case": "day2_consultation05",
+      "offset_s": 600.0,
+      "duration_s": 34.555
+    },
+    {
+      "case": "day2_consultation06",
+      "source_case": "day2_consultation06",
+      "offset_s": 0,
+      "duration_s": 597.05
+    },
+    {
+      "case": "day3_consultation04",
+      "source_case": "day3_consultation04",
+      "offset_s": 0,
+      "duration_s": 431.924
+    },
+    {
+      "case": "day3_consultation09__part01",
+      "source_case": "day3_consultation09",
+      "offset_s": 0.0,
+      "duration_s": 600.0
+    },
+    {
+      "case": "day3_consultation09__part02",
+      "source_case": "day3_consultation09",
+      "offset_s": 600.0,
+      "duration_s": 110.939
+    },
+    {
+      "case": "day4_consultation02",
+      "source_case": "day4_consultation02",
+      "offset_s": 0,
+      "duration_s": 502.755
+    },
+    {
+      "case": "day4_consultation03",
+      "source_case": "day4_consultation03",
+      "offset_s": 0,
+      "duration_s": 380.107
+    },
+    {
+      "case": "day4_consultation04",
+      "source_case": "day4_consultation04",
+      "offset_s": 0,
+      "duration_s": 393.3
+    },
+    {
+      "case": "day5_consultation07",
+      "source_case": "day5_consultation07",
+      "offset_s": 0,
+      "duration_s": 489.239
+    },
+    {
+      "case": "day5_consultation10",
+      "source_case": "day5_consultation10",
+      "offset_s": 0,
+      "duration_s": 585.712
+    }
+  ]
+}

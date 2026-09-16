@@ -1,0 +1,254 @@
+{
+  "segments": [
+    {
+      "start": 0.06,
+      "end": 2.94,
+      "speaker": "A"
+    },
+    {
+      "start": 2.94,
+      "end": 6.94,
+      "speaker": "B"
+    },
+    {
+      "start": 8.7,
+      "end": 15.9,
+      "speaker": "A"
+    },
+    {
+      "start": 15.9,
+      "end": 20.62,
+      "speaker": "B"
+    },
+    {
+      "start": 21.42,
+      "end": 27.1,
+      "speaker": "A"
+    },
+    {
+      "start": 27.34,
+      "end": 34.22,
+      "speaker": "B"
+    },
+    {
+      "start": 35.34,
+      "end": 38.62,
+      "speaker": "A"
+    },
+    {
+      "start": 38.62,
+      "end": 38.94,
+      "speaker": "B"
+    },
+    {
+      "start": 39.02,
+      "end": 40.78,
+      "speaker": "A"
+    },
+    {
+      "start": 40.78,
+      "end": 42.22,
+      "speaker": "B"
+    },
+    {
+      "start": 42.22,
+      "end": 43.02,
+      "speaker": "A"
+    },
+    {
+      "start": 43.18,
+      "end": 46.62,
+      "speaker": "B"
+    },
+    {
+      "start": 46.78,
+      "end": 48.3,
+      "speaker": "A"
+    },
+    {
+      "start": 48.3,
+      "end": 48.86,
+      "speaker": "B"
+    },
+    {
+      "start": 50.78,
+      "end": 59.1,
+      "speaker": "A"
+    },
+    {
+      "start": 59.26,
+      "end": 69.82,
+      "speaker": "A"
+    },
+    {
+      "start": 70.14,
+      "end": 72.06,
+      "speaker": "B"
+    },
+    {
+      "start": 72.06,
+      "end": 73.1,
+      "speaker": "A"
+    },
+    {
+      "start": 73.1,
+      "end": 75.26,
+      "speaker": "B"
+    },
+    {
+      "start": 77.1,
+      "end": 78.3,
+      "speaker": "B"
+    },
+    {
+      "start": 79.9,
+      "end": 95.58,
+      "speaker": "A"
+    },
+    {
+      "start": 95.58,
+      "end": 98.06,
+      "speaker": "B"
+    },
+    {
+      "start": 99.98,
+      "end": 101.5,
+      "speaker": "A"
+    },
+    {
+      "start": 101.5,
+      "end": 105.42,
+      "speaker": "B"
+    },
+    {
+      "start": 107.9,
+      "end": 119.98,
+      "speaker": "A"
+    },
+    {
+      "start": 120.22,
+      "end": 123.74,
+      "speaker": "B"
+    },
+    {
+      "start": 123.9,
+      "end": 133.34,
+      "speaker": "A"
+    },
+    {
+      "start": 133.82,
+      "end": 134.54,
+      "speaker": "B"
+    },
+    {
+      "start": 134.54,
+      "end": 145.42,
+      "speaker": "A"
+    },
+    {
+      "start": 145.5,
+      "end": 152.94,
+      "speaker": "B"
+    },
+    {
+      "start": 152.94,
+      "end": 152.94,
+      "speaker": "A"
+    },
+    {
+      "start": 152.94,
+      "end": 178.06,
+      "speaker": "B"
+    },
+    {
+      "start": 178.46,
+      "end": 184.7,
+      "speaker": "B"
+    },
+    {
+      "start": 184.7,
+      "end": 198.86,
+      "speaker": "B"
+    },
+    {
+      "start": 200.3,
+      "end": 205.74,
+      "speaker": "A"
+    },
+    {
+      "start": 205.74,
+      "end": 205.9,
+      "speaker": "B"
+    },
+    {
+      "start": 205.9,
+      "end": 208.7,
+      "speaker": "A"
+    },
+    {
+      "start": 208.94,
+      "end": 208.94,
+      "speaker": "B"
+    },
+    {
+      "start": 208.94,
+      "end": 210.06,
+      "speaker": "A"
+    },
+    {
+      "start": 210.22,
+      "end": 228.46,
+      "speaker": "B"
+    },
+    {
+      "start": 228.94,
+      "end": 232.78,
+      "speaker": "A"
+    },
+    {
+      "start": 232.86,
+      "end": 233.5,
+      "speaker": "B"
+    },
+    {
+      "start": 233.5,
+      "end": 235.5,
+      "speaker": "A"
+    },
+    {
+      "start": 235.74,
+      "end": 237.1,
+      "speaker": "B"
+    },
+    {
+      "start": 237.5,
+      "end": 240.3,
+      "speaker": "A"
+    },
+    {
+      "start": 240.38,
+      "end": 248.14,
+      "speaker": "B"
+    },
+    {
+      "start": 248.38,
+      "end": 253.5,
+      "speaker": "A"
+    },
+    {
+      "start": 253.5,
+      "end": 253.5,
+      "speaker": "B"
+    },
+    {
+      "start": 253.5,
+      "end": 254.14,
+      "speaker": "A"
+    },
+    {
+      "start": 254.38,
+      "end": 255.1,
+      "speaker": "B"
+    }
+  ]
+}

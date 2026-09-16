@@ -1,0 +1,639 @@
+{
+  "segments": [
+    {
+      "start": 0.24351632,
+      "end": 0.801604,
+      "speaker": "doctor"
+    },
+    {
+      "start": 2.946,
+      "end": 5.374,
+      "speaker": "doctor"
+    },
+    {
+      "start": 5.474,
+      "end": 6.88917239,
+      "speaker": "doctor"
+    },
+    {
+      "start": 15.682,
+      "end": 20.49103726,
+      "speaker": "doctor"
+    },
+    {
+      "start": 25.06762215,
+      "end": 25.52111032,
+      "speaker": "doctor"
+    },
+    {
+      "start": 27.03297684,
+      "end": 31.998,
+      "speaker": "doctor"
+    },
+    {
+      "start": 32.162,
+      "end": 34.02258009,
+      "speaker": "doctor"
+    },
+    {
+      "start": 38.28109066,
+      "end": 38.93235249,
+      "speaker": "doctor"
+    },
+    {
+      "start": 40.56518325,
+      "end": 41.31,
+      "speaker": "doctor"
+    },
+    {
+      "start": 41.41,
+      "end": 42.302,
+      "speaker": "doctor"
+    },
+    {
+      "start": 43.074,
+      "end": 44.638,
+      "speaker": "doctor"
+    },
+    {
+      "start": 44.93,
+      "end": 45.662,
+      "speaker": "doctor"
+    },
+    {
+      "start": 45.794,
+      "end": 46.41517315,
+      "speaker": "doctor"
+    },
+    {
+      "start": 47.55176366,
+      "end": 48.19,
+      "speaker": "doctor"
+    },
+    {
+      "start": 48.322,
+      "end": 49.0219102,
+      "speaker": "doctor"
+    },
+    {
+      "start": 68.642,
+      "end": 69.374,
+      "speaker": "doctor"
+    },
+    {
+      "start": 69.794,
+      "end": 71.82021877,
+      "speaker": "doctor"
+    },
+    {
+      "start": 73.026,
+      "end": 75.166,
+      "speaker": "doctor"
+    },
+    {
+      "start": 76.738,
+      "end": 78.238,
+      "speaker": "doctor"
+    },
+    {
+      "start": 93.30723263,
+      "end": 97.95,
+      "speaker": "doctor"
+    },
+    {
+      "start": 101.25164823,
+      "end": 101.374,
+      "speaker": "doctor"
+    },
+    {
+      "start": 101.474,
+      "end": 105.182,
+      "speaker": "doctor"
+    },
+    {
+      "start": 120.034,
+      "end": 120.478,
+      "speaker": "doctor"
+    },
+    {
+      "start": 120.738,
+      "end": 121.214,
+      "speaker": "doctor"
+    },
+    {
+      "start": 121.634,
+      "end": 122.654,
+      "speaker": "doctor"
+    },
+    {
+      "start": 133.19177261,
+      "end": 133.886,
+      "speaker": "doctor"
+    },
+    {
+      "start": 134.21,
+      "end": 134.69398506,
+      "speaker": "doctor"
+    },
+    {
+      "start": 144.46376996,
+      "end": 151.742,
+      "speaker": "doctor"
+    },
+    {
+      "start": 152.066,
+      "end": 155.486,
+      "speaker": "doctor"
+    },
+    {
+      "start": 155.714,
+      "end": 159.902,
+      "speaker": "doctor"
+    },
+    {
+      "start": 160.002,
+      "end": 163.998,
+      "speaker": "doctor"
+    },
+    {
+      "start": 164.098,
+      "end": 164.862,
+      "speaker": "doctor"
+    },
+    {
+      "start": 165.25,
+      "end": 166.494,
+      "speaker": "doctor"
+    },
+    {
+      "start": 166.754,
+      "end": 170.174,
+      "speaker": "doctor"
+    },
+    {
+      "start": 170.338,
+      "end": 173.79,
+      "speaker": "doctor"
+    },
+    {
+      "start": 174.402,
+      "end": 177.214,
+      "speaker": "doctor"
+    },
+    {
+      "start": 177.506,
+      "end": 183.23,
+      "speaker": "doctor"
+    },
+    {
+      "start": 183.522,
+      "end": 192.766,
+      "speaker": "doctor"
+    },
+    {
+      "start": 193.122,
+      "end": 195.998,
+      "speaker": "doctor"
+    },
+    {
+      "start": 196.29,
+      "end": 199.102,
+      "speaker": "doctor"
+    },
+    {
+      "start": 205.24045273,
+      "end": 205.278,
+      "speaker": "doctor"
+    },
+    {
+      "start": 205.442,
+      "end": 206.20389159,
+      "speaker": "doctor"
+    },
+    {
+      "start": 208.77,
+      "end": 209.726,
+      "speaker": "doctor"
+    },
+    {
+      "start": 209.858,
+      "end": 220.702,
+      "speaker": "doctor"
+    },
+    {
+      "start": 220.994,
+      "end": 222.718,
+      "speaker": "doctor"
+    },
+    {
+      "start": 222.946,
+      "end": 227.646,
+      "speaker": "doctor"
+    },
+    {
+      "start": 232.75171445,
+      "end": 233.59780129,
+      "speaker": "doctor"
+    },
+    {
+      "start": 235.458,
+      "end": 236.446,
+      "speaker": "doctor"
+    },
+    {
+      "start": 240.14040445,
+      "end": 241.662,
+      "speaker": "doctor"
+    },
+    {
+      "start": 241.794,
+      "end": 242.558,
+      "speaker": "doctor"
+    },
+    {
+      "start": 243.586,
+      "end": 246.142,
+      "speaker": "doctor"
+    },
+    {
+      "start": 251.54118505,
+      "end": 252.862,
+      "speaker": "doctor"
+    },
+    {
+      "start": 253.058,
+      "end": 254.99927703,
+      "speaker": "doctor"
+    },
+    {
+      "start": 0.0,
+      "end": 1.054,
+      "speaker": "patient"
+    },
+    {
+      "start": 1.314,
+      "end": 1.63,
+      "speaker": "patient"
+    },
+    {
+      "start": 1.89,
+      "end": 2.718,
+      "speaker": "patient"
+    },
+    {
+      "start": 8.546,
+      "end": 10.174,
+      "speaker": "patient"
+    },
+    {
+      "start": 10.498,
+      "end": 11.614,
+      "speaker": "patient"
+    },
+    {
+      "start": 11.938,
+      "end": 12.702,
+      "speaker": "patient"
+    },
+    {
+      "start": 13.186,
+      "end": 15.486,
+      "speaker": "patient"
+    },
+    {
+      "start": 15.682,
+      "end": 17.26768472,
+      "speaker": "patient"
+    },
+    {
+      "start": 21.57,
+      "end": 23.87,
+      "speaker": "patient"
+    },
+    {
+      "start": 24.002,
+      "end": 26.27,
+      "speaker": "patient"
+    },
+    {
+      "start": 26.402,
+      "end": 27.20890473,
+      "speaker": "patient"
+    },
+    {
+      "start": 35.49,
+      "end": 41.31,
+      "speaker": "patient"
+    },
+    {
+      "start": 41.41,
+      "end": 42.302,
+      "speaker": "patient"
+    },
+    {
+      "start": 45.794,
+      "end": 46.814,
+      "speaker": "patient"
+    },
+    {
+      "start": 47.298,
+      "end": 48.19,
+      "speaker": "patient"
+    },
+    {
+      "start": 48.322,
+      "end": 49.182,
+      "speaker": "patient"
+    },
+    {
+      "start": 50.562,
+      "end": 54.302,
+      "speaker": "patient"
+    },
+    {
+      "start": 54.402,
+      "end": 57.95,
+      "speaker": "patient"
+    },
+    {
+      "start": 58.498,
+      "end": 61.47,
+      "speaker": "patient"
+    },
+    {
+      "start": 61.73,
+      "end": 62.782,
+      "speaker": "patient"
+    },
+    {
+      "start": 62.946,
+      "end": 63.326,
+      "speaker": "patient"
+    },
+    {
+      "start": 63.49,
+      "end": 64.318,
+      "speaker": "patient"
+    },
+    {
+      "start": 64.77,
+      "end": 65.502,
+      "speaker": "patient"
+    },
+    {
+      "start": 65.634,
+      "end": 66.91,
+      "speaker": "patient"
+    },
+    {
+      "start": 67.394,
+      "end": 68.222,
+      "speaker": "patient"
+    },
+    {
+      "start": 68.642,
+      "end": 69.374,
+      "speaker": "patient"
+    },
+    {
+      "start": 70.2799554,
+      "end": 72.766,
+      "speaker": "patient"
+    },
+    {
+      "start": 73.026,
+      "end": 73.54467799,
+      "speaker": "patient"
+    },
+    {
+      "start": 76.738,
+      "end": 77.62445831,
+      "speaker": "patient"
+    },
+    {
+      "start": 79.522,
+      "end": 79.838,
+      "speaker": "patient"
+    },
+    {
+      "start": 80.13,
+      "end": 82.334,
+      "speaker": "patient"
+    },
+    {
+      "start": 82.498,
+      "end": 83.07,
+      "speaker": "patient"
+    },
+    {
+      "start": 83.202,
+      "end": 83.934,
+      "speaker": "patient"
+    },
+    {
+      "start": 84.194,
+      "end": 84.606,
+      "speaker": "patient"
+    },
+    {
+      "start": 85.25,
+      "end": 86.846,
+      "speaker": "patient"
+    },
+    {
+      "start": 87.01,
+      "end": 91.902,
+      "speaker": "patient"
+    },
+    {
+      "start": 92.034,
+      "end": 95.74397953,
+      "speaker": "patient"
+    },
+    {
+      "start": 99.746,
+      "end": 100.414,
+      "speaker": "patient"
+    },
+    {
+      "start": 100.706,
+      "end": 101.33267988,
+      "speaker": "patient"
+    },
+    {
+      "start": 106.85,
+      "end": 107.774,
+      "speaker": "patient"
+    },
+    {
+      "start": 108.002,
+      "end": 108.446,
+      "speaker": "patient"
+    },
+    {
+      "start": 108.578,
+      "end": 109.214,
+      "speaker": "patient"
+    },
+    {
+      "start": 109.73,
+      "end": 111.23,
+      "speaker": "patient"
+    },
+    {
+      "start": 111.746,
+      "end": 114.334,
+      "speaker": "patient"
+    },
+    {
+      "start": 114.466,
+      "end": 114.91,
+      "speaker": "patient"
+    },
+    {
+      "start": 115.042,
+      "end": 116.862,
+      "speaker": "patient"
+    },
+    {
+      "start": 117.474,
+      "end": 119.838,
+      "speaker": "patient"
+    },
+    {
+      "start": 123.586,
+      "end": 124.158,
+      "speaker": "patient"
+    },
+    {
+      "start": 126.114,
+      "end": 126.494,
+      "speaker": "patient"
+    },
+    {
+      "start": 127.042,
+      "end": 130.814,
+      "speaker": "patient"
+    },
+    {
+      "start": 131.074,
+      "end": 133.886,
+      "speaker": "patient"
+    },
+    {
+      "start": 134.21,
+      "end": 137.502,
+      "speaker": "patient"
+    },
+    {
+      "start": 137.89,
+      "end": 139.678,
+      "speaker": "patient"
+    },
+    {
+      "start": 139.81,
+      "end": 145.19741266,
+      "speaker": "patient"
+    },
+    {
+      "start": 152.22418095,
+      "end": 153.62124195,
+      "speaker": "patient"
+    },
+    {
+      "start": 156.13595613,
+      "end": 156.80529894,
+      "speaker": "patient"
+    },
+    {
+      "start": 165.76835093,
+      "end": 166.494,
+      "speaker": "patient"
+    },
+    {
+      "start": 166.754,
+      "end": 166.76835093,
+      "speaker": "patient"
+    },
+    {
+      "start": 176.62000023,
+      "end": 177.214,
+      "speaker": "patient"
+    },
+    {
+      "start": 177.506,
+      "end": 178.60129566,
+      "speaker": "patient"
+    },
+    {
+      "start": 183.81254558,
+      "end": 184.53982148,
+      "speaker": "patient"
+    },
+    {
+      "start": 200.226,
+      "end": 201.982,
+      "speaker": "patient"
+    },
+    {
+      "start": 202.146,
+      "end": 205.278,
+      "speaker": "patient"
+    },
+    {
+      "start": 205.442,
+      "end": 208.286,
+      "speaker": "patient"
+    },
+    {
+      "start": 208.77,
+      "end": 209.726,
+      "speaker": "patient"
+    },
+    {
+      "start": 209.858,
+      "end": 210.38620425,
+      "speaker": "patient"
+    },
+    {
+      "start": 228.61,
+      "end": 230.398,
+      "speaker": "patient"
+    },
+    {
+      "start": 230.658,
+      "end": 231.678,
+      "speaker": "patient"
+    },
+    {
+      "start": 232.002,
+      "end": 234.718,
+      "speaker": "patient"
+    },
+    {
+      "start": 237.186,
+      "end": 240.29810007,
+      "speaker": "patient"
+    },
+    {
+      "start": 243.72458396,
+      "end": 244.60337325,
+      "speaker": "patient"
+    },
+    {
+      "start": 246.914,
+      "end": 247.55,
+      "speaker": "patient"
+    },
+    {
+      "start": 248.162,
+      "end": 252.862,
+      "speaker": "patient"
+    },
+    {
+      "start": 253.058,
+      "end": 255.358,
+      "speaker": "patient"
+    }
+  ]
+}
