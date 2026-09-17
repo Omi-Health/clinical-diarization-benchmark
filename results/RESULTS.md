@@ -38,13 +38,14 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
+| Model X, streaming preset, unpaced (tuned) | Tuned; top 2 speakers retained | 12.566% | 4.271% | 12.566% | 4.272% | constrained |
 | Sortformer v2.1, 1.04 s preset, unpaced | Folded to 2 after inference | 13.031% | 5.397% | 13.031% | 5.398% | constrained |
 | VibeVoice streaming 7B, unpaced | Automatic | 32.627% | 16.838% | 32.627% | 16.842% | 93.3% |
 | VibeVoice streaming 1.5B, unpaced | Automatic | 32.669% | 16.952% | 32.669% | 16.956% | 100.0% |
 
 ## Reading the results
 
-- **Model X:** anonymized system. Aggregate results only; its inference code, configuration and individual outputs are private. The public repo cannot independently reproduce this row.
+- **Model X:** anonymized system. Aggregate results only; its inference code, configuration and individual outputs are private. The public repo cannot independently reproduce these rows.
 - **±250 ms** means a 250 ms exclusion radius around each reference boundary (pyannote total collar **0.5 seconds**). Zero collar is also shown. This is a 10 ms frame scorer, not a claim of bitwise parity with a continuous-time scorer.
 - **Common intervals:** the same 20 scoring intervals for every system. Muse required five long recordings to be split at 600 seconds. Matching is independent in each interval. Inference context remains different, and cross-interval speaker continuity is not measured.
 - **Known/folded to 2:** these rows use information that automatic-count rows do not. A correct count for a constrained run does not demonstrate automatic speaker counting.

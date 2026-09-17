@@ -10557,6 +10557,65 @@
           ]
         }
       }
+    },
+    {
+      "key": "model_x_streaming_unpaced",
+      "model": "Model X, streaming preset, unpaced (tuned)",
+      "speaker_policy": "Tuned; top 2 speakers retained",
+      "group": "supplemental_unpaced",
+      "public_outputs": false,
+      "full_recordings": {
+        "0": {
+          "aggregate": {
+            "reference_frames": 725466,
+            "miss_frames": 76534,
+            "false_alarm_frames": 14078,
+            "confusion_frames": 552,
+            "error_frames": 91164,
+            "records": 15,
+            "der": 0.12566267750659577,
+            "speaker_count_accuracy": 1.0
+          }
+        },
+        "0.25": {
+          "aggregate": {
+            "reference_frames": 513167,
+            "miss_frames": 19438,
+            "false_alarm_frames": 2187,
+            "confusion_frames": 293,
+            "error_frames": 21918,
+            "records": 15,
+            "der": 0.042711242149241865,
+            "speaker_count_accuracy": 1.0
+          }
+        }
+      },
+      "common_scoring_intervals": {
+        "0": {
+          "aggregate": {
+            "reference_frames": 725466,
+            "miss_frames": 76534,
+            "false_alarm_frames": 14078,
+            "confusion_frames": 552,
+            "error_frames": 91164,
+            "records": 20,
+            "der": 0.12566267750659577,
+            "speaker_count_accuracy": 1.0
+          }
+        },
+        "0.25": {
+          "aggregate": {
+            "reference_frames": 513032,
+            "miss_frames": 19438,
+            "false_alarm_frames": 2187,
+            "confusion_frames": 293,
+            "error_frames": 21918,
+            "records": 20,
+            "der": 0.04272248124873302,
+            "speaker_count_accuracy": 1.0
+          }
+        }
+      }
     }
   ]
 }

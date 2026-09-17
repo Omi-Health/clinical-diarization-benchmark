@@ -56,6 +56,7 @@ These are third-party model configurations evaluated by Omi. The tables do not r
 | VibeVoice-ASR | Native batch output; automatic speaker labels |
 | VibeVoice streaming 1.5B / 7B | Paced runs and separate supplemental unpaced runs; automatic labels |
 | Model X | Automatic labels; aggregate-only disclosure |
+| Model X, streaming preset (tuned) | Unpaced whole-recording replay; postprocessing selected on 42 separate tuning recordings, top two speakers retained; aggregate-only disclosure |
 
 Historical folding sorts labels by total segment duration, retains the two longest, and assigns any remaining label to the second retained label. It is an explicit limitation of these archived baselines. The included normalized outputs already incorporate it. The public scorer never silently applies folding or a speaker cap.
 
@@ -66,6 +67,8 @@ The pyannoteAI live run covers the same 15 audio hashes. Its recorded requests u
 The additional Sortformer v2.1 run uses the archived 1.04-second streaming preset and the same 15 audio hashes. Its harness submitted each complete WAV in a file request, with a 3,600-second outer window covering every recording. It did not pace input at speaking speed. This evaluates the streaming preset's segmentation through prerecorded replay; it is not a paced live-client latency test. The historical max-two normalization remains explicit. This row is separate from later tune-selected postprocessors and from Omi's proprietary runtime.
 
 Both added rows were rescored against the exact public frozen references at both collars. All whole-recording integer counts match their saved corrected-reference score files. Their common-interval scores were calculated by clipping predictions to the same published intervals. No inference was rerun to add these rows. No private server identifiers, event logs, access details or runtime code are included.
+
+Model X also has an archived streaming-preset run. It processed complete recordings without wall-clock pacing, so it belongs in the supplementary unpaced table. Its postprocessing was selected on 42 separate tuning recordings, then applied to the 15 frozen report recordings. Only the two most active speakers were retained; extra speakers were dropped, not folded. This is a tuned, constrained configuration and is not a direct default-settings comparison with the automatic offline Model X row. The saved probability outputs were postprocessed again locally, and every whole-recording integer count at ±250 ms matched the archived corrected-reference result. Zero-collar and common-interval scores were calculated with the public scorer. Only aggregates are published; individual outputs, settings and recovery code remain private. This recovery did not rerun inference or establish live latency.
 
 For VibeVoice, the saved official segment timing is used, including coarse/chunk-derived boundaries. Explicitly unlabelled `[Silence]`, `[Noise]` or empty annotations produce no attributed speaker activity. Other unlabelled content fails the historical normalization instead of being silently discarded. Speaker-labelled non-speech and segments spanning pauses remain scored; there is no reference-based silence masking or timestamp repair.
 

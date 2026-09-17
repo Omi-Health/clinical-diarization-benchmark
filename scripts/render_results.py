@@ -47,7 +47,7 @@ def main():
              "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. These are historical system configurations, not a controlled model-only ranking."]
     lines += table_lines(snapshot)
     lines += ["", "## Reading the results", "",
-              "- **Model X:** anonymized system. Aggregate results only; its inference code, configuration and individual outputs are private. The public repo cannot independently reproduce this row.",
+              "- **Model X:** anonymized system. Aggregate results only; its inference code, configuration and individual outputs are private. The public repo cannot independently reproduce these rows.",
               "- **±250 ms** means a 250 ms exclusion radius around each reference boundary (pyannote total collar **0.5 seconds**). Zero collar is also shown. This is a 10 ms frame scorer, not a claim of bitwise parity with a continuous-time scorer.",
               "- **Common intervals:** the same 20 scoring intervals for every system. Muse required five long recordings to be split at 600 seconds. Matching is independent in each interval. Inference context remains different, and cross-interval speaker continuity is not measured.",
               "- **Known/folded to 2:** these rows use information that automatic-count rows do not. A correct count for a constrained run does not demonstrate automatic speaker counting.",
@@ -71,7 +71,7 @@ def main():
     summary = [header, "", "**DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below."]
     summary += ["", "Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed."]
     supplementary_count = len(snapshot["models"]) - main_count
-    supplementary_link = ["", f"{supplementary_count} supplementary unpaced runs, including Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced)."]
+    supplementary_link = ["", f"{supplementary_count} supplementary unpaced runs, including Model X's tuned streaming preset and Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced)."]
     generated = "\n".join(summary + table_lines(snapshot, heading_level=3, include_supplementary=False) + supplementary_link)
     readme_path.write_text(before + start_marker + "\n\n" + generated + "\n\n" + end_marker + after)
 

@@ -40,7 +40,7 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 | VibeVoice streaming 1.5B, paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
 | VibeVoice streaming 7B, paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
-3 supplementary unpaced runs, including Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
+4 supplementary unpaced runs, including Model X's tuned streaming preset and Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
 
 <!-- BENCHMARK:END -->
 
