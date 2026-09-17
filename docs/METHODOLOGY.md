@@ -47,7 +47,7 @@ These are third-party model configurations evaluated by Omi. The tables do not r
 | System | Saved inference / output policy |
 |---|---|
 | Sortformer v1 | 180-second windows, 12-second overlap; historical two-speaker folding before scoring |
-| Sortformer v2.1 | Whole-file path; historical two-speaker folding before scoring |
+| Sortformer v2.1 | Whole-file path through Omi's production runtime, which merges same-speaker gaps of up to about 0.5 s after inference; historical two-speaker folding before scoring. The public adapter omits that merge and scores 3.866 % at ±250 ms (see inference/README.md) |
 | pyannoteAI Community-1 | Known two speakers during inference, plus historical two-speaker normalization |
 | pyannoteAI Precision-2 | Whole-file API with the known count of two |
 | pyannoteAI live API | Real-time-paced WebSocket requests, 100 ms PCM chunks, automatic labels |
