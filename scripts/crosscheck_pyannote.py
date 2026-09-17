@@ -26,7 +26,13 @@ print(f"{'row':32} {'pyannote c=0':>13} {'snapshot':>9} {'pyannote c=0.5':>15} {
 worst = 0.0
 for model in snapshot["models"]:
     panel = model.get("full_recordings") or {}
-    if "0" not in panel or panel["0"].get("der") is None:
+
+    def der(collar_key: str):
+        block = panel.get(collar_key) or {}
+        block = block.get("aggregate") if isinstance(block.get("aggregate"), dict) else block
+        return block.get("der")
+
+    if der("0") is None:
         continue
     scores = []
     for collar in (0.0, 0.5):
@@ -36,7 +42,7 @@ for model in snapshot["models"]:
             if hyp.exists():
                 metric(references[c], annotation(hyp))
         scores.append(abs(metric))
-    s0, s25 = panel["0"]["der"], panel["0.25"]["der"]
+    s0, s25 = der("0"), der("0.25")
     worst = max(worst, abs(scores[0] - s0), abs(scores[1] - s25))
     print(f"{model['key']:32} {100*scores[0]:12.3f}% {100*s0:8.3f}% {100*scores[1]:14.3f}% {100*s25:8.3f}%")
 print(f"largest absolute difference: {100*worst:.3f} points")
