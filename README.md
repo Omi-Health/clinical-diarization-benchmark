@@ -14,17 +14,21 @@ Built by [Omi Health](https://omi.health) · [All research](https://omi.health/r
 
 ### Batch / offline
 
+Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
+
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
-| Model X | Automatic | 12.589% | 4.786% | 12.589% | 4.787% | 80.0% |
-| Sortformer v2.1, whole-file | Folded to 2 after inference | 12.173% | 3.610% | 12.173% | 3.611% | constrained |
-| Sortformer v1, 180s windows | Folded to 2 after inference | 12.706% | 3.157% | 12.706% | 3.158% | constrained |
-| Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained |
 | Precision-2 API | Known 2 | 11.004% | 2.823% | 10.986% | 2.824% | constrained |
-| Meta Muse Voice Transcribe | Automatic per request | — | — | 29.169% | 13.042% | — |
+| Sortformer v1, 180s windows | Folded to 2 after inference | 12.706% | 3.157% | 12.706% | 3.158% | constrained |
+| Sortformer v2.1, whole-file | Folded to 2 after inference | 12.173% | 3.610% | 12.173% | 3.611% | constrained |
+| Model X | Automatic | 12.589% | 4.786% | 12.589% | 4.787% | 80.0% |
+| Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained |
 | VibeVoice-ASR, native batch | Automatic | 24.191% | 8.233% | 24.191% | 8.235% | 100.0% |
+| Meta Muse Voice Transcribe | Automatic per request | — | — | 29.169% | 13.042% | — |
 
 ### Real-time-paced streaming
+
+Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
 
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
@@ -33,10 +37,12 @@ Built by [Omi Health](https://omi.health) · [All research](https://omi.health/r
 
 ### Supplementary: streaming checkpoints run unpaced
 
+Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
+
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
-| VibeVoice streaming 1.5B, unpaced | Automatic | 32.669% | 16.952% | 32.669% | 16.956% | 100.0% |
 | VibeVoice streaming 7B, unpaced | Automatic | 32.627% | 16.838% | 32.627% | 16.842% | 93.3% |
+| VibeVoice streaming 1.5B, unpaced | Automatic | 32.669% | 16.952% | 32.669% | 16.956% | 100.0% |
 
 <!-- BENCHMARK:END -->
 

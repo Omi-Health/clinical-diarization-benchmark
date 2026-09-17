@@ -9,11 +9,14 @@ def table_lines(snapshot, heading_level=2):
     lines = []
     for group, title in [("batch", "Batch / offline"), ("paced_streaming", "Real-time-paced streaming"), ("supplemental_unpaced", "Supplementary: streaming checkpoints run unpaced")]:
         lines += ["", "#" * heading_level + " " + title, "",
+                  "Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.", "",
                   "| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |",
                   "|---|---|---:|---:|---:|---:|---:|"]
-        for model in snapshot["models"]:
-            if model["group"] != group:
-                continue
+        models = sorted(
+            (model for model in snapshot["models"] if model["group"] == group),
+            key=lambda model: (model["common_scoring_intervals"]["0.25"]["aggregate"]["der"], model["model"]),
+        )
+        for model in models:
             cells = []
             for panel in ["full_recordings", "common_scoring_intervals"]:
                 for collar in ["0", "0.25"]:
