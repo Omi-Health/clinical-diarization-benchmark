@@ -32,8 +32,8 @@ for model in snapshot["models"]:
         block = block.get("aggregate") if isinstance(block.get("aggregate"), dict) else block
         return block.get("der")
 
-    if der("0") is None:
-        continue
+    if der("0") is None or not (ROOT / f"data/hypotheses/{model['key']}/full_recordings").exists():
+        continue  # aggregate-only rows (private outputs) cannot be cross-checked publicly
     scores = []
     for collar in (0.0, 0.5):
         metric = DiarizationErrorRate(collar=collar, skip_overlap=False)
