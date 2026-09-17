@@ -12,7 +12,7 @@ Built by [Omi Health](https://omi.health) · [All research](https://omi.health/r
 
 **DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below.
 
-Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed. Streaming presets (unpaced) process prerecorded audio without real-time pacing; these scores do not measure live latency.
+Batch / offline receives the complete recording. Streaming diarization combines streaming API and streaming-preset runs, with input pacing shown for each row.
 
 ### Batch / offline
 
@@ -30,26 +30,21 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 \* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated.
 
-### Live streaming
+### Streaming diarization
 
 Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
 
-| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
-|---|---|---:|---:|---:|---:|---:|
-| pyannoteAI live API | Automatic | 10.515% | 3.959% | 10.515% | 3.960% | 66.7% |
-| VibeVoice streaming 1.5B, paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
-| VibeVoice streaming 7B, paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
+| System | Input pacing | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
+|---|---|---|---:|---:|---:|---:|---:|
+| pyannoteAI live API | Real-time paced | Automatic | 10.515% | 3.959% | 10.515% | 3.960% | 66.7% |
+| Model X, streaming preset, unpaced (tuned) | Unpaced | Tuned; top 2 speakers retained | 12.566% | 4.271% | 12.566% | 4.272% | constrained |
+| Sortformer v2.1, 1.04 s preset, unpaced | Unpaced | Folded to 2 after inference | 13.031% | 5.397% | 13.031% | 5.398% | constrained |
+| VibeVoice streaming 1.5B, paced | Real-time paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
+| VibeVoice streaming 7B, paced | Real-time paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
-### Streaming presets (unpaced)
+**Input pacing:** real-time paced runs receive audio at normal speaking speed; unpaced runs process prerecorded audio without that timing constraint. DER measures diarization accuracy, not live latency. Tuning and speaker constraints remain specific to each row.
 
-Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
-
-| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
-|---|---|---:|---:|---:|---:|---:|
-| Model X, streaming preset, unpaced (tuned) | Tuned; top 2 speakers retained | 12.566% | 4.271% | 12.566% | 4.272% | constrained |
-| Sortformer v2.1, 1.04 s preset, unpaced | Folded to 2 after inference | 13.031% | 5.397% | 13.031% | 5.398% | constrained |
-
-2 additional VibeVoice unpaced runs are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
+2 additional VibeVoice unpaced runs are available in the [detailed results](results/RESULTS.md#streaming-diarization).
 
 <!-- BENCHMARK:END -->
 
