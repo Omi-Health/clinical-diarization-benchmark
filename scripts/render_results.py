@@ -5,14 +5,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def table_lines(snapshot, heading_level=2):
+def table_lines(snapshot, heading_level=2, compact=False):
     lines = []
     for groups, title in [({"batch"}, "Batch / offline"), ({"paced_streaming", "supplemental_unpaced"}, "Streaming diarization")]:
         streaming = "paced_streaming" in groups
         pacing_header = " Input pacing |" if streaming else ""
         pacing_separator = "---|" if streaming else ""
         lines += ["", "#" * heading_level + " " + title, "",
-                  "Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.", "",
+                  *([] if compact else ["Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.", ""]),
                   f"| System |{pacing_header} Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |",
                   f"|---|{pacing_separator}---|---:|---:|---:|---:|---:|"]
         models = sorted(
@@ -38,9 +38,9 @@ def table_lines(snapshot, heading_level=2):
             pacing = ["Real-time paced" if model["group"] == "paced_streaming" else "Unpaced"] if streaming else []
             lines.append("| " + " | ".join([model["model"], *pacing, model["speaker_policy"], *cells, count]) + " |")
         if streaming:
-            lines += ["", "**Input pacing:** real-time paced runs receive audio at normal speaking speed; unpaced runs process prerecorded audio without that timing constraint. DER measures diarization accuracy, not live latency. Tuning and speaker constraints remain specific to each row."]
+            lines += ["", ("**Pacing:** real-time = normal speaking speed; unpaced = processed without waiting. Scores measure accuracy, not live latency." if compact else "**Input pacing:** real-time paced runs receive audio at normal speaking speed; unpaced runs process prerecorded audio without that timing constraint. DER measures diarization accuracy, not live latency. Tuning and speaker constraints remain specific to each row.")]
         if any(model["key"] == "muse" for model in models):
-            lines += ["", "\\* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated."]
+            lines += ["", ("\\* Muse's starred values are interval results, not whole-recording results; count accuracy is 18/20 intervals." if compact else "\\* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated.")]
     return lines
 
 
@@ -77,11 +77,10 @@ def main():
     main_count = len(readme_snapshot["models"])
     header = (f"**Dataset**: PriMock57 ({snapshot['recordings']} mock consultations, {hours:.4f} audio hours) "
               f"| **Configurations shown**: {main_count} | **Updated**: {snapshot['snapshot_date']}")
-    summary = [header, "", "**DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below."]
-    summary += ["", "Batch / offline receives the complete recording. Streaming diarization combines streaming API and streaming-preset runs, with input pacing shown for each row."]
+    summary = [header, "", "**DER ↓** = speaker diarization error; lower is better. Ranked by common-interval DER at ±250 ms."]
     supplementary_count = len(snapshot["models"]) - main_count
     supplementary_link = ["", f"{supplementary_count} additional VibeVoice unpaced runs are available in the [detailed results](results/RESULTS.md#streaming-diarization)."]
-    readme_tables = table_lines(readme_snapshot, heading_level=3)
+    readme_tables = table_lines(readme_snapshot, heading_level=3, compact=True)
     generated = "\n".join(summary + readme_tables + supplementary_link)
     readme_path.write_text(before + start_marker + "\n\n" + generated + "\n\n" + end_marker + after)
 

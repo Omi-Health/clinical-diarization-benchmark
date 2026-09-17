@@ -1,22 +1,18 @@
 # Clinical Diarization Benchmark
 
-Evaluation framework for speaker diarization on medical conversation data: who spoke when.
+Comparing who-spoke-when accuracy on medical conversations.
 
-Built by [Omi Health](https://omi.health) · [All research](https://omi.health/research) · [Medical STT benchmark](https://github.com/Omi-Health/medical-STT-eval)
+Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://github.com/Omi-Health/medical-STT-eval) · [Note safety benchmark](https://github.com/Omi-Health/medical-note-eval)
 
-## Benchmark Results
+## Results
 
 <!-- BENCHMARK:START -->
 
 **Dataset**: PriMock57 (15 mock consultations, 2.4152 audio hours) | **Configurations shown**: 12 | **Updated**: 2026-09-17
 
-**DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below.
-
-Batch / offline receives the complete recording. Streaming diarization combines streaming API and streaming-preset runs, with input pacing shown for each row.
+**DER ↓** = speaker diarization error; lower is better. Ranked by common-interval DER at ±250 ms.
 
 ### Batch / offline
-
-Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
 
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
@@ -28,11 +24,9 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 | VibeVoice-ASR, native batch | Automatic | 24.191% | 8.233% | 24.191% | 8.235% | 100.0% |
 | Meta Muse Voice Transcribe | Automatic per request | 29.169%\* | 13.042%\* | 29.169% | 13.042% | 90.0%\* |
 
-\* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated.
+\* Muse's starred values are interval results, not whole-recording results; count accuracy is 18/20 intervals.
 
 ### Streaming diarization
-
-Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
 
 | System | Input pacing | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -42,151 +36,33 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 | VibeVoice streaming 1.5B, paced | Real-time paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
 | VibeVoice streaming 7B, paced | Real-time paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
-**Input pacing:** real-time paced runs receive audio at normal speaking speed; unpaced runs process prerecorded audio without that timing constraint. DER measures diarization accuracy, not live latency. Tuning and speaker constraints remain specific to each row.
+**Pacing:** real-time = normal speaking speed; unpaced = processed without waiting. Scores measure accuracy, not live latency.
 
 2 additional VibeVoice unpaced runs are available in the [detailed results](results/RESULTS.md#streaming-diarization).
 
 <!-- BENCHMARK:END -->
 
-**Reading the tables:**
+- **Scoring:** “Whole” scores complete recordings; “Common” uses the same 20 intervals for every system. ±250 ms allows timing tolerance around speech boundaries.
+- **Speaker policy:** some runs use the known two-speaker count. “Constrained” does not measure automatic speaker counting.
+- **Scope:** 15 simulated consultations with VAD-refined references. Model X is anonymized and shares aggregates only. Omi's proprietary runtime is not included.
 
-- **±250 ms** is the exclusion radius around each reference boundary, equivalent to a pyannote total collar of **0.5 seconds**. Zero-collar scores are also shown.
-- **Common intervals** use the same 20 scoring intervals for all systems. Muse required five recordings to be split at 600 seconds. Speaker matching restarts per interval; inference context still differs.
-- **Constrained** speaker counts are not automatic-counting results. The historical two-speaker folding is already present in the published baseline outputs.
-- **Model X** shares aggregate results only. Its identity, inference code, configuration and individual outputs remain private; its rows cannot be independently reproduced from this repo.
+[Full results](results/RESULTS.md) · [Methodology](docs/METHODOLOGY.md) · [Scores and error counts](results/snapshot.json)
 
-Overlap and false alarms during silence are retained. References are frozen VAD-corrected PriMock timings. Speed is not ranked because hardware, APIs and the work performed differ across systems.
+## Reproduce the scores
 
-[Detailed results](results/RESULTS.md) · [Numeric snapshot](results/snapshot.json) · [Methodology](docs/METHODOLOGY.md)
-
-**Omi's proprietary runtime performance is not included in these tables.** These are third-party model configurations evaluated by Omi; an evaluation of our own runtime will be published separately.
-
-This is a comparison of saved system configurations. Some use a known two-speaker count or historical output folding; others infer the count automatically. Those differences are shown beside the scores. This small, repeatedly evaluated subset does not establish performance on new clinical audio or larger groups.
-
-### Metrics Explained
-
-| Metric | What it measures |
-|---|---|
-| **DER ↓** | Diarization Error Rate: missed speech + false alarm + speaker confusion, divided by reference speaker time |
-| **Missed speech ↓** | Reference speaker activity with no corresponding predicted activity |
-| **False alarm ↓** | Excess predicted speaker activity, including speech predicted during silence |
-| **Speaker confusion ↓** | Active speech assigned to the wrong speaker after optimal label matching |
-| **Count accuracy ↑** | Fraction of whole recordings with the correct number of predicted speakers; reported for automatic-count runs |
-
-Whole-recording scores use one speaker mapping per recording. Common-interval scores use a separate mapping per interval. Corpus DER sums integer error counts before dividing by total reference speaker time. Error components and counts are available in the [numeric snapshot](results/snapshot.json).
-
-## What's Included
-
-- An open, permutation-invariant DER scorer: 10 ms frames, overlap included, false alarms during silence retained.
-- The exact 15 mixed benchmark WAVs (about 278 MB), stored with Git LFS under `data/raw_audio/`.
-- Frozen reference timings, normalized baseline speaker/timestamp outputs and per-recording error counts. Transcript text is not included.
-- Two collar settings: zero and **±250 ms around reference boundaries**.
-- Full-recording and common-interval results, with explicit speaker-count policies.
-- **Model X aggregate results only.** Its inference code, settings, identity and individual outputs are kept private. Its row cannot be independently reproduced from this repository.
-
-## Quick Start
-
-Python 3.10+; CPU only. No model weights, API keys or GPU needed to rescore the included outputs. Install [Git LFS](https://git-lfs.com/) to download the audio.
+Python 3.10+. Includes the scorer, reference timings and saved baseline outputs. Model inference runners are not included; Model X's individual outputs are private.
 
 ```bash
-git lfs install
-git clone https://github.com/Omi-Health/clinical-diarization-benchmark.git
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/Omi-Health/clinical-diarization-benchmark.git
 cd clinical-diarization-benchmark
-git lfs pull
-
 python -m venv .venv
 source .venv/bin/activate
-pip install -e '.[test]'
-pytest -q
-python scripts/verify_audio.py
+pip install -e .
 python scripts/verify_snapshot.py
-python scripts/render_results.py
 ```
 
-The audio verifier checks all 15 WAV hashes, formats and durations against the frozen manifest. The score verifier recomputes **810 recording/interval/collar scores** for the public baseline outputs and checks their integer error counts against the snapshot. For Model X it checks aggregate arithmetic only. It also checks the hashes of the exported timing data and numeric results. The renderer updates both this README's tables and the detailed results page from the same snapshot.
+The exact benchmark audio is available through Git LFS. See [setup, audio download and adding a comparison](docs/REPRODUCING.md).
 
-For scoring only, clone with `GIT_LFS_SKIP_SMUDGE=1 git clone ...` and omit `git lfs pull` and `verify_audio.py`; the saved outputs can be rescored without downloading audio. CI checks LFS pointer hashes and expected sizes without downloading the WAVs on each run.
+## Data and licence
 
-Score your own output with the same reference:
-
-```bash
-python -m clinical_diarization.score \
-  --reference data/references/full_recordings/day1_consultation03.json \
-  --hypothesis data/hypotheses/precision2/full_recordings/day1_consultation03.json \
-  --duration 542.299 --collar-radius 0.25
-```
-
-Input JSON uses seconds and arbitrary speaker labels:
-
-```json
-{"segments": [{"start": 1.2, "end": 3.4, "speaker": "speaker_0"}]}
-```
-
-## Project Structure
-
-```text
-clinical-diarization-benchmark/
-├── clinical_diarization/
-│   └── score.py              # 10 ms, overlap-inclusive DER scorer and CLI
-├── data/
-│   ├── manifest.json         # Frozen recording IDs, audio hashes and intervals
-│   ├── raw_audio/            # Exact 15 mixed WAVs, stored with Git LFS
-│   ├── references/           # Speaker/timestamp references, no transcript text
-│   ├── hypotheses/           # Named baselines' normalized speaker/timestamp outputs
-│   └── ATTRIBUTION.md        # PriMock57 attribution and data licensing
-├── results/
-│   ├── RESULTS.md            # Detailed comparison, generated from the snapshot
-│   ├── snapshot.json         # Scores and per-case counts; Model X aggregates only
-│   └── file_hashes.json      # Exported data integrity checks
-├── scripts/
-│   ├── verify_snapshot.py    # Rescore included outputs and verify counts/hashes
-│   ├── verify_audio.py       # Verify WAV hashes, formats and durations
-│   └── render_results.py     # Update both README and detailed results tables
-├── docs/METHODOLOGY.md
-└── tests/
-```
-
-## Public vs Private Contents
-
-This release reproduces **scoring from saved outputs**, rather than rerunning every model. Original inference runners, weights and live API access are not bundled. Model X additionally withholds its outputs. [Methodology](docs/METHODOLOGY.md) explains the reference preparation, legacy normalization and remaining limits.
-
-The public scoring workflow needs only the files in this repository. Model X's private review package is stored separately and is not required to verify any named baseline.
-
-## Dataset
-
-The reference timing is derived from [PriMock57](https://github.com/babylonhealth/primock57) and refined using VAD. These are simulated consultations; the annotations are not a new hand-verified clinical ground truth. The exact mixed WAVs used for scoring are included under `data/raw_audio/`; the original separate doctor/patient tracks remain available upstream. See [data attribution](data/ATTRIBUTION.md) and the [CC BY 4.0 data licence](data/LICENSE.md).
-
-This benchmark uses **15 frozen consultations (2.4152 audio hours)**. The [Medical STT benchmark](https://github.com/Omi-Health/medical-STT-eval) uses a different evaluation subset and transcription metrics. DER measures speaker timing and attribution, whereas WER measures transcript errors; the percentages are not interchangeable.
-
-## Adding a New Comparison
-
-Corrections and reproducible comparisons are welcome through issues or pull requests. Include your inference configuration, speaker-count policy, timestamp source and the same scoring settings.
-
-Use the frozen case list and audio hashes, export speaker/timestamp segments in the JSON format above, then score at both collar settings. Keep automatic and constrained speaker-count policies explicit. Include normalized outputs and per-case counts so others can check your aggregate result. Changes to the numeric snapshot or data also need updated file hashes and regenerated tables.
-
-## Related Benchmarks
-
-- [Medical STT Benchmark](https://github.com/Omi-Health/medical-STT-eval): transcription, medical-term and drug-term accuracy.
-- [Clinical SOAP Note Safety Benchmark](https://github.com/Omi-Health/medical-note-eval): generated-note quality and safety.
-
-## Citation
-
-```bibtex
-@misc{omi_clinical_diarization_2026,
-  title  = {Clinical Diarization Benchmark},
-  author = {{Omi Health}},
-  year   = {2026},
-  url    = {https://github.com/Omi-Health/clinical-diarization-benchmark},
-  note   = {15 frozen PriMock57 mock consultations; September 2026 snapshot}
-}
-```
-
-Please also credit the [PriMock57 dataset authors](data/ATTRIBUTION.md).
-
-## License
-
-Code: [MIT](LICENSE). Audio, derived references, normalized predictions and benchmark data: [CC BY 4.0](data/LICENSE.md).
-
----
-
-Built by **[Omi Health](https://omi.health)** — medical voice infrastructure.
+Audio and annotations derive from [PriMock57](https://github.com/babylonhealth/primock57). Code: [MIT](LICENSE). Benchmark data: [CC BY 4.0](data/LICENSE.md). See [dataset attribution](data/ATTRIBUTION.md).
