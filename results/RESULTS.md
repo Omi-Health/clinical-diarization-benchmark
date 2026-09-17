@@ -22,7 +22,7 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 \* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated.
 
-## Real-time-paced streaming
+## Live streaming
 
 Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
 

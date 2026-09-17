@@ -5,9 +5,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def table_lines(snapshot, heading_level=2):
+def table_lines(snapshot, heading_level=2, include_supplementary=True):
     lines = []
-    for group, title in [("batch", "Batch / offline"), ("paced_streaming", "Real-time-paced streaming"), ("supplemental_unpaced", "Supplementary: streaming checkpoints run unpaced")]:
+    for group, title in [("batch", "Batch / offline"), ("paced_streaming", "Live streaming"), ("supplemental_unpaced", "Supplementary: streaming checkpoints run unpaced")]:
+        if group == "supplemental_unpaced" and not include_supplementary:
+            continue
         lines += ["", "#" * heading_level + " " + title, "",
                   "Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.", "",
                   "| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |",
@@ -63,10 +65,13 @@ def main():
     before, rest = readme.split(start_marker)
     _, after = rest.split(end_marker)
     hours = snapshot["audio_hours"]
+    main_count = sum(model["group"] != "supplemental_unpaced" for model in snapshot["models"])
     header = (f"**Dataset**: PriMock57 ({snapshot['recordings']} mock consultations, {hours:.4f} audio hours) "
-              f"| **Configurations**: {len(snapshot['models'])} | **Updated**: {snapshot['snapshot_date']}")
+              f"| **Configurations shown**: {main_count} | **Updated**: {snapshot['snapshot_date']}")
     summary = [header, "", "**DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below."]
-    generated = "\n".join(summary + table_lines(snapshot, heading_level=3))
+    summary += ["", "Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed."]
+    supplementary_link = ["", "Two supplementary unpaced runs are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced)."]
+    generated = "\n".join(summary + table_lines(snapshot, heading_level=3, include_supplementary=False) + supplementary_link)
     readme_path.write_text(before + start_marker + "\n\n" + generated + "\n\n" + end_marker + after)
 
 

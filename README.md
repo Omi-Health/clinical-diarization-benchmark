@@ -8,9 +8,11 @@ Built by [Omi Health](https://omi.health) · [All research](https://omi.health/r
 
 <!-- BENCHMARK:START -->
 
-**Dataset**: PriMock57 (15 mock consultations, 2.4152 audio hours) | **Configurations**: 11 | **Updated**: 2026-09-17
+**Dataset**: PriMock57 (15 mock consultations, 2.4152 audio hours) | **Configurations shown**: 9 | **Updated**: 2026-09-17
 
 **DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below.
+
+Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed.
 
 ### Batch / offline
 
@@ -28,7 +30,7 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 \* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated.
 
-### Real-time-paced streaming
+### Live streaming
 
 Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
 
@@ -37,14 +39,7 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 | VibeVoice streaming 1.5B, paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
 | VibeVoice streaming 7B, paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
-### Supplementary: streaming checkpoints run unpaced
-
-Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
-
-| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
-|---|---|---:|---:|---:|---:|---:|
-| VibeVoice streaming 7B, unpaced | Automatic | 32.627% | 16.838% | 32.627% | 16.842% | 93.3% |
-| VibeVoice streaming 1.5B, unpaced | Automatic | 32.669% | 16.952% | 32.669% | 16.956% | 100.0% |
+Two supplementary unpaced runs are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
 
 <!-- BENCHMARK:END -->
 
