@@ -21,12 +21,20 @@ def table_lines(snapshot, heading_level=2):
             for panel in ["full_recordings", "common_scoring_intervals"]:
                 for collar in ["0", "0.25"]:
                     p = model[panel].get(collar)
-                    cells.append(f"{100*p['aggregate']['der']:.3f}%" if p else "—")
+                    interval_fallback = model["key"] == "muse" and not p and panel == "full_recordings"
+                    if interval_fallback:
+                        p = model["common_scoring_intervals"][collar]
+                    cells.append((f"{100*p['aggregate']['der']:.3f}%" + ("\\*" if interval_fallback else "")) if p else "—")
             full = model["full_recordings"].get("0")
             count = "constrained" if model["speaker_policy"] != "Automatic" else (f"{100*full['aggregate']['speaker_count_accuracy']:.1f}%" if full else "—")
             if not full:
                 count = "—"
+                if model["key"] == "muse":
+                    interval_accuracy = model["common_scoring_intervals"]["0"]["aggregate"]["speaker_count_accuracy"]
+                    count = f"{100*interval_accuracy:.1f}%\\*"
             lines.append("| " + " | ".join([model["model"], model["speaker_policy"], *cells, count]) + " |")
+        if any(model["key"] == "muse" for model in models):
+            lines += ["", "\\* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated."]
     return lines
 
 
