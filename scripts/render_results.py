@@ -70,7 +70,8 @@ def main():
               f"| **Configurations shown**: {main_count} | **Updated**: {snapshot['snapshot_date']}")
     summary = [header, "", "**DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below."]
     summary += ["", "Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed."]
-    supplementary_link = ["", "Two supplementary unpaced runs are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced)."]
+    supplementary_count = len(snapshot["models"]) - main_count
+    supplementary_link = ["", f"{supplementary_count} supplementary unpaced runs, including Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced)."]
     generated = "\n".join(summary + table_lines(snapshot, heading_level=3, include_supplementary=False) + supplementary_link)
     readme_path.write_text(before + start_marker + "\n\n" + generated + "\n\n" + end_marker + after)
 

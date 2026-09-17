@@ -8,7 +8,7 @@ Built by [Omi Health](https://omi.health) · [All research](https://omi.health/r
 
 <!-- BENCHMARK:START -->
 
-**Dataset**: PriMock57 (15 mock consultations, 2.4152 audio hours) | **Configurations shown**: 9 | **Updated**: 2026-09-17
+**Dataset**: PriMock57 (15 mock consultations, 2.4152 audio hours) | **Configurations shown**: 10 | **Updated**: 2026-09-17
 
 **DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below.
 
@@ -36,10 +36,11 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
+| pyannoteAI live API | Automatic | 10.515% | 3.959% | 10.515% | 3.960% | 66.7% |
 | VibeVoice streaming 1.5B, paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
 | VibeVoice streaming 7B, paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
-Two supplementary unpaced runs are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
+3 supplementary unpaced runs, including Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
 
 <!-- BENCHMARK:END -->
 
@@ -98,7 +99,7 @@ python scripts/verify_snapshot.py
 python scripts/render_results.py
 ```
 
-The audio verifier checks all 15 WAV hashes, formats and durations against the frozen manifest. The score verifier recomputes **670 recording/interval/collar scores** for the public baseline outputs and checks their integer error counts against the snapshot. For Model X it checks aggregate arithmetic only. It also checks the hashes of the exported timing data and numeric results. The renderer updates both this README's tables and the detailed results page from the same snapshot.
+The audio verifier checks all 15 WAV hashes, formats and durations against the frozen manifest. The score verifier recomputes **810 recording/interval/collar scores** for the public baseline outputs and checks their integer error counts against the snapshot. For Model X it checks aggregate arithmetic only. It also checks the hashes of the exported timing data and numeric results. The renderer updates both this README's tables and the detailed results page from the same snapshot.
 
 For scoring only, clone with `GIT_LFS_SKIP_SMUDGE=1 git clone ...` and omit `git lfs pull` and `verify_audio.py`; the saved outputs can be rescored without downloading audio. CI checks LFS pointer hashes and expected sizes without downloading the WAVs on each run.
 

@@ -28,6 +28,7 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
+| pyannoteAI live API | Automatic | 10.515% | 3.959% | 10.515% | 3.960% | 66.7% |
 | VibeVoice streaming 1.5B, paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
 | VibeVoice streaming 7B, paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
@@ -37,6 +38,7 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
+| Sortformer v2.1, 1.04 s preset, unpaced | Folded to 2 after inference | 13.031% | 5.397% | 13.031% | 5.398% | constrained |
 | VibeVoice streaming 7B, unpaced | Automatic | 32.627% | 16.838% | 32.627% | 16.842% | 93.3% |
 | VibeVoice streaming 1.5B, unpaced | Automatic | 32.669% | 16.952% | 32.669% | 16.956% | 100.0% |
 

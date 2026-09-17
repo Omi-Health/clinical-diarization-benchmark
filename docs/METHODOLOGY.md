@@ -50,12 +50,22 @@ These are third-party model configurations evaluated by Omi. The tables do not r
 | Sortformer v2.1 | Whole-file path; historical two-speaker folding before scoring |
 | pyannoteAI Community-1 | Known two speakers during inference, plus historical two-speaker normalization |
 | pyannoteAI Precision-2 | Whole-file API with the known count of two |
+| pyannoteAI live API | Real-time-paced WebSocket requests, 100 ms PCM chunks, automatic labels |
+| Sortformer v2.1, 1.04 s preset | Archived low-latency preset evaluated via whole-recording requests; historical two-speaker folding; supplementary unpaced results |
 | Meta Muse | Automatic labels per request; five recordings split at 600 seconds |
 | VibeVoice-ASR | Native batch output; automatic speaker labels |
 | VibeVoice streaming 1.5B / 7B | Paced runs and separate supplemental unpaced runs; automatic labels |
 | Model X | Automatic labels; aggregate-only disclosure |
 
 Historical folding sorts labels by total segment duration, retains the two longest, and assigns any remaining label to the second retained label. It is an explicit limitation of these archived baselines. The included normalized outputs already incorporate it. The public scorer never silently applies folding or a speaker cap.
+
+### Archived streaming runs
+
+The pyannoteAI live run covers the same 15 audio hashes. Its recorded requests used 16 kHz mono float32 PCM, fixed 100 ms chunks and wall-clock pacing at 1× audio speed. The historical `/v1/live` endpoint did not expose a model selector, so this is labelled **pyannoteAI live API**, not Precision-2 streaming or a retroactively assigned model version. Speaker start/end events were converted to intervals using the provider's timestamps. At stream close, any still-open speaker interval was closed at the recording duration; this occurred for 10 intervals across 9 recordings. No other anomalies were recorded. No speaker-count folding is applied to the published live row; the correct count was returned on 10/15 recordings.
+
+The additional Sortformer v2.1 run uses the archived 1.04-second streaming preset and the same 15 audio hashes. Its harness submitted each complete WAV in a file request, with a 3,600-second outer window covering every recording. It did not pace input at speaking speed. This evaluates the streaming preset's segmentation through prerecorded replay; it is not a paced live-client latency test. The historical max-two normalization remains explicit. This row is separate from later tune-selected postprocessors and from Omi's proprietary runtime.
+
+Both added rows were rescored against the exact public frozen references at both collars. All whole-recording integer counts match their saved corrected-reference score files. Their common-interval scores were calculated by clipping predictions to the same published intervals. No inference was rerun to add these rows. No private server identifiers, event logs, access details or runtime code are included.
 
 For VibeVoice, the saved official segment timing is used, including coarse/chunk-derived boundaries. Explicitly unlabelled `[Silence]`, `[Noise]` or empty annotations produce no attributed speaker activity. Other unlabelled content fails the historical normalization instead of being silently discarded. Speaker-labelled non-speech and segments spanning pauses remain scored; there is no reference-based silence masking or timestamp repair.
 
