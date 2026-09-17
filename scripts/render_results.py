@@ -65,14 +65,21 @@ def main():
     before, rest = readme.split(start_marker)
     _, after = rest.split(end_marker)
     hours = snapshot["audio_hours"]
-    main_count = sum(model["group"] != "supplemental_unpaced" for model in snapshot["models"])
+    featured_unpaced = {"model_x_streaming_unpaced", "sortformer21_low_unpaced"}
+    readme_snapshot = {**snapshot, "models": [
+        model for model in snapshot["models"]
+        if model["group"] != "supplemental_unpaced" or model["key"] in featured_unpaced
+    ]}
+    main_count = len(readme_snapshot["models"])
     header = (f"**Dataset**: PriMock57 ({snapshot['recordings']} mock consultations, {hours:.4f} audio hours) "
               f"| **Configurations shown**: {main_count} | **Updated**: {snapshot['snapshot_date']}")
     summary = [header, "", "**DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below."]
-    summary += ["", "Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed."]
+    summary += ["", "Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed. Streaming presets (unpaced) process prerecorded audio without real-time pacing; these scores do not measure live latency."]
     supplementary_count = len(snapshot["models"]) - main_count
-    supplementary_link = ["", f"{supplementary_count} supplementary unpaced runs, including Model X's tuned streaming preset and Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced)."]
-    generated = "\n".join(summary + table_lines(snapshot, heading_level=3, include_supplementary=False) + supplementary_link)
+    supplementary_link = ["", f"{supplementary_count} additional VibeVoice unpaced runs are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced)."]
+    readme_tables = table_lines(readme_snapshot, heading_level=3)
+    readme_tables = [line.replace("Supplementary: streaming checkpoints run unpaced", "Streaming presets (unpaced)") for line in readme_tables]
+    generated = "\n".join(summary + readme_tables + supplementary_link)
     readme_path.write_text(before + start_marker + "\n\n" + generated + "\n\n" + end_marker + after)
 
 

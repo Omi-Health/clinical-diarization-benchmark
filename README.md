@@ -8,11 +8,11 @@ Built by [Omi Health](https://omi.health) · [All research](https://omi.health/r
 
 <!-- BENCHMARK:START -->
 
-**Dataset**: PriMock57 (15 mock consultations, 2.4152 audio hours) | **Configurations shown**: 10 | **Updated**: 2026-09-17
+**Dataset**: PriMock57 (15 mock consultations, 2.4152 audio hours) | **Configurations shown**: 12 | **Updated**: 2026-09-17
 
 **DER ↓** measures who-spoke-when errors; lower is better. Each recording has two reference speakers. Speaker-count policies differ, as shown below.
 
-Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed.
+Batch / offline receives the complete recording. Live streaming receives audio at normal speaking speed. Streaming presets (unpaced) process prerecorded audio without real-time pacing; these scores do not measure live latency.
 
 ### Batch / offline
 
@@ -40,7 +40,16 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 | VibeVoice streaming 1.5B, paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
 | VibeVoice streaming 7B, paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
-4 supplementary unpaced runs, including Model X's tuned streaming preset and Sortformer v2.1's 1.04-second streaming preset, are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
+### Streaming presets (unpaced)
+
+Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.
+
+| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
+|---|---|---:|---:|---:|---:|---:|
+| Model X, streaming preset, unpaced (tuned) | Tuned; top 2 speakers retained | 12.566% | 4.271% | 12.566% | 4.272% | constrained |
+| Sortformer v2.1, 1.04 s preset, unpaced | Folded to 2 after inference | 13.031% | 5.397% | 13.031% | 5.398% | constrained |
+
+2 additional VibeVoice unpaced runs are available in the [detailed results](results/RESULTS.md#supplementary-streaming-checkpoints-run-unpaced).
 
 <!-- BENCHMARK:END -->
 
@@ -49,7 +58,7 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 - **±250 ms** is the exclusion radius around each reference boundary, equivalent to a pyannote total collar of **0.5 seconds**. Zero-collar scores are also shown.
 - **Common intervals** use the same 20 scoring intervals for all systems. Muse required five recordings to be split at 600 seconds. Speaker matching restarts per interval; inference context still differs.
 - **Constrained** speaker counts are not automatic-counting results. The historical two-speaker folding is already present in the published baseline outputs.
-- **Model X** shares aggregate results only. Its identity, inference code, configuration and individual outputs remain private; its row cannot be independently reproduced from this repo.
+- **Model X** shares aggregate results only. Its identity, inference code, configuration and individual outputs remain private; its rows cannot be independently reproduced from this repo.
 
 Overlap and false alarms during silence are retained. References are frozen VAD-corrected PriMock timings. Speed is not ranked because hardware, APIs and the work performed differ across systems.
 
