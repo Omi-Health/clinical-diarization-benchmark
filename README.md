@@ -50,7 +50,7 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 
 ## Reproduce the scores
 
-Python 3.10+. Includes the scorer, reference timings and saved baseline outputs. Model inference runners are not included; Model X's individual outputs are private.
+Python 3.10+. Includes the scorer, reference timings and saved baseline outputs. [Inference code](inference/README.md) is included for Sortformer and configurable Model X runs; Model X's settings and individual outputs remain private.
 
 ```bash
 GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/Omi-Health/clinical-diarization-benchmark.git

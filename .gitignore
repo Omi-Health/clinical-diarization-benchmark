@@ -19,3 +19,4 @@ private/
 private-sharing/
 model_x/
 *private*.zip
+*.npy

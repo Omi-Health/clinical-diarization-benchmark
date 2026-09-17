@@ -13,7 +13,7 @@ dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2"]
 test = ["pytest>=8,<9"]
 
 [tool.setuptools.packages.find]
-include = ["clinical_diarization*"]
+include = ["clinical_diarization*", "inference*"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
