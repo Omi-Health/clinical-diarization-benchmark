@@ -64,9 +64,9 @@ clinical-diarization-benchmark/
 
 ## Public vs Private Contents
 
-This release reproduces **scoring from saved outputs**, rather than rerunning every model. Standalone [inference adapters](../inference/README.md) are included for Sortformer and configurable Model X runs. Weights, private Model X presets and live API access are not bundled. Model X withholds its settings and outputs. [Methodology](../docs/METHODOLOGY.md) explains the reference preparation, legacy normalization and remaining limits.
+This release reproduces **scoring from saved outputs**, rather than rerunning every model. Standalone [inference adapters](../inference/README.md) are included for Sortformer and configurable Model X runs. Weights and live API access are not bundled. Model X presets are included with a placeholder name; historical individual outputs remain private. [Methodology](../docs/METHODOLOGY.md) explains the reference preparation, legacy normalization and remaining limits.
 
-The public scoring workflow needs only the files in this repository. Model X's private review package is stored separately and is not required to verify any named baseline.
+The public scoring workflow needs only the files in this repository. Model X needs only the actual model name and authorized access to its weights; no private review package is required to run inference.
 
 ## Dataset
 

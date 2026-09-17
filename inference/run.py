@@ -1,4 +1,4 @@
-"""Run a local checkpoint on the frozen audio; configuration is supplied separately."""
+"""Run a configured model on the frozen audio, downloading its checkpoint if needed."""
 import argparse
 from contextlib import nullcontext
 import hashlib
@@ -25,6 +25,37 @@ def sha(path):
 def write(path, data):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2, allow_nan=False) + '\n')
+
+
+def resolve_checkpoint(config, checkpoint=None, *, api=None, download=None):
+    """Resolve one checkpoint by model name, or use an explicitly supplied local file."""
+    revision = None
+    if checkpoint is None:
+        model_id = config.get('model_id', '').strip()
+        if not model_id or model_id.lower() == 'model x':
+            raise ValueError('Replace "Model X" in model_id with the actual model name, or pass --model-id.')
+        if api is None or download is None:
+            from huggingface_hub import HfApi, hf_hub_download
+            api = api or HfApi()
+            download = download or hf_hub_download
+        info = api.model_info(model_id, revision=config.get('model_revision') or 'main')
+        revision = info.sha
+        if not revision:
+            raise ValueError('The model repository did not return a resolved revision')
+        files = [entry.rfilename for entry in info.siblings if entry.rfilename.endswith('.nemo')]
+        filename = config.get('checkpoint_file')
+        if filename is None:
+            if len(files) != 1:
+                raise ValueError('Expected one .nemo checkpoint; set checkpoint_file or pass --checkpoint')
+            filename = files[0]
+        elif filename not in files:
+            raise ValueError('Configured checkpoint_file is missing from the model repository')
+        checkpoint = Path(download(repo_id=model_id, filename=filename, revision=revision))
+    checkpoint = Path(checkpoint)
+    digest = sha(checkpoint)
+    if config.get('checkpoint_sha256') and digest != config['checkpoint_sha256']:
+        raise ValueError('Checkpoint hash mismatch')
+    return checkpoint, digest, revision
 
 
 def windowed_inference(model, audio, window_s, overlap_s):
@@ -83,11 +114,16 @@ def configure(model, config):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config', type=Path, required=True)
-    parser.add_argument('--checkpoint', type=Path, required=True)
+    parser.add_argument('--checkpoint', type=Path, help='Optional local checkpoint; otherwise download by model_id')
+    parser.add_argument('--model-id', help='Override model_id without editing the configuration')
     parser.add_argument('--audio-dir', type=Path, default=ROOT/'data/raw_audio')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     config = json.loads(args.config.read_text())
+    if args.model_id:
+        config['model_id'] = args.model_id
+    if args.checkpoint is None and config.get('model_id', '').strip().lower() in {'', 'model x'}:
+        parser.error('Replace "Model X" in the config with the actual model name, or pass --model-id.')
     mode = config['mode']
     if mode not in {'legacy_windowed', 'native', 'probabilities'}:
         raise ValueError('Unknown inference mode')
@@ -96,17 +132,13 @@ def main():
         raise ValueError('precision must be fp32 or bf16')
     if config.get('fold_to') not in {None, 2}:
         raise ValueError('Only historical fold-to-two is supported')
-    # Private configurations and generated outputs belong outside tracked source/data.
+    # Generated outputs may identify the model and belong outside tracked source/data.
     output = args.output.resolve()
     if output.is_relative_to(ROOT) and not output.is_relative_to(ROOT/'private'):
         raise ValueError('Use private/ or an output directory outside this repository')
     output.mkdir(parents=True, exist_ok=True)
     if any(output.iterdir()):
         raise ValueError('Output directory must be empty; preserve earlier runs')
-    checkpoint_hash = sha(args.checkpoint)
-    expected_hash = config.get('checkpoint_sha256')
-    if expected_hash and checkpoint_hash != expected_hash:
-        raise ValueError('Checkpoint hash mismatch')
     cases = json.loads((ROOT/'data/manifest.json').read_text())['recordings']
     for case in cases:
         audio = args.audio_dir / (case['case']+'_conversation.wav')
@@ -124,12 +156,14 @@ def main():
         raise RuntimeError('BF16 support required')
     if config.get('matmul_precision'):
         torch.set_float32_matmul_precision(config['matmul_precision'])
-    model = SortformerEncLabelModel.restore_from(str(args.checkpoint), map_location='cpu', strict=config['strict'])
+    checkpoint, checkpoint_hash, resolved_revision = resolve_checkpoint(config, args.checkpoint)
+    model = SortformerEncLabelModel.restore_from(str(checkpoint), map_location='cpu', strict=config['strict'])
     dtype = torch.bfloat16 if precision == 'bf16' else torch.float32
     model = model.to(device='cuda', dtype=dtype).eval()
     geometry = configure(model, config)
     receipt = dict(configuration=config, effective_geometry=geometry,
-                   checkpoint_sha256=checkpoint_hash, runner_sha256=sha(__file__),
+                   checkpoint_sha256=checkpoint_hash, resolved_model_revision=resolved_revision,
+                   runner_sha256=sha(__file__),
                    processing_sha256=sha(Path(__file__).with_name('processing.py')),
                    manifest_sha256=sha(ROOT/'data/manifest.json'),
                    python=platform.python_version(), torch=torch.__version__, nemo=nemo.__version__,

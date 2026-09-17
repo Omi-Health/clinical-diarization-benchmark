@@ -50,7 +50,7 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 
 ## Reproduce the scores
 
-Python 3.10+. Includes the scorer, reference timings and saved baseline outputs. `scripts/crosscheck_pyannote.py` rescores every whole-recording row with pyannote.metrics as an independent check (agrees within 0.3 points). [Inference code](inference/README.md) is included for Sortformer and configurable Model X runs; Model X's settings and individual outputs remain private.
+Python 3.10+. Includes the scorer, reference timings and saved baseline outputs. `scripts/crosscheck_pyannote.py` rescores every whole-recording row with pyannote.metrics as an independent check (agrees within 0.3 points). [Inference code](inference/README.md) is included for Sortformer and configurable Model X runs; For Model X, replace the placeholder model name in its preset and run; no private ZIP is needed.
 
 ```bash
 GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/Omi-Health/clinical-diarization-benchmark.git

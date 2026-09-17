@@ -51,7 +51,7 @@ def main():
              "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. These are historical system configurations, not a controlled model-only ranking."]
     lines += table_lines(snapshot)
     lines += ["", "## Reading the results", "",
-              "- **Model X:** anonymized system. Aggregate results only; generic inference code is included, while its identity, configuration and individual outputs are private. The public repo cannot independently reproduce these rows.",
+              "- **Model X:** anonymized system. Aggregate results only; inference code and presets are included. Replace the placeholder model name to run; historical individual outputs remain private. New runs can be compared with the published aggregates.",
               "- **±250 ms** means a 250 ms exclusion radius around each reference boundary (pyannote total collar **0.5 seconds**). Zero collar is also shown. This is a 10 ms frame scorer, not a claim of bitwise parity with a continuous-time scorer.",
               "- **Common intervals:** the same 20 scoring intervals for every system. Muse required five long recordings to be split at 600 seconds. Matching is independent in each interval. Inference context remains different, and cross-interval speaker continuity is not measured.",
               "- **Known/folded to 2:** these rows use information that automatic-count rows do not. A correct count for a constrained run does not demonstrate automatic speaker counting.",

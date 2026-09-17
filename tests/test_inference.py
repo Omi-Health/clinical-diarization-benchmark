@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 
 from inference.processing import normalize_max_speakers, parse_native, probability_segments, stitch_windows
-from inference.run import windowed_inference, configure
+from inference.run import windowed_inference, configure, resolve_checkpoint
 
 
 def test_stitch_matches_swapped_speakers_and_cuts_overlap():
@@ -60,7 +60,7 @@ def test_native_parser_keeps_legacy_millisecond_truncation():
     assert parse_native([['0.1239 0.4569 arbitrary']])[0]['start'] == .1239
 
 
-def test_geometry_is_validated_and_no_private_preset_is_shipped():
+def test_geometry_is_validated_and_model_x_presets_are_ready():
     class Modules:
         chunk_len = 1
     class Model:
@@ -74,4 +74,49 @@ def test_geometry_is_validated_and_no_private_preset_is_shipped():
     with pytest.raises(ValueError):
         configure(model, dict(streaming_mode=False))
     configs = Path(__file__).resolve().parents[1]/'inference/configs'
-    assert {p.stem for p in configs.glob('*.json')} == {'sortformer1', 'sortformer21', 'sortformer21_low_unpaced'}
+    assert {p.stem for p in configs.glob('*.json')} == {'sortformer1', 'sortformer21', 'sortformer21_low_unpaced', 'model_x', 'model_x_streaming_unpaced'}
+
+    for key in ['model_x', 'model_x_streaming_unpaced']:
+        config = json.loads((configs / (key + '.json')).read_text())
+        assert config['model_id'] == 'Model X'
+        assert config['geometry']
+        assert 'checkpoint_sha256' not in config and 'model_revision' not in config
+    streaming = json.loads((configs/'model_x_streaming_unpaced.json').read_text())
+    assert streaming['postprocessing']['params']['constraint'] == 'drop'
+
+
+def test_model_name_alone_resolves_checkpoint_and_records_revision(tmp_path):
+    from types import SimpleNamespace
+    checkpoint = tmp_path/'downloaded.nemo'
+    checkpoint.write_bytes(b'test checkpoint')
+    calls = []
+    class API:
+        def model_info(self, model_id, revision):
+            calls.append((model_id, revision))
+            return SimpleNamespace(sha='resolved-revision', siblings=[
+                SimpleNamespace(rfilename='README.md'), SimpleNamespace(rfilename='weights.nemo')])
+    def download(**kwargs):
+        calls.append(kwargs)
+        return str(checkpoint)
+    config = json.loads((Path(__file__).resolve().parents[1]/'inference/configs/model_x.json').read_text())
+    config['model_id'] = 'example/diarization'
+    path, digest, revision = resolve_checkpoint(config, api=API(), download=download)
+    assert path == checkpoint and len(digest) == 64 and revision == 'resolved-revision'
+    assert calls == [('example/diarization', 'main'),
+        dict(repo_id='example/diarization', filename='weights.nemo', revision='resolved-revision')]
+
+
+def test_placeholder_and_ambiguous_download_fail_without_guessing(tmp_path):
+    from types import SimpleNamespace
+    with pytest.raises(ValueError, match='Replace'):
+        resolve_checkpoint(dict(model_id='Model X'))
+    class API:
+        def model_info(self, *args, **kwargs):
+            return SimpleNamespace(sha='resolved', siblings=[SimpleNamespace(rfilename=f'{n}.nemo') for n in [1, 2]])
+    with pytest.raises(ValueError, match='Expected one'):
+        resolve_checkpoint(dict(model_id='example/diarization'), api=API(), download=lambda **kwargs: pytest.fail('Unexpected download'))
+    checkpoint = tmp_path/'local.nemo'
+    checkpoint.write_bytes(b'local')
+    with pytest.raises(ValueError, match='hash mismatch'):
+        resolve_checkpoint(dict(model_id='Model X', checkpoint_sha256='wrong'), checkpoint)
+    assert resolve_checkpoint(dict(model_id='Model X'), checkpoint)[0] == checkpoint
