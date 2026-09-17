@@ -4,7 +4,7 @@
 
 The snapshot uses 15 previously frozen recordings from PriMock57, a public dataset of simulated primary-care consultations. Every recording has a doctor and a patient. Case IDs, durations and frozen mixed-audio SHA-256 hashes are in `data/manifest.json`. Total duration is 8,694.664 seconds (2.415184 hours).
 
-The historical audio preparation adds the synchronized doctor and patient PCM16 tracks in a wider integer type, clips the sum to the PCM16 range, and trims to the final text-bearing reference boundary. Input is 16 kHz mono. Audio is not redistributed here; use the upstream dataset and verify the frozen hashes before treating new inference as a matched rerun.
+The historical audio preparation adds the synchronized doctor and patient PCM16 tracks in a wider integer type, clips the sum to the PCM16 range, and trims to the final text-bearing reference boundary. Input is 16 kHz mono. The exact 15 mixed WAVs are included under `data/raw_audio/` through Git LFS, under CC BY 4.0. Use `scripts/verify_audio.py` to verify the frozen hashes, formats and durations before a matched rerun. The WAVs contain only format and PCM audio chunks, with no additional metadata.
 
 The frozen timing references intersect the source TextGrid speech turns with Silero VAD speech intervals on the mixed conversation. This removes some silence inside broad reference turns. The exported JSON retains only start/end times and speaker labels. Common-interval references are exported from the exact frozen split references used for the reported scores.
 
@@ -42,12 +42,14 @@ This equalizes scoring support, **not inference context**. It does not evaluate 
 
 ## Historical system policies
 
+These are third-party model configurations evaluated by Omi. The tables do not report Omi's proprietary runtime performance; a separate runtime evaluation is planned.
+
 | System | Saved inference / output policy |
 |---|---|
 | Sortformer v1 | 180-second windows, 12-second overlap; historical two-speaker folding before scoring |
 | Sortformer v2.1 | Whole-file path; historical two-speaker folding before scoring |
-| Community-1 | Known two speakers during inference, plus historical two-speaker normalization |
-| Precision-2 | Whole-file API with the known count of two |
+| pyannoteAI Community-1 | Known two speakers during inference, plus historical two-speaker normalization |
+| pyannoteAI Precision-2 | Whole-file API with the known count of two |
 | Meta Muse | Automatic labels per request; five recordings split at 600 seconds |
 | VibeVoice-ASR | Native batch output; automatic speaker labels |
 | VibeVoice streaming 1.5B / 7B | Paced runs and separate supplemental unpaced runs; automatic labels |

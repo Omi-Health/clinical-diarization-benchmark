@@ -10,5 +10,6 @@ jobs:
           python-version: '3.12'
       - run: pip install -e '.[test]'
       - run: pytest -q
+      - run: python scripts/verify_audio.py --allow-lfs-pointers
       - run: python scripts/verify_snapshot.py
       - run: python scripts/render_results.py && git diff --exit-code -- README.md results/RESULTS.md

@@ -8,6 +8,7 @@ dist/
 .DS_Store
 .env*
 *.wav
+!/data/raw_audio/*.wav
 *.mp3
 *.m4a
 *.nemo

@@ -2,6 +2,8 @@
 
 Snapshot: 2026-09-17. Same 15 PriMock mock consultations, 2.4152 audio hours.
 
+**Omi's proprietary runtime performance is not included.** These are third-party model configurations evaluated by Omi; our own runtime will be evaluated separately.
+
 DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. These are historical system configurations, not a controlled model-only ranking.
 
 ## Batch / offline
@@ -10,11 +12,11 @@ Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies s
 
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
-| Precision-2 API | Known 2 | 11.004% | 2.823% | 10.986% | 2.824% | constrained |
+| pyannoteAI Precision-2 API | Known 2 | 11.004% | 2.823% | 10.986% | 2.824% | constrained |
 | Sortformer v1, 180s windows | Folded to 2 after inference | 12.706% | 3.157% | 12.706% | 3.158% | constrained |
 | Sortformer v2.1, whole-file | Folded to 2 after inference | 12.173% | 3.610% | 12.173% | 3.611% | constrained |
 | Model X | Automatic | 12.589% | 4.786% | 12.589% | 4.787% | 80.0% |
-| Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained |
+| pyannoteAI Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained |
 | VibeVoice-ASR, native batch | Automatic | 24.191% | 8.233% | 24.191% | 8.235% | 100.0% |
 | Meta Muse Voice Transcribe | Automatic per request | 29.169%\* | 13.042%\* | 29.169% | 13.042% | 90.0%\* |
 

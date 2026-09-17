@@ -41,6 +41,7 @@ def table_lines(snapshot, heading_level=2):
 def main():
     snapshot = json.loads((ROOT / "results/snapshot.json").read_text())
     lines = ["# Diarization results", "", "Snapshot: 2026-09-17. Same 15 PriMock mock consultations, 2.4152 audio hours.", "",
+             "**Omi's proprietary runtime performance is not included.** These are third-party model configurations evaluated by Omi; our own runtime will be evaluated separately.", "",
              "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. These are historical system configurations, not a controlled model-only ranking."]
     lines += table_lines(snapshot)
     lines += ["", "## Reading the results", "",

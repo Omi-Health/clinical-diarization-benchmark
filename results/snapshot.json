@@ -1879,7 +1879,7 @@
     },
     {
       "key": "community1",
-      "model": "Community-1, whole-file",
+      "model": "pyannoteAI Community-1, whole-file",
       "speaker_policy": "Known 2; historical folding to 2",
       "group": "batch",
       "public_outputs": true,
@@ -2786,7 +2786,7 @@
     },
     {
       "key": "precision2",
-      "model": "Precision-2 API",
+      "model": "pyannoteAI Precision-2 API",
       "speaker_policy": "Known 2",
       "group": "batch",
       "public_outputs": true,
