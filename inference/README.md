@@ -8,7 +8,7 @@ The September 18 reruns use this runner directly on one NVIDIA L4, batch size 1,
 | Sortformer v2.1 offline | `configs/rerun-20260918/v21_offline_fp32_a.json` (published row); `configs/sortformer21.json` (BF16 variant) | 30.4 s buffer preset |
 | Sortformer v2.1 streaming | `configs/rerun-20260918/v21_low_fp32.json` (published row); `configs/sortformer21_low_unpaced.json` (BF16 variant) | 1.04 s buffer preset, unpaced |
 | Model X offline | `configs/model_x.json` | 30.4 s buffer preset |
-| Model X streaming | `configs/model_x_streaming_unpaced.json` | 1.04 s buffer preset, unpaced |
+| Model X streaming | `configs/rerun-20260918/model_x_streaming_tuned_fp32.json` | 1.04 s buffer preset, unpaced, tuned decoding |
 
 Buffer size is not measured live latency. Every run receives saved audio without wall-clock pacing. Rows marked "folded to 2" apply the historical two-speaker folding inside the runner (`fold_to: 2` in the configuration), so the documented command reproduces the published outputs; rows marked automatic keep the native speaker count.
 
@@ -22,12 +22,12 @@ docker run --rm -it --gpus all --ipc host --entrypoint bash \
   -v "$PWD:/work/repo" -w /work/repo clinical-diarization
 
 # Inside the container:
-python -m inference.run --config inference/configs/sortformer21.json --output private/sortformer21
+python -m inference.run --config inference/configs/rerun-20260918/v21_offline_fp32_a.json --output private/sortformer21
 python -m inference.score_run --output private/sortformer21
 python -m inference.compare --output private/sortformer21 --snapshot-key sortformer21
 ```
 
-`run.py` verifies every audio hash before inference and checks the pinned Sortformer checkpoint hashes. It saves native segments, frame probabilities, requested settings, geometry, the loaded model configuration, package versions, GPU details, code hashes and per-recording output hashes. The public [run receipt](../results/native_l4_receipt.json) contains the safe environment and code/configuration hashes. Full receipts and raw outputs stay in ignored `private/` or outside the repository. NeMo effectively clamps offline cache updates from the requested 300 to 340; the receipt records that effective value.
+`run.py` verifies every audio hash before inference and checks the pinned Sortformer checkpoint hashes. It saves native segments, frame probabilities, requested settings, geometry, the loaded model configuration, package versions, GPU details, code hashes and per-recording output hashes. The [selected-run receipt](../results/best_settings_receipt.json) records the current configurations and code hashes; the [native BF16 receipt](../results/native_l4_receipt.json) records the earlier baseline. Full receipts and raw outputs stay in ignored `private/` or outside the repository. NeMo effectively clamps offline cache updates from the requested 300 to 340; the receipt records that effective value.
 
 ## Model X
 
@@ -38,8 +38,8 @@ python -m inference.run --config inference/configs/model_x.json --model-id ORGAN
 python -m inference.compare --output private/model-x --snapshot-key model_x
 ```
 
-Use `model_x_streaming_unpaced.json` and snapshot key `model_x_streaming_unpaced` for streaming. No private code or ZIP is needed. The name alone downloads the current checkpoint; `--checkpoint /path/to/model.nemo` lets an authorized reviewer use the exact evaluated file. Both Model X presets were evaluated with the same checkpoint. Its identity, exact pin and individual predictions remain private; public scores are aggregate-only.
+Use `configs/rerun-20260918/model_x_streaming_tuned_fp32.json` and snapshot key `model_x_streaming_unpaced` for streaming. No private code or ZIP is needed. The name alone downloads the current checkpoint; `--checkpoint /path/to/model.nemo` lets an authorized reviewer use the exact evaluated file. Both Model X presets were evaluated with the same checkpoint. Its identity, exact pin and individual predictions remain private; public scores are aggregate-only.
 
 ## Earlier runs
 
-The [previous snapshot](../results/archive/2026-09-17/) and `configs/legacy/` retain the older adjusted configurations. Their folding/tuning and runtime differences should not be mixed with the current native results. Other vendors' inference clients are not included; their saved outputs remain independently scoreable.
+The [previous snapshot](../results/archive/2026-09-17/) and `configs/legacy/` retain the older adjusted configurations. Their folding/tuning and runtime differences should not be mixed with the current best-tested results. Other vendors' inference clients are not included; their saved outputs remain independently scoreable.

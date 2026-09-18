@@ -70,6 +70,21 @@
       "recordings": 15,
       "mode": "probabilities",
       "reproduced": "2026-09-18 timed session"
+    },
+    "model_x": {
+      "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.bfloat16",
+      "configuration": "inference/configs/model_x.json",
+      "configuration_sha256": "4f089017573b5e1849d80ff9e6a548ffdce87f58998237e7664399bca44e5f91",
+      "recordings": 15,
+      "mode": "native",
+      "reproduced": "2026-09-18 timed session; all aggregate score counts match published row"
     }
   },
   "settings_log": {
@@ -185,7 +200,7 @@
       {
         "setting": "1.04 s preset, unpaced, FP32, tuned probability decoding (tuned on 42 separate recordings), top 2 speakers retained",
         "chosen": true,
-        "source": "rerun 2026-09-18 (reproduces archived 4.271)",
+        "source": "fresh rerun 2026-09-18; close to archived 4.271, not bit-identical",
         "zero": 12.567,
         "c250": 4.275
       },
@@ -203,6 +218,12 @@
         "source": "rerun 2026-09-18 (7cce63b)",
         "zero": 12.746,
         "c250": 4.962
+      },
+      {
+        "setting": "1.04 s preset, tuned probability decoding, top 2 (archived 2026-09-17 environment)",
+        "source": "archive 2026-09-17",
+        "zero": 12.566,
+        "c250": 4.271
       }
     ],
     "community1": [
@@ -229,9 +250,11 @@
       "x_realtime": 274.0,
       "peak_gpu_gb": 1.77,
       "files": 15,
-      "warm_up": "one recording per configuration run and discarded before timing",
+      "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
       "gpu": "NVIDIA L4 (g6.2xlarge)",
-      "batch_size": 1
+      "batch_size": 1,
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
     },
     "sortformer21": {
       "kind": "l4_batch",
@@ -240,9 +263,11 @@
       "x_realtime": 402.0,
       "peak_gpu_gb": 1.03,
       "files": 15,
-      "warm_up": "one recording per configuration run and discarded before timing",
+      "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
       "gpu": "NVIDIA L4 (g6.2xlarge)",
-      "batch_size": 1
+      "batch_size": 1,
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
     },
     "sortformer21_low_unpaced": {
       "kind": "l4_batch",
@@ -251,9 +276,11 @@
       "x_realtime": 16.0,
       "peak_gpu_gb": 1.03,
       "files": 15,
-      "warm_up": "one recording per configuration run and discarded before timing",
+      "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
       "gpu": "NVIDIA L4 (g6.2xlarge)",
-      "batch_size": 1
+      "batch_size": 1,
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
     },
     "model_x": {
       "kind": "l4_batch",
@@ -262,9 +289,11 @@
       "x_realtime": 768.0,
       "peak_gpu_gb": 0.74,
       "files": 15,
-      "warm_up": "one recording per configuration run and discarded before timing",
+      "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
       "gpu": "NVIDIA L4 (g6.2xlarge)",
-      "batch_size": 1
+      "batch_size": 1,
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
     },
     "model_x_streaming_unpaced": {
       "kind": "l4_batch",
@@ -273,9 +302,11 @@
       "x_realtime": 29.0,
       "peak_gpu_gb": 0.94,
       "files": 15,
-      "warm_up": "one recording per configuration run and discarded before timing",
+      "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
       "gpu": "NVIDIA L4 (g6.2xlarge)",
-      "batch_size": 1
+      "batch_size": 1,
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
     },
     "community1": {
       "kind": "l4_batch",
@@ -283,10 +314,13 @@
       "total_s": 278.1,
       "x_realtime": 31.0,
       "files": 15,
-      "warm_up": "none; first file includes CUDA initialization",
+      "warm_up": "each known-two call followed an automatic-count call on the same audio in the same process",
       "gpu": "NVIDIA L4 (g6.2xlarge)",
       "batch_size": 1,
-      "note": "fresh run for timing; published accuracy row is the archived run"
+      "note": "fresh run for timing; published accuracy row is the archived run",
+      "torch": "2.14.0+cu130",
+      "pyannote_audio": "4.0.7",
+      "timing_scope": "pipeline call including audio loading, excluding model loading and output serialization"
     },
     "precision2": {
       "kind": "api_round_trip",
@@ -302,7 +336,9 @@
       "p95_s_per_file": 110.6,
       "batch_elapsed_s": 227.7,
       "concurrency": 8,
-      "note": "2026-09-15 API receipts; 20 requests, five recordings split at the 600 s limit"
+      "note": "2026-09-15 API receipts; 20 requests, five recordings split at the 600 s limit",
+      "unit": "request",
+      "requests": 20
     },
     "vibe_original": {
       "kind": "joint_server",
@@ -314,5 +350,5 @@
       "note": "2026-09-15 vLLM server, joint ASR+diarization 9B model; needed ~30 GB GPU memory, not an L4; wall time includes transcript generation"
     }
   },
-  "speed_policy": "L4 batch rows: same host, same session, batch size 1, sequential, median seconds per recording after a discarded warm-up recording; API rows: request round trip as recorded; joint-server row: not comparable diarizer compute."
+  "speed_policy": "Observed times on the same L4, batch size 1, with differing software and warm-up. All 15 timed files included. Median wall time per file; x_realtime = total audio / summed processing time. API values are per request, not always per recording. See docs/METHODOLOGY.md#speed."
 }

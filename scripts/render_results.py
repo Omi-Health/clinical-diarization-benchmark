@@ -17,7 +17,8 @@ def speed_cell(key):
     if s.get("kind") == "l4_batch":
         return f"{s['median_s_per_file']:.1f} s/file ({s['x_realtime']:.0f}×), L4 batch"
     if s.get("kind") == "api_round_trip":
-        return f"{s['median_s_per_file']:.0f} s/file, API round trip"
+        unit = s.get("unit", "file")
+        return f"{s['median_s_per_file']:.0f} s/{unit}, API round trip"
     if s.get("kind") == "joint_server":
         return f"{s['median_s_per_file']:.0f} s/file, joint ASR+diarization server"
     return "—"

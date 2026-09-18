@@ -1,6 +1,6 @@
 # Native rerun decomposition — 2026-09-18
 
-Status: analysis of the 18 September native rerun (commit 7cce63b) against the archived rows, with a targeted FP32 rerun on one NVIDIA L4 in the same pinned environment (Dockerfile in `inference/`). The published snapshot is unchanged by this document; it proposes the standard for the next snapshot.
+Status: analysis of the 18 September native rerun (commit 7cce63b) against the archived rows, with a targeted FP32 rerun on one NVIDIA L4 in the same pinned environment (Dockerfile in `inference/`). The final snapshot uses the best tested reproducible configuration per row; the settings log records alternatives. The analysis below describes the earlier decomposition run.
 
 Question: the archived public rows had Sortformer v1 as the best NVIDIA row (3.157 % DER at
 ±250 ms) and v2.1 at 3.610 %; the 18 September native L4 rerun (public commit 7cce63b) shows
@@ -33,8 +33,7 @@ targeted rerun on a dedicated L4 in the same pinned environment (NeMo 3.1.0+2d90
 | Model X 1.04 s preset (public 7cce63b) | BF16 | 1.04 s preset | 12.746 / 4.962 | – | 9/15 |
 
 Folding = the repository's historical `normalize_max_speakers(…, 2)`: keep the two labels
-with most speech, map the rest onto the second. Applied offline to native outputs; the
-runner never folds in the rerun.
+with most speech, map the rest onto the second. Applied offline to native outputs for this decomposition. The final public runner applies folding itself when `fold_to: 2` is configured.
 
 ## What each factor does
 
@@ -51,10 +50,7 @@ of memory on the L4 here). Whole-file inference on these 6–14 minute recording
 that 90 s training context. Length alone does not predict the failure: the longest recording
 (day1_consultation07, 14.3 min) scored 5.58 %, within 0.03 of its archived value, while
 consultation11 collapsed into file-wide label confusion. One of fifteen files failing this
-way, and none under the 180 s windows, is the point: the windowed protocol is the documented
-way to run v1 on long recordings, so whole-file v1 is not a fair "native" v1 row. Note also that windowed v1 has no meaningful
-automatic-count number: stitching 180 s windows invents extra labels (5/15 correct counts,
-9.47 % unfolded), so the folded column is the only honest v1 row.
+way, and none under the 180 s windows, supports choosing the windowed configuration on this dataset. The 180 s windows and 12 s overlap are this benchmark's adapter policy, not a model-card requirement. Longer inference is not invalid merely because training samples were 90 s. Window stitching can introduce extra labels (5/15 correct counts, 9.47 % unfolded); both policies remain useful measured results, and the selected folded row uses the known count of two.
 
 **Sortformer v2.1.** FP32 native folded gives 3.945 %, within 0.34 points of the published
 3.610 %; the remainder is the known production-path difference (the September 7 row went
@@ -64,30 +60,15 @@ FP32 (7.974 %) and 1.2 at BF16 (6.593 %), because the 4-speaker model predicts 3
 speakers on 12–14 of the 15 two-person consultations. Precision matters for v2.1 but not in
 one direction: at FP32 the swap lands on day1_consultation07 with 4 labels (33 %), at BF16 the
 same file gets 3 labels (20 %) while the folded score worsens from 3.945 to 5.392. Under
-automatic count v2.1 is unstable on this material at either precision; that instability, not
-a quality change, is what the public table now shows.
+automatic count v2.1 is unstable on this material at either precision; that difference explains the weaker native baseline; the current table uses the labelled folded result.
 
-**Model X.** Precision-insensitive (4.787 vs 4.786) and count-stable (12/15). Its rows are
-the same under both policies, which is why it now sits above both Sortformer rows.
+**Model X.** Precision-insensitive (4.787 vs 4.786) and count-stable (12/15). Its offline scores barely change under folding. This does not apply to its tuned streaming decoder, which explicitly retains the top two speakers.
 
-## What a standardized table should be
+## Selected comparison
 
-1. **FP32 for every NVIDIA row.** It is the checkpoints' stored dtype and NeMo's default
-   inference precision; BF16 was chosen only for whole-file v1 memory, which windowing
-   removes. Chosen a priori, not by score: for v2.1 FP32 is worse unfolded and better folded.
-   Keep the BF16 whole-file rows in the archive as labelled variants.
-2. **Two policy columns for every NVIDIA row: native automatic count, and folded to two.**
-   The pyannote batch rows use the known count of two; the folded column is the only fair
-   comparison against them, and the automatic column is the honest product finding (v2.1
-   over-splits two-speaker consultations; Model X mostly does not).
-3. **Run v1 in its documented context (180 s windows)** and label whole-file v1 as outside
-   the model card's regime. v1's automatic-count cell should read "n/a (windowed stitching)".
-4. Report the v2.1 FP32 folded row (3.945 %) as the reproducible number, and keep the
-   published 3.610 % production-path row labelled as such, with the 0.33-point gap stated.
+The main table shows the best tested configuration reproduced with the current public runner and pinned environment. Alternatives, including native counts, BF16 and historical runs, remain in the settings log. Older archived scores can be slightly lower; they are not selected merely because their numbers are lower.
 
-With that standard, the NVIDIA ordering on this material is: v1 windowed folded 3.16, v2.1
-folded 3.95, Model X 4.79 (auto) — the archived ordering — and, under automatic count where
-v1 has no row: Model X 4.79, v2.1 low-latency 6.96, v2.1 offline 7.97.
+Speaker-count information differs by row, so this is a comparison of labelled configurations, not an equal-information model-only ranking. Configuration selection used these 15 recordings; the result is not a new holdout estimate or proof of the best possible setting. The 3.610 % production-path result remains archived because it has not been reproduced by the public runner; the exact cause of the gap is not fully established.
 
 
 ## Provenance

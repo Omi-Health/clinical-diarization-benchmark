@@ -1,4 +1,5 @@
 import json
+import hashlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,6 +20,11 @@ def test_best_settings_log_matches_published_rows():
     for key, run in receipt['runs'].items():
         config = ROOT / run['configuration']
         assert config.exists() and run['recordings'] == 15 and run.get('reproduced')
+        assert hashlib.sha256(config.read_bytes()).hexdigest() == run['configuration_sha256']
+        for field, path in [('runner_sha256', 'inference/run.py'),
+                            ('processing_sha256', 'inference/processing.py'),
+                            ('manifest_sha256', 'data/manifest.json')]:
+            assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == run[field]
         text = config.read_text()
         if key.startswith('model_x'):
             assert json.loads(text)['model_id'] == 'Model X' and 'checkpoint_sha256' not in run

@@ -22,7 +22,7 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 | Model X, 30.4 s preset, BF16 | Automatic | 12.593% | 4.786% | 12.593% | 4.787% | 80.0% | 0.7 s/file (768×), L4 batch |
 | pyannoteAI Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained | 18.5 s/file (31×), L4 batch |
 | VibeVoice-ASR, native batch | Automatic | 24.191% | 8.233% | 24.191% | 8.235% | 100.0% | 123 s/file, joint ASR+diarization server |
-| Meta Muse Voice Transcribe | Automatic per request | 29.169%\* | 13.042%\* | 29.169% | 13.042% | 90.0%\* | 92 s/file, API round trip |
+| Meta Muse Voice Transcribe | Automatic per request | 29.169%\* | 13.042%\* | 29.169% | 13.042% | 90.0%\* | 92 s/request, API round trip |
 
 \* Muse's starred values are interval results, not whole-recording results; count accuracy is 18/20 intervals.
 
@@ -48,7 +48,9 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 - **Speaker policy:** some runs use the known two-speaker count. “Constrained” does not measure automatic speaker counting.
 - **Scope:** 15 simulated consultations with VAD-refined references. Model X is anonymized and shares aggregates only. Omi's proprietary runtime is not included.
 
-**Best-setting rows:** each Sortformer/Model X row shows the best setting measured for that model on this material (precision, context, speaker policy); every other setting tried, with its score, is in the [settings log](results/best_settings_receipt.json) and the [rerun decomposition](docs/NATIVE_RERUN_DECOMPOSITION_20260918.md). [Earlier native-only results](results/archive/2026-09-17/) **Speed:** median seconds per recording; "L4 batch" rows were timed in one session on one NVIDIA L4 (batch size 1, sequential, a warm-up recording discarded), API rows are request round trips as recorded, and the VibeVoice row is a joint ASR+diarization server on a larger GPU; details and per-row notes in the settings log.
+**Best-setting rows:** each Sortformer/Model X row shows the best setting measured for that model on this material (precision, context, speaker policy); every other setting tried, with its score, is in the [settings log](results/best_settings_receipt.json) and the [rerun decomposition](docs/NATIVE_RERUN_DECOMPOSITION_20260918.md). [Earlier adjusted results](results/archive/2026-09-17/).
+
+**Speed:** measured seconds per recording on one L4, including the first timed file; × real time uses total audio / total processing time. Software and warm-up differ for Community-1. API times are per request; VibeVoice includes transcription on a larger GPU. See [timing details](docs/METHODOLOGY.md#speed).
 
 [Full results](results/RESULTS.md) · [Methodology](docs/METHODOLOGY.md) · [Scores and error counts](results/snapshot.json)
 
