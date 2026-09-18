@@ -1,0 +1,16 @@
+{
+  "snapshot_key": "model_x_streaming_unpaced",
+  "model_id": "Model X",
+  "strict": false,
+  "precision": "fp32",
+  "mode": "native",
+  "geometry": {
+    "chunk_len": 9,
+    "chunk_right_context": 4,
+    "chunk_left_context": 0,
+    "fifo_len": 264,
+    "spkcache_len": 264,
+    "spkcache_update_period": 222
+  },
+  "matmul_precision": "highest"
+}

@@ -1,0 +1,15 @@
+{
+  "snapshot_key": "model_x",
+  "model_id": "Model X",
+  "strict": false,
+  "precision": "fp32",
+  "mode": "native",
+  "geometry": {
+    "spkcache_len": 264,
+    "fifo_len": 40,
+    "chunk_len": 340,
+    "chunk_right_context": 40,
+    "spkcache_update_period": 300
+  },
+  "matmul_precision": "highest"
+}

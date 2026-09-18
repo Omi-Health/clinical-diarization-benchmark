@@ -1,0 +1,19 @@
+{
+  "model_id": "nvidia/diar_streaming_sortformer_4spk-v2.1",
+  "model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
+  "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
+  "strict": true,
+  "precision": "fp32",
+  "streaming_mode": true,
+  "mode": "native",
+  "geometry": {
+    "chunk_len": 6,
+    "chunk_left_context": 1,
+    "chunk_right_context": 7,
+    "fifo_len": 188,
+    "spkcache_update_period": 144,
+    "spkcache_len": 188
+  },
+  "snapshot_key": "sortformer21_low_unpaced",
+  "matmul_precision": "highest"
+}
