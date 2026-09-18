@@ -46,9 +46,13 @@ recordings stay within 0.5 points of the archived values, and one recording,
 day1_consultation11 (13.4 min), goes from 3.95 % to 31.76 % with two speakers predicted and
 confusion in every minute of the file; the windowed run has zero confusion frames on the
 same file. The v1 model card states it was trained on 90-second samples and that the maximum
-test duration is memory-bound (about 12 minutes on a 48 GB GPU). A 13-minute whole file is
-outside that regime; the 180 s windows were the documented way to run it. Whole-file v1
-therefore is not a fair "native" v1 row. Note also that windowed v1 has no meaningful
+test duration is memory-bound (about 12 minutes on a 48 GB GPU; FP32 whole-file v1 ran out
+of memory on the L4 here). Whole-file inference on these 6–14 minute recordings is outside
+that 90 s training context. Length alone does not predict the failure: the longest recording
+(day1_consultation07, 14.3 min) scored 5.58 %, within 0.03 of its archived value, while
+consultation11 collapsed into file-wide label confusion. One of fifteen files failing this
+way, and none under the 180 s windows, is the point: the windowed protocol is the documented
+way to run v1 on long recordings, so whole-file v1 is not a fair "native" v1 row. Note also that windowed v1 has no meaningful
 automatic-count number: stitching 180 s windows invents extra labels (5/15 correct counts,
 9.47 % unfolded), so the folded column is the only honest v1 row.
 
