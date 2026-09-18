@@ -57,19 +57,19 @@
         "setting": "180 s windows, 12 s overlap, FP32, folded to 2",
         "chosen": true,
         "source": "rerun 2026-09-18",
-        "zero": 18.555,
-        "c250": 9.474,
-        "zero_folded": 12.706,
-        "c250_folded": 3.159,
+        "zero": 12.706,
+        "c250": 3.159,
+        "automatic_count_zero": 18.555,
+        "automatic_count_c250": 9.474,
         "two_speaker_files": 5
       },
       {
         "setting": "180 s windows, 12 s overlap, BF16, folded to 2",
         "source": "rerun 2026-09-18",
-        "zero": 18.541,
-        "c250": 9.483,
-        "zero_folded": 12.689,
-        "c250_folded": 3.165,
+        "zero": 12.689,
+        "c250": 3.165,
+        "automatic_count_zero": 18.541,
+        "automatic_count_c250": 9.483,
         "two_speaker_files": 5
       },
       {
@@ -77,8 +77,8 @@
         "source": "rerun 2026-09-18 (7cce63b)",
         "zero": 14.784,
         "c250": 6.778,
-        "zero_folded": 14.122,
-        "c250_folded": 6.143,
+        "folded_zero": 14.122,
+        "folded_c250": 6.143,
         "two_speaker_files": 14
       },
       {
@@ -93,10 +93,10 @@
         "setting": "30.4 s preset, FP32, folded to 2 (run twice, identical)",
         "chosen": true,
         "source": "rerun 2026-09-18",
-        "zero": 15.768,
-        "c250": 7.974,
-        "zero_folded": 11.407,
-        "c250_folded": 3.945,
+        "zero": 11.407,
+        "c250": 3.945,
+        "automatic_count_zero": 15.768,
+        "automatic_count_c250": 7.974,
         "two_speaker_files": 3
       },
       {
@@ -104,8 +104,8 @@
         "source": "rerun 2026-09-18 (7cce63b)",
         "zero": 14.077,
         "c250": 6.593,
-        "zero_folded": 12.731,
-        "c250_folded": 5.392,
+        "folded_zero": 12.731,
+        "folded_c250": 5.392,
         "two_speaker_files": 1
       },
       {
@@ -120,10 +120,10 @@
         "setting": "1.04 s preset, unpaced, FP32, folded to 2",
         "chosen": true,
         "source": "rerun 2026-09-18",
-        "zero": 14.841,
-        "c250": 6.958,
-        "zero_folded": 12.496,
-        "c250_folded": 4.815,
+        "zero": 12.496,
+        "c250": 4.815,
+        "automatic_count_zero": 14.841,
+        "automatic_count_c250": 6.958,
         "two_speaker_files": 0
       },
       {
@@ -131,8 +131,8 @@
         "source": "rerun 2026-09-18 (7cce63b)",
         "zero": 15.649,
         "c250": 7.956,
-        "zero_folded": 13.446,
-        "c250_folded": 5.927,
+        "folded_zero": 13.446,
+        "folded_c250": 5.927,
         "two_speaker_files": 0
       },
       {
@@ -155,8 +155,8 @@
         "source": "rerun 2026-09-18",
         "zero": 12.594,
         "c250": 4.787,
-        "zero_folded": 12.59,
-        "c250_folded": 4.787,
+        "folded_zero": 12.59,
+        "folded_c250": 4.787,
         "two_speaker_files": 12
       }
     ],
@@ -173,8 +173,8 @@
         "source": "rerun 2026-09-18",
         "zero": 12.754,
         "c250": 4.947,
-        "zero_folded": 12.669,
-        "c250_folded": 4.865,
+        "folded_zero": 12.669,
+        "folded_c250": 4.865,
         "two_speaker_files": 7
       },
       {
