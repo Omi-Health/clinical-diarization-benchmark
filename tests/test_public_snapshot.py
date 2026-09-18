@@ -21,7 +21,7 @@ def test_model_x_discloses_only_aggregate_results():
 
 
 def test_timing_data_contains_no_transcript_text():
-    for directory in ["data/references", "data/hypotheses"]:
+    for directory in ["data/references", "data/hypotheses", "data/policy_inputs"]:
         for path in (ROOT / directory).rglob("*.json"):
             body = json.loads(path.read_text())
             assert set(body) == {"segments"}

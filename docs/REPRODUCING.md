@@ -80,3 +80,7 @@ Corrections and reproducible comparisons are welcome through issues or pull requ
 
 Use the frozen case list and audio hashes, export speaker/timestamp segments in the JSON format above, then score at both collar settings. Keep automatic and constrained speaker-count policies explicit. Include normalized outputs and per-case counts so others can check your aggregate result. Changes to the numeric snapshot or data also need updated file hashes and regenerated tables.
 
+
+## Matched speaker-policy tables
+
+Run `python scripts/verify_speaker_policies.py` to verify the paired tables. Both policies use the same automatic source output; the two-speaker view applies the public folding function before scoring. Main table scores are in `results/speaker_policy_snapshot.json`; `results/snapshot.json` retains the earlier selected-setting results and their timing context.

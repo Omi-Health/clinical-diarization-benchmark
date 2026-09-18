@@ -1,5 +1,19 @@
 # Run the models
 
+## Current paired comparison
+
+The main tables hold each NVIDIA configuration at FP32 and score the same automatic output with and without the common fold-to-two step. Use the presets in `configs/speaker-policies/` (`sortformer1`, `sortformer21`, `sortformer21_low_unpaced`, `model_x`, `model_x_streaming_unpaced`). For Model X, supply the actual model name or the evaluated checkpoint privately.
+
+```bash
+python -m inference.run --config inference/configs/speaker-policies/sortformer21.json --output private/policy-sortformer21
+python -m inference.speaker_policies --output private/policy-sortformer21 --policy automatic
+python -m inference.speaker_policies --output private/policy-sortformer21 --policy fold_two
+```
+
+Compare these scores with `results/speaker_policy_snapshot.json`. The saved public inputs can also be scored directly, for example with `--output data/policy_inputs/sortformer21`. `scripts/verify_speaker_policies.py` checks every public pair. The container setup below applies to both comparisons.
+
+## Earlier best-tested settings
+
 The September 18 reruns use this runner directly on one NVIDIA L4, batch size 1, complete recordings. The published rows use the best measured setting per model (`configs/rerun-20260918/` for the FP32 Sortformer rows, folded to two speakers after inference; `configs/` for the BF16 native presets); every setting tried is logged in `../results/best_settings_receipt.json`.
 
 | Row | Configuration | Input |

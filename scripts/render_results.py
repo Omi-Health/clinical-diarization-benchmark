@@ -65,47 +65,63 @@ def table_lines(snapshot, heading_level=2, compact=False):
     return lines
 
 
+def paired_tables(snapshot, heading_level=2, compact=False):
+    lines = []
+    for groups, title in [({'batch'}, 'Batch / offline'),
+                          ({'paced_streaming', 'supplemental_unpaced'}, 'Streaming diarization')]:
+        streaming = 'paced_streaming' in groups
+        lines += ['', '#' * heading_level + ' ' + title]
+        for policy, label in [('automatic', 'Automatic speaker count'), ('fold_two', 'Same two-speaker post-processing')]:
+            lines += ['', '#' * (heading_level + 1) + ' ' + label, '',
+                      '| System |' + (' Input pacing |' if streaming else '') + ' Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Count accuracy |',
+                      '|---|' + ('---|' if streaming else '') + '---:|---:|---:|---:|---:|']
+            models = sorted((m for m in snapshot['models'] if m['group'] in groups),
+                            key=lambda m: m['policies'][policy]['common_scoring_intervals']['0.25']['aggregate']['der'])
+            for m in models:
+                panels = m['policies'][policy]
+                cells = []
+                for panel in ['full_recordings', 'common_scoring_intervals']:
+                    for collar in ['0', '0.25']:
+                        body = panels[panel].get(collar)
+                        fallback = not body and m.get('interval_only')
+                        if fallback:
+                            body = panels['common_scoring_intervals'][collar]
+                        cells.append(f"{100 * body['aggregate']['der']:.3f}%" + ('\\*' if fallback else ''))
+                body = panels['full_recordings'].get('0') or panels['common_scoring_intervals']['0']
+                count = 'constrained' if policy == 'fold_two' else f"{100 * body['aggregate']['speaker_count_accuracy']:.1f}%" + ('\\*' if m.get('interval_only') else '')
+                pacing = ['Real-time paced' if m['group'] == 'paced_streaming' else 'Unpaced'] if streaming else []
+                lines += ['| ' + ' | '.join([m['model'], *pacing, *cells, count]) + ' |']
+        if not streaming:
+            lines += ['', '\\* Muse: 20 separate request intervals, not whole recordings. V1 automatic counts include window-stitching errors.']
+        else:
+            lines += ['', 'Unpaced = saved audio processed without waiting. Two-speaker correction uses the complete output after the stream, not a live speaker-count decision. These scores do not measure latency.']
+    return lines
+
+
 def main():
-    snapshot = json.loads((ROOT / "results/snapshot.json").read_text())
-    lines = ["# Diarization results", "", "Snapshot: 2026-09-18. Same 15 PriMock mock consultations, 2.4152 audio hours.", "",
-             "**Omi's proprietary runtime performance is not included.** These are third-party model configurations evaluated by Omi; our own runtime will be evaluated separately.", "",
-             "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. Each Sortformer/Model X row is shown at its best measured setting on this material; every other setting tried is logged with its score in `results/best_settings_receipt.json`. Other rows retain their recorded vendor settings."]
-    lines += table_lines(snapshot)
-    lines += ["", "## Reading the results", "",
-              "- **Model X:** anonymized system. Aggregate results only; inference code and presets are included. Replace the placeholder model name to run; individual outputs remain private. New runs can be compared with the published aggregates.",
-              "- **±250 ms** means a 250 ms exclusion radius around each reference boundary (pyannote total collar **0.5 seconds**). Zero collar is also shown. This is a 10 ms frame scorer, not a claim of bitwise parity with a continuous-time scorer.",
-              "- **Common intervals:** the same 20 scoring intervals for every system. Muse required five long recordings to be split at 600 seconds. Matching is independent in each interval. Inference context remains different, and cross-interval speaker continuity is not measured.",
-              "- **Known/folded to 2:** these rows use information that automatic-count rows do not. A correct count for a constrained run does not demonstrate automatic speaker counting.",
-              "- **References:** frozen VAD-corrected timing annotations derived from PriMock57. Overlap and false alarms during silence are included. These are not hand-verified word-level speech boundaries.",
-              "- VibeVoice uses its returned timing, including coarse/chunk-derived boundaries. Speaker-labelled pauses count as false alarms; no reference-based silence mask repairs the predictions.",
-              "- No speed ranking: these systems perform different work (diarization alone versus ASR plus diarization), on different hardware or remote APIs.",
-              "", "See [methodology](../docs/METHODOLOGY.md), [data attribution](../data/ATTRIBUTION.md), and [numeric snapshot](snapshot.json).", ""]
-    (ROOT / "results/RESULTS.md").write_text("\n".join(lines))
-    readme_path = ROOT / "README.md"
-    readme = readme_path.read_text()
-    start_marker = "<!-- BENCHMARK:START -->"
-    end_marker = "<!-- BENCHMARK:END -->"
-    if readme.count(start_marker) != 1 or readme.count(end_marker) != 1:
-        raise ValueError("README must contain one benchmark marker pair")
-    before, rest = readme.split(start_marker)
-    _, after = rest.split(end_marker)
-    hours = snapshot["audio_hours"]
-    featured_unpaced = {"model_x_streaming_unpaced", "sortformer21_low_unpaced"}
-    readme_snapshot = {**snapshot, "models": [
-        model for model in snapshot["models"]
-        if model["group"] != "supplemental_unpaced" or model["key"] in featured_unpaced
-    ]}
-    main_count = len(readme_snapshot["models"])
-    header = (f"**Dataset**: PriMock57 ({snapshot['recordings']} mock consultations, {hours:.4f} audio hours) "
-              f"| **Configurations shown**: {main_count} | **Updated**: {snapshot['snapshot_date']}")
-    summary = [header, "", "**DER ↓** = speaker diarization error; lower is better. Ranked by common-interval DER at ±250 ms."]
-    supplementary_count = len(snapshot["models"]) - main_count
-    supplementary_link = ["", f"{supplementary_count} additional VibeVoice unpaced runs are available in the [detailed results](results/RESULTS.md#streaming-diarization)."]
-    readme_tables = table_lines(readme_snapshot, heading_level=3, compact=True)
-    generated = "\n".join(summary + readme_tables + supplementary_link)
-    readme_path.write_text(before + start_marker + "\n\n" + generated + "\n\n" + end_marker + after)
+    historical = json.loads((ROOT/'results/snapshot.json').read_text())
+    snapshot = json.loads((ROOT/'results/speaker_policy_snapshot.json').read_text())
+    intro = ['# Diarization results', '',
+             'Same 15 PriMock consultations, 2.4152 audio hours. Updated 2026-09-19.', '',
+             'Each pair scores the same automatic inference output, unchanged or folded to at most two speakers with the same public function. NVIDIA pairs use FP32 and native decoding (v1 uses 180 s windows). Ranked by common-interval DER at ±250 ms. These are controlled speaker-policy comparisons, not best-setting claims.', '',
+             'Omi’s proprietary runtime is not included. Model X remains aggregate-only.']
+    lines = intro + paired_tables(snapshot)
+    lines += ['', '## Earlier selected settings and timings', '',
+              'The earlier best-tested settings are retained below as a separate record. They mix speaker constraints and decoding policies, so they are not the paired comparison above. Precision-2 only has a known-two API run here; it cannot supply an automatic/folded pair. The tuned Model X streaming decoder also changes thresholds and drops extra speakers rather than folding them. Its result is retained here, not relabelled as the common folding method.']
+    lines += table_lines(historical, heading_level=3)
+    lines += ['', 'See [methodology](../docs/METHODOLOGY.md), [paired score counts](speaker_policy_snapshot.json), [settings log](best_settings_receipt.json), and [run instructions](../inference/README.md).', '']
+    (ROOT/'results/RESULTS.md').write_text('\n'.join(lines))
+    featured = {'model_x_streaming_unpaced', 'sortformer21_low_unpaced'}
+    shown = {**snapshot, 'models': [m for m in snapshot['models'] if m['group'] != 'supplemental_unpaced' or m['key'] in featured]}
+    generated = [f"**Dataset:** 15 mock consultations, {snapshot['audio_hours']:.4f} audio hours · **Updated:** {snapshot['snapshot_date']}", '',
+                 '**DER ↓** = speaker diarization error. Ranked by common-interval DER at ±250 ms.', '',
+                 '**Matched policies:** each pair uses the same saved output. The second table keeps the two most-active labels and folds extras into the second. NVIDIA pairs use FP32; inference settings stay fixed between the two policies.']
+    generated += paired_tables(shown, heading_level=3, compact=True)
+    generated += ['', '[Other settings and timings](results/RESULTS.md#earlier-selected-settings-and-timings) include Precision-2’s known-two API run and the earlier tuned Model X streaming result. Additional unpaced VibeVoice pairs are in the detailed results.']
+    p = ROOT/'README.md';readme = p.read_text();a = '<!-- BENCHMARK:START -->';b = '<!-- BENCHMARK:END -->'
+    before, rest = readme.split(a);_, after = rest.split(b)
+    p.write_text(before + a + '\n\n' + '\n'.join(generated) + '\n\n' + b + after)
 
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

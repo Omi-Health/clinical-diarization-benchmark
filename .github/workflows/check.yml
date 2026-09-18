@@ -12,5 +12,7 @@ jobs:
       - run: pytest -q
       - run: python scripts/verify_audio.py --allow-lfs-pointers
       - run: python scripts/verify_snapshot.py
+      - run: python scripts/verify_speaker_policies.py
       - run: python scripts/crosscheck_pyannote.py
+      - run: python scripts/crosscheck_pyannote.py --speaker-policies
       - run: python scripts/render_results.py && git diff --exit-code -- README.md results/RESULTS.md
