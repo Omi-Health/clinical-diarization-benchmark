@@ -3,82 +3,77 @@
     {
       "start": 0,
       "end": 2.32000000000005,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 2.5599999999999454,
       "end": 4.399999999999977,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 4.639999999999986,
       "end": 6.7999999999999545,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 6.960000000000036,
       "end": 8.799999999999955,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 8.960000000000036,
       "end": 10.399999999999977,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
-      "start": 10.559999999999945,
+      "start": 10.639999999999986,
       "end": 12.240000000000009,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 12.32000000000005,
       "end": 13.759999999999991,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 14.080000000000041,
       "end": 17.279999999999973,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 18.399999999999977,
       "end": 20.32000000000005,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 23.200000000000045,
       "end": 27.600000000000023,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 27.840000000000032,
       "end": 31.519999999999982,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
-      "start": 32.960000000000036,
+      "start": 33.039999999999964,
       "end": 34.48000000000002,
-      "speaker": "speaker_0"
+      "speaker": "spk_0"
     },
     {
       "start": 17.600000000000023,
       "end": 17.91999999999996,
-      "speaker": "speaker_1"
+      "speaker": "spk_1"
     },
     {
       "start": 20.960000000000036,
-      "end": 22.559999999999945,
-      "speaker": "speaker_1"
+      "end": 22.639999999999986,
+      "speaker": "spk_1"
     },
     {
       "start": 31.91999999999996,
       "end": 32.639999999999986,
-      "speaker": "speaker_1"
-    },
-    {
-      "start": 34.32000000000005,
-      "end": 34.39999999999998,
-      "speaker": "speaker_1"
+      "speaker": "spk_1"
     }
   ]
 }

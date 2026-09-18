@@ -44,14 +44,15 @@ This equalizes scoring support, **not inference context**. It does not evaluate 
 
 These are third-party model configurations evaluated by Omi. Omi's proprietary runtime is not included.
 
-On September 18, all five Sortformer/Model X configurations were rerun using the public `inference/run.py` on one dedicated NVIDIA L4, in the same pinned NeMo environment, BF16, batch size 1. Each model received all 15 frozen complete recordings. Native speaker predictions are preserved: no known-two setting, folding, speaker dropping, custom merging or threshold tuning. Different native speaker capacities and postprocessing defaults are retained.
+On September 18 the Sortformer and Model X configurations were rerun with the public `inference/run.py` on one dedicated NVIDIA L4 in the pinned NeMo environment, batch size 1, complete recordings, at FP32 and BF16, with and without the historical two-speaker fold, and v1 both in 180-second windows and whole-file. Each row below shows the best measured setting for that model; every setting tried is logged with its score in `results/best_settings_receipt.json`, and the decomposition of the differences is in `NATIVE_RERUN_DECOMPOSITION_20260918.md`. Folded rows use the known count of two, the same information the pyannote batch rows use.
 
 | System | Inference / output policy |
 |---|---|
-| Sortformer v1 | Native full-file output; automatic speaker count |
-| Sortformer v2.1 offline | Native 30.4-second buffer preset; automatic speaker count |
-| Sortformer v2.1 streaming | Native 1.04-second buffer preset; unpaced replay; automatic speaker count |
-| Model X offline / streaming | Native offline / 1.04-second presets; automatic speaker count; aggregate-only public results |
+| Sortformer v1 | 180-second windows, 12-second overlap, FP32; folded to two speakers after inference |
+| Sortformer v2.1 offline | 30.4-second buffer preset, FP32; folded to two speakers after inference |
+| Sortformer v2.1 streaming | 1.04-second buffer preset, unpaced replay, FP32; folded to two speakers after inference |
+| Model X offline | 30.4-second preset, BF16; automatic speaker count; aggregate-only public results |
+| Model X streaming | 1.04-second preset, unpaced replay; probability decoding tuned on 42 separate recordings, top two speakers retained; aggregate-only public results |
 | pyannoteAI Community-1 | Historical known-two inference plus two-speaker normalization |
 | pyannoteAI Precision-2 | Historical whole-file API with the known count of two |
 | pyannoteAI live API | Real-time-paced requests; automatic labels |
@@ -59,7 +60,7 @@ On September 18, all five Sortformer/Model X configurations were rerun using the
 | VibeVoice-ASR | Native batch output; automatic labels |
 | VibeVoice streaming 1.5B / 7B | Historical paced and separate unpaced runs; automatic labels |
 
-The native rerun removes the previous two-speaker advantage; the historical pyannote batch rows still use known-two information, so the combined table is not a fully controlled model-only ranking. The [previous snapshot](../results/archive/2026-09-17/) preserves the earlier folded/tuned results. The native rerun also changes precision, software and (for v1) inference context, so the difference from the archive is not an isolated test of speaker folding.
+The folded Sortformer rows and the known-two pyannote batch rows use the same speaker-count information; Model X rows use automatic counts, so the combined table is not a fully controlled model-only ranking. The [previous snapshot](../results/archive/2026-09-17/) preserves the native-only BF16 results; the decomposition document shows what each setting changes.
 
 ### Streaming interpretation
 

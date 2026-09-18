@@ -1,12 +1,12 @@
 # Run the models
 
-The September 18 rerun uses this runner directly on one NVIDIA L4: BF16, batch size 1, complete recordings, native NeMo segments. No speaker folding, top-two selection, custom gap merging or tuned probability decoder is applied.
+The September 18 reruns use this runner directly on one NVIDIA L4, batch size 1, complete recordings. The published rows use the best measured setting per model (`configs/rerun-20260918/` for the FP32 Sortformer rows, folded to two speakers after inference; `configs/` for the BF16 native presets); every setting tried is logged in `../results/best_settings_receipt.json`.
 
 | Row | Configuration | Input |
 |---|---|---|
-| Sortformer v1 | `configs/sortformer1.json` | Native whole file |
-| Sortformer v2.1 offline | `configs/sortformer21.json` | 30.4 s buffer preset |
-| Sortformer v2.1 streaming | `configs/sortformer21_low_unpaced.json` | 1.04 s buffer preset, unpaced |
+| Sortformer v1 | `configs/rerun-20260918/v1_windowed_fp32.json` (published row); `configs/sortformer1.json` (whole-file BF16 variant) | 180 s windows / native whole file |
+| Sortformer v2.1 offline | `configs/rerun-20260918/v21_offline_fp32_a.json` (published row); `configs/sortformer21.json` (BF16 variant) | 30.4 s buffer preset |
+| Sortformer v2.1 streaming | `configs/rerun-20260918/v21_low_fp32.json` (published row); `configs/sortformer21_low_unpaced.json` (BF16 variant) | 1.04 s buffer preset, unpaced |
 | Model X offline | `configs/model_x.json` | 30.4 s buffer preset |
 | Model X streaming | `configs/model_x_streaming_unpaced.json` | 1.04 s buffer preset, unpaced |
 

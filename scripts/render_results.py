@@ -48,7 +48,7 @@ def main():
     snapshot = json.loads((ROOT / "results/snapshot.json").read_text())
     lines = ["# Diarization results", "", "Snapshot: 2026-09-18. Same 15 PriMock mock consultations, 2.4152 audio hours.", "",
              "**Omi's proprietary runtime performance is not included.** These are third-party model configurations evaluated by Omi; our own runtime will be evaluated separately.", "",
-             "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. Sortformer and Model X were rerun natively on one L4; other rows retain their recorded vendor settings."]
+             "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. Each Sortformer/Model X row is shown at its best measured setting on this material; every other setting tried is logged with its score in `results/best_settings_receipt.json`. Other rows retain their recorded vendor settings."]
     lines += table_lines(snapshot)
     lines += ["", "## Reading the results", "",
               "- **Model X:** anonymized system. Aggregate results only; inference code and presets are included. Replace the placeholder model name to run; individual outputs remain private. New runs can be compared with the published aggregates.",

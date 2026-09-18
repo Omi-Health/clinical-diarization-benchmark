@@ -1,0 +1,188 @@
+{
+  "date": "2026-09-18",
+  "policy": "Each NVIDIA row is shown at its best measured setting on this material; every other setting tried is logged below with its full-recording score. Folded rows use the known count of two, as the pyannote batch rows do.",
+  "runs": {
+    "sortformer1": {
+      "configuration_sha256": "7a3ded4f1948826437b3217285fe4c0b222f467b0a949b04a77ece7de9b00661",
+      "configuration": "inference/configs/rerun-20260918/v1_windowed_fp32.json",
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.float32",
+      "checkpoint_sha256": "bc74dfd8ca314240abcdc7e2949901eeaa72947a04ce1fab893e373d81f1e689",
+      "resolved_model_revision": "9f17b10df44c0a4c8f3c86fbddc9ee2d6ab9ac08",
+      "recordings": 15,
+      "fold_to": 2
+    },
+    "sortformer21": {
+      "configuration_sha256": "4b7c2555d82b76f1d66af3257220311e8a3a4780eb33f6bac5ea599a0a395ef0",
+      "configuration": "inference/configs/rerun-20260918/v21_offline_fp32_a.json",
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.float32",
+      "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
+      "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
+      "recordings": 15,
+      "fold_to": 2
+    },
+    "sortformer21_low_unpaced": {
+      "configuration_sha256": "eb66299919df258e947843a2156ab54c65ba573fd677e5722721ed7cb8764579",
+      "configuration": "inference/configs/rerun-20260918/v21_low_fp32.json",
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.float32",
+      "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
+      "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
+      "recordings": 15,
+      "fold_to": 2
+    }
+  },
+  "settings_log": {
+    "sortformer1": [
+      {
+        "setting": "180 s windows, 12 s overlap, FP32, folded to 2",
+        "chosen": true,
+        "source": "rerun 2026-09-18",
+        "zero": 18.555,
+        "c250": 9.474,
+        "zero_folded": 12.706,
+        "c250_folded": 3.159,
+        "two_speaker_files": 5
+      },
+      {
+        "setting": "180 s windows, 12 s overlap, BF16, folded to 2",
+        "source": "rerun 2026-09-18",
+        "zero": 18.541,
+        "c250": 9.483,
+        "zero_folded": 12.689,
+        "c250_folded": 3.165,
+        "two_speaker_files": 5
+      },
+      {
+        "setting": "whole file, BF16, automatic count (FP32 whole file: CUDA out of memory on the L4)",
+        "source": "rerun 2026-09-18 (7cce63b)",
+        "zero": 14.784,
+        "c250": 6.778,
+        "zero_folded": 14.122,
+        "c250_folded": 6.143,
+        "two_speaker_files": 14
+      },
+      {
+        "setting": "180 s windows, FP32, folded to 2 (archived 2026-09-17 run, NeMo 2.7.3)",
+        "source": "archive",
+        "zero": 12.706,
+        "c250": 3.157
+      }
+    ],
+    "sortformer21": [
+      {
+        "setting": "30.4 s preset, FP32, folded to 2 (run twice, identical)",
+        "chosen": true,
+        "source": "rerun 2026-09-18",
+        "zero": 15.768,
+        "c250": 7.974,
+        "zero_folded": 11.407,
+        "c250_folded": 3.945,
+        "two_speaker_files": 3
+      },
+      {
+        "setting": "30.4 s preset, BF16, automatic count",
+        "source": "rerun 2026-09-18 (7cce63b)",
+        "zero": 14.077,
+        "c250": 6.593,
+        "zero_folded": 12.731,
+        "c250_folded": 5.392,
+        "two_speaker_files": 1
+      },
+      {
+        "setting": "30.4 s preset, FP32, Omi production runtime post-processing, folded to 2 (not reproducible with the public runner)",
+        "source": "archive 2026-09-07",
+        "zero": 12.173,
+        "c250": 3.61
+      }
+    ],
+    "sortformer21_low_unpaced": [
+      {
+        "setting": "1.04 s preset, unpaced, FP32, folded to 2",
+        "chosen": true,
+        "source": "rerun 2026-09-18",
+        "zero": 14.841,
+        "c250": 6.958,
+        "zero_folded": 12.496,
+        "c250_folded": 4.815,
+        "two_speaker_files": 0
+      },
+      {
+        "setting": "1.04 s preset, unpaced, BF16, automatic count",
+        "source": "rerun 2026-09-18 (7cce63b)",
+        "zero": 15.649,
+        "c250": 7.956,
+        "zero_folded": 13.446,
+        "c250_folded": 5.927,
+        "two_speaker_files": 0
+      },
+      {
+        "setting": "1.04 s preset, unpaced, FP32, folded to 2 (archived 2026-09-17 run)",
+        "source": "archive",
+        "zero": 13.031,
+        "c250": 5.397
+      }
+    ],
+    "model_x": [
+      {
+        "setting": "30.4 s preset, BF16, automatic count",
+        "chosen": true,
+        "source": "rerun 2026-09-18 (7cce63b)",
+        "zero": 12.593,
+        "c250": 4.786
+      },
+      {
+        "setting": "30.4 s preset, FP32, automatic count (folding to 2: 4.787)",
+        "source": "rerun 2026-09-18",
+        "zero": 12.594,
+        "c250": 4.787,
+        "zero_folded": 12.59,
+        "c250_folded": 4.787,
+        "two_speaker_files": 12
+      }
+    ],
+    "model_x_streaming_unpaced": [
+      {
+        "setting": "1.04 s preset, unpaced, tuned probability decoding (tuned on 42 separate recordings), top 2 speakers retained",
+        "chosen": true,
+        "source": "archive 2026-09-17",
+        "zero": 12.566,
+        "c250": 4.271
+      },
+      {
+        "setting": "1.04 s preset, unpaced, FP32, automatic count",
+        "source": "rerun 2026-09-18",
+        "zero": 12.754,
+        "c250": 4.947,
+        "zero_folded": 12.669,
+        "c250_folded": 4.865,
+        "two_speaker_files": 7
+      },
+      {
+        "setting": "1.04 s preset, unpaced, BF16, automatic count",
+        "source": "rerun 2026-09-18 (7cce63b)",
+        "zero": 12.746,
+        "c250": 4.962
+      }
+    ]
+  }
+}

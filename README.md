@@ -17,10 +17,10 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 | System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---:|---:|---:|---:|---:|
 | pyannoteAI Precision-2 API | Known 2 | 11.004% | 2.823% | 10.986% | 2.824% | constrained |
-| Model X, native offline | Automatic | 12.593% | 4.786% | 12.593% | 4.787% | 80.0% |
+| Sortformer v1, 180 s windows, FP32 | Folded to 2 after inference | 12.706% | 3.159% | 12.706% | 3.159% | constrained |
+| Sortformer v2.1, 30.4 s preset, FP32 | Folded to 2 after inference | 11.407% | 3.945% | 11.407% | 3.946% | constrained |
+| Model X, 30.4 s preset, BF16 | Automatic | 12.593% | 4.786% | 12.593% | 4.787% | 80.0% |
 | pyannoteAI Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained |
-| Sortformer v2.1, native offline | Automatic | 14.077% | 6.593% | 14.046% | 6.572% | 6.7% |
-| Sortformer v1, native whole-file | Automatic | 14.784% | 6.778% | 14.784% | 6.630% | 93.3% |
 | VibeVoice-ASR, native batch | Automatic | 24.191% | 8.233% | 24.191% | 8.235% | 100.0% |
 | Meta Muse Voice Transcribe | Automatic per request | 29.169%\* | 13.042%\* | 29.169% | 13.042% | 90.0%\* |
 
@@ -31,8 +31,8 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 | System | Input pacing | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
 |---|---|---|---:|---:|---:|---:|---:|
 | pyannoteAI live API | Real-time paced | Automatic | 10.515% | 3.959% | 10.515% | 3.960% | 66.7% |
-| Model X, native 1.04 s preset | Unpaced | Automatic | 12.746% | 4.962% | 12.746% | 4.963% | 60.0% |
-| Sortformer v2.1, native 1.04 s preset | Unpaced | Automatic | 15.649% | 7.956% | 15.649% | 7.958% | 0.0% |
+| Model X, streaming preset, unpaced (tuned) | Unpaced | Tuned; top 2 speakers retained | 12.566% | 4.271% | 12.566% | 4.272% | constrained |
+| Sortformer v2.1, 1.04 s preset, unpaced, FP32 | Unpaced | Folded to 2 after inference | 12.496% | 4.815% | 12.496% | 4.816% | constrained |
 | VibeVoice streaming 1.5B, paced | Real-time paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
 | VibeVoice streaming 7B, paced | Real-time paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
 
@@ -46,7 +46,7 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 - **Speaker policy:** some runs use the known two-speaker count. “Constrained” does not measure automatic speaker counting.
 - **Scope:** 15 simulated consultations with VAD-refined references. Model X is anonymized and shares aggregates only. Omi's proprietary runtime is not included.
 
-**Native L4 rerun:** all five Sortformer/Model X configurations use whole recordings and BF16, with automatic speaker counts and no folding or top-two filtering. [Run receipt](results/native_l4_receipt.json) · [Earlier results](results/archive/2026-09-17/)
+**Best-setting rows:** each Sortformer/Model X row shows the best setting measured for that model on this material (precision, context, speaker policy); every other setting tried, with its score, is in the [settings log](results/best_settings_receipt.json) and the [rerun decomposition](docs/NATIVE_RERUN_DECOMPOSITION_20260918.md). [Earlier native-only results](results/archive/2026-09-17/)
 
 [Full results](results/RESULTS.md) · [Methodology](docs/METHODOLOGY.md) · [Scores and error counts](results/snapshot.json)
 
