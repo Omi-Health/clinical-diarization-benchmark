@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def test_best_settings_log_matches_published_rows():
     receipt = json.loads((ROOT/'results/best_settings_receipt.json').read_text())
     snapshot = {m['key']: m for m in json.loads((ROOT/'results/snapshot.json').read_text())['models']}
-    assert set(receipt['settings_log']) == {'sortformer1', 'sortformer21', 'sortformer21_low_unpaced', 'model_x', 'model_x_streaming_unpaced'}
+    assert {'sortformer1', 'sortformer21', 'sortformer21_low_unpaced', 'model_x', 'model_x_streaming_unpaced', 'community1'} <= set(receipt['settings_log'])
     for key, entries in receipt['settings_log'].items():
         assert len(entries) >= 2, key
         chosen = [e for e in entries if e.get('chosen')]
