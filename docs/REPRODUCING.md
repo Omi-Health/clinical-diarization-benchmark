@@ -83,4 +83,4 @@ Use the frozen case list and audio hashes, export speaker/timestamp segments in 
 
 ## Matched speaker-policy tables
 
-Run `python scripts/verify_speaker_policies.py` to verify the paired tables. Both policies use the same automatic source output; the two-speaker view applies the public folding function before scoring. Main table scores are in `results/speaker_policy_snapshot.json`; `results/snapshot.json` retains the earlier selected-setting results and their timing context.
+Run `python scripts/verify_speaker_policies.py` to verify the paired tables. Both policies use the same automatic source output; the two-speaker view applies the public folding function before scoring. Controlled-pair scores are in `results/speaker_policy_snapshot.json`; `results/snapshot.json` contains the best-tested results shown first. Their timings are in `results/best_settings_receipt.json`.
