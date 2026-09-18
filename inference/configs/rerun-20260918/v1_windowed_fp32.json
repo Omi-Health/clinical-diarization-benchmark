@@ -9,5 +9,6 @@
   "window_s": 180,
   "overlap_s": 12,
   "geometry": {},
-  "snapshot_key": "sortformer1"
+  "snapshot_key": "sortformer1",
+  "fold_to": 2
 }

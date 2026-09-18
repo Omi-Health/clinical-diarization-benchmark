@@ -11610,7 +11610,7 @@
     },
     {
       "key": "model_x_streaming_unpaced",
-      "model": "Model X, streaming preset, unpaced (tuned)",
+      "model": "Model X, 1.04 s preset, unpaced, tuned decoding, FP32",
       "speaker_policy": "Tuned; top 2 speakers retained",
       "group": "supplemental_unpaced",
       "public_outputs": false,
@@ -11618,24 +11618,24 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 76534,
-            "false_alarm_frames": 14078,
-            "confusion_frames": 552,
-            "error_frames": 91164,
+            "miss_frames": 76527,
+            "false_alarm_frames": 14081,
+            "confusion_frames": 561,
+            "error_frames": 91169,
             "records": 15,
-            "der": 0.12566267750659577,
+            "der": 0.12566956962834921,
             "speaker_count_accuracy": 1.0
           }
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513167,
-            "miss_frames": 19438,
-            "false_alarm_frames": 2187,
-            "confusion_frames": 293,
-            "error_frames": 21918,
+            "miss_frames": 19451,
+            "false_alarm_frames": 2189,
+            "confusion_frames": 300,
+            "error_frames": 21940,
             "records": 15,
-            "der": 0.042711242149241865,
+            "der": 0.04275411318342762,
             "speaker_count_accuracy": 1.0
           }
         }
@@ -11644,24 +11644,24 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 76534,
-            "false_alarm_frames": 14078,
-            "confusion_frames": 552,
-            "error_frames": 91164,
+            "miss_frames": 76527,
+            "false_alarm_frames": 14081,
+            "confusion_frames": 561,
+            "error_frames": 91169,
             "records": 20,
-            "der": 0.12566267750659577,
+            "der": 0.12566956962834921,
             "speaker_count_accuracy": 1.0
           }
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513032,
-            "miss_frames": 19438,
-            "false_alarm_frames": 2187,
-            "confusion_frames": 293,
-            "error_frames": 21918,
+            "miss_frames": 19451,
+            "false_alarm_frames": 2189,
+            "confusion_frames": 300,
+            "error_frames": 21940,
             "records": 20,
-            "der": 0.04272248124873302,
+            "der": 0.042765363564066176,
             "speaker_count_accuracy": 1.0
           }
         }

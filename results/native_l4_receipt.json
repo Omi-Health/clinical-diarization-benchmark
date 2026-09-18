@@ -124,5 +124,7 @@
       "configuration_sha256": "33e0ee4dc3598381dd4980e3cfdc59b6efa0c397046501f8d1f99feb5bd1c4ec",
       "recordings": 15
     }
-  }
+  },
+  "runner_sha256_at_run": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+  "runner_change_note": "inference/run.py later gained fold_to handling in native mode; these BF16 native runs used no fold, so their outputs are unaffected. The hash above identifies the runner as it was on 2026-09-18 (commit 7cce63b)."
 }

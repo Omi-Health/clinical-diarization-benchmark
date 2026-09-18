@@ -14,27 +14,29 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 
 ### Batch / offline
 
-| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
-|---|---|---:|---:|---:|---:|---:|
-| pyannoteAI Precision-2 API | Known 2 | 11.004% | 2.823% | 10.986% | 2.824% | constrained |
-| Sortformer v1, 180 s windows, FP32 | Folded to 2 after inference | 12.706% | 3.159% | 12.706% | 3.159% | constrained |
-| Sortformer v2.1, 30.4 s preset, FP32 | Folded to 2 after inference | 11.407% | 3.945% | 11.407% | 3.946% | constrained |
-| Model X, 30.4 s preset, BF16 | Automatic | 12.593% | 4.786% | 12.593% | 4.787% | 80.0% |
-| pyannoteAI Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained |
-| VibeVoice-ASR, native batch | Automatic | 24.191% | 8.233% | 24.191% | 8.235% | 100.0% |
-| Meta Muse Voice Transcribe | Automatic per request | 29.169%\* | 13.042%\* | 29.169% | 13.042% | 90.0%\* |
+| System | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy | Speed |
+|---|---|---:|---:|---:|---:|---:|---|
+| pyannoteAI Precision-2 API | Known 2 | 11.004% | 2.823% | 10.986% | 2.824% | constrained | 12 s/file, API round trip |
+| Sortformer v1, 180 s windows, FP32 | Folded to 2 after inference | 12.706% | 3.159% | 12.706% | 3.159% | constrained | 1.7 s/file (274×), L4 batch |
+| Sortformer v2.1, 30.4 s preset, FP32 | Folded to 2 after inference | 11.407% | 3.945% | 11.407% | 3.946% | constrained | 1.1 s/file (402×), L4 batch |
+| Model X, 30.4 s preset, BF16 | Automatic | 12.593% | 4.786% | 12.593% | 4.787% | 80.0% | 0.7 s/file (768×), L4 batch |
+| pyannoteAI Community-1, whole-file | Known 2; historical folding to 2 | 15.856% | 6.323% | 15.855% | 6.325% | constrained | 18.5 s/file (31×), L4 batch |
+| VibeVoice-ASR, native batch | Automatic | 24.191% | 8.233% | 24.191% | 8.235% | 100.0% | 123 s/file, joint ASR+diarization server |
+| Meta Muse Voice Transcribe | Automatic per request | 29.169%\* | 13.042%\* | 29.169% | 13.042% | 90.0%\* | 92 s/file, API round trip |
 
 \* Muse's starred values are interval results, not whole-recording results; count accuracy is 18/20 intervals.
 
 ### Streaming diarization
 
-| System | Input pacing | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |
-|---|---|---|---:|---:|---:|---:|---:|
-| pyannoteAI live API | Real-time paced | Automatic | 10.515% | 3.959% | 10.515% | 3.960% | 66.7% |
-| Model X, streaming preset, unpaced (tuned) | Unpaced | Tuned; top 2 speakers retained | 12.566% | 4.271% | 12.566% | 4.272% | constrained |
-| Sortformer v2.1, 1.04 s preset, unpaced, FP32 | Unpaced | Folded to 2 after inference | 12.496% | 4.815% | 12.496% | 4.816% | constrained |
-| VibeVoice streaming 1.5B, paced | Real-time paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% |
-| VibeVoice streaming 7B, paced | Real-time paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% |
+| System | Input pacing | Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy | Speed |
+|---|---|---|---:|---:|---:|---:|---:|---|
+| pyannoteAI live API | Real-time paced | Automatic | 10.515% | 3.959% | 10.515% | 3.960% | 66.7% | — |
+| Model X, 1.04 s preset, unpaced, tuned decoding, FP32 | Unpaced | Tuned; top 2 speakers retained | 12.567% | 4.275% | 12.567% | 4.277% | constrained | 19.8 s/file (29×), L4 batch |
+| Sortformer v2.1, 1.04 s preset, unpaced, FP32 | Unpaced | Folded to 2 after inference | 12.496% | 4.815% | 12.496% | 4.816% | constrained | 36.4 s/file (16×), L4 batch |
+| VibeVoice streaming 1.5B, paced | Real-time paced | Automatic | 32.947% | 17.210% | 32.947% | 17.215% | 100.0% | — |
+| VibeVoice streaming 7B, paced | Real-time paced | Automatic | 33.808% | 18.032% | 33.808% | 18.036% | 86.7% | — |
+
+**Speed in this table:** unpaced replay of the chunk loop on one L4, batch size 1; it is throughput of the streaming preset on saved audio, not live latency.
 
 **Pacing:** real-time = normal speaking speed; unpaced = processed without waiting. Scores measure accuracy, not live latency.
 
@@ -46,7 +48,7 @@ Built by [Omi Health](https://omi.health) · [Medical STT benchmark](https://git
 - **Speaker policy:** some runs use the known two-speaker count. “Constrained” does not measure automatic speaker counting.
 - **Scope:** 15 simulated consultations with VAD-refined references. Model X is anonymized and shares aggregates only. Omi's proprietary runtime is not included.
 
-**Best-setting rows:** each Sortformer/Model X row shows the best setting measured for that model on this material (precision, context, speaker policy); every other setting tried, with its score, is in the [settings log](results/best_settings_receipt.json) and the [rerun decomposition](docs/NATIVE_RERUN_DECOMPOSITION_20260918.md). [Earlier native-only results](results/archive/2026-09-17/)
+**Best-setting rows:** each Sortformer/Model X row shows the best setting measured for that model on this material (precision, context, speaker policy); every other setting tried, with its score, is in the [settings log](results/best_settings_receipt.json) and the [rerun decomposition](docs/NATIVE_RERUN_DECOMPOSITION_20260918.md). [Earlier native-only results](results/archive/2026-09-17/) **Speed:** median seconds per recording; "L4 batch" rows were timed in one session on one NVIDIA L4 (batch size 1, sequential, a warm-up recording discarded), API rows are request round trips as recorded, and the VibeVoice row is a joint ASR+diarization server on a larger GPU; details and per-row notes in the settings log.
 
 [Full results](results/RESULTS.md) · [Methodology](docs/METHODOLOGY.md) · [Scores and error counts](results/snapshot.json)
 

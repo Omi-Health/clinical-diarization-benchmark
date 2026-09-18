@@ -10,7 +10,7 @@ The September 18 reruns use this runner directly on one NVIDIA L4, batch size 1,
 | Model X offline | `configs/model_x.json` | 30.4 s buffer preset |
 | Model X streaming | `configs/model_x_streaming_unpaced.json` | 1.04 s buffer preset, unpaced |
 
-Buffer size is not measured live latency. Every run receives saved audio without wall-clock pacing. Native speaker capacities and postprocessing defaults remain model-specific. All five runs use BF16 because Sortformer v1 exceeded L4 memory in FP32 on the longest recordings. BF16 allowed all recordings to run whole-file without stitching.
+Buffer size is not measured live latency. Every run receives saved audio without wall-clock pacing. Rows marked "folded to 2" apply the historical two-speaker folding inside the runner (`fold_to: 2` in the configuration), so the documented command reproduces the published outputs; rows marked automatic keep the native speaker count.
 
 ## Environment and commands
 

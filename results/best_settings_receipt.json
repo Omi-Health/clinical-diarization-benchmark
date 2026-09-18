@@ -3,9 +3,9 @@
   "policy": "Each NVIDIA row is shown at its best measured setting on this material; every other setting tried is logged below with its full-recording score. Folded rows use the known count of two, as the pyannote batch rows do.",
   "runs": {
     "sortformer1": {
-      "configuration_sha256": "7a3ded4f1948826437b3217285fe4c0b222f467b0a949b04a77ece7de9b00661",
+      "configuration_sha256": "6426cd88de0a45562b4ca5232bf2e5cc636590c1863353b0ef4af3e27754f34f",
       "configuration": "inference/configs/rerun-20260918/v1_windowed_fp32.json",
-      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
       "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
       "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
       "python": "3.12.3",
@@ -16,12 +16,14 @@
       "checkpoint_sha256": "bc74dfd8ca314240abcdc7e2949901eeaa72947a04ce1fab893e373d81f1e689",
       "resolved_model_revision": "9f17b10df44c0a4c8f3c86fbddc9ee2d6ab9ac08",
       "recordings": 15,
-      "fold_to": 2
+      "fold_to": 2,
+      "fold_applied_by": "runner (fold_to: 2)",
+      "reproduced": "2026-09-18 timed session: runner output identical to published hypotheses"
     },
     "sortformer21": {
-      "configuration_sha256": "4b7c2555d82b76f1d66af3257220311e8a3a4780eb33f6bac5ea599a0a395ef0",
+      "configuration_sha256": "afc811770b2e0f5b7dc48650d5d9053ee91a1a870b3ec68748bfeb6b4b97a81c",
       "configuration": "inference/configs/rerun-20260918/v21_offline_fp32_a.json",
-      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
       "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
       "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
       "python": "3.12.3",
@@ -32,12 +34,14 @@
       "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
       "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
       "recordings": 15,
-      "fold_to": 2
+      "fold_to": 2,
+      "fold_applied_by": "runner (fold_to: 2)",
+      "reproduced": "2026-09-18 timed session: runner output identical to published hypotheses"
     },
     "sortformer21_low_unpaced": {
-      "configuration_sha256": "eb66299919df258e947843a2156ab54c65ba573fd677e5722721ed7cb8764579",
+      "configuration_sha256": "64015f591f6c3addae80a52b5df202f12d9e64ef78b901c396109e1cc8bde9fc",
       "configuration": "inference/configs/rerun-20260918/v21_low_fp32.json",
-      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
       "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
       "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
       "python": "3.12.3",
@@ -48,7 +52,24 @@
       "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
       "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
       "recordings": 15,
-      "fold_to": 2
+      "fold_to": 2,
+      "fold_applied_by": "runner (fold_to: 2)",
+      "reproduced": "2026-09-18 timed session: runner output identical to published hypotheses"
+    },
+    "model_x_streaming_unpaced": {
+      "configuration": "inference/configs/rerun-20260918/model_x_streaming_tuned_fp32.json",
+      "configuration_sha256": "3b8ad543297a2eb61fef24d5079f935e9258dcc1b51923f5f119b93b10310de0",
+      "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.float32",
+      "recordings": 15,
+      "mode": "probabilities",
+      "reproduced": "2026-09-18 timed session"
     }
   },
   "settings_log": {
@@ -162,11 +183,11 @@
     ],
     "model_x_streaming_unpaced": [
       {
-        "setting": "1.04 s preset, unpaced, tuned probability decoding (tuned on 42 separate recordings), top 2 speakers retained",
+        "setting": "1.04 s preset, unpaced, FP32, tuned probability decoding (tuned on 42 separate recordings), top 2 speakers retained",
         "chosen": true,
-        "source": "archive 2026-09-17",
-        "zero": 12.566,
-        "c250": 4.271
+        "source": "rerun 2026-09-18 (reproduces archived 4.271)",
+        "zero": 12.567,
+        "c250": 4.275
       },
       {
         "setting": "1.04 s preset, unpaced, FP32, automatic count",
@@ -183,6 +204,115 @@
         "zero": 12.746,
         "c250": 4.962
       }
+    ],
+    "community1": [
+      {
+        "setting": "whole file, known two speakers (archived row)",
+        "chosen": true,
+        "source": "archive",
+        "zero": 15.856,
+        "c250": 6.323
+      },
+      {
+        "setting": "whole file, known two speakers, fresh L4 run for timing (pyannote.audio 4.0.7)",
+        "source": "rerun 2026-09-18",
+        "zero": 15.856,
+        "c250": 6.323
+      }
     ]
-  }
+  },
+  "speed": {
+    "sortformer1": {
+      "kind": "l4_batch",
+      "median_s_per_file": 1.74,
+      "total_s": 31.7,
+      "x_realtime": 274.0,
+      "peak_gpu_gb": 1.77,
+      "files": 15,
+      "warm_up": "one recording per configuration run and discarded before timing",
+      "gpu": "NVIDIA L4 (g6.2xlarge)",
+      "batch_size": 1
+    },
+    "sortformer21": {
+      "kind": "l4_batch",
+      "median_s_per_file": 1.1,
+      "total_s": 21.6,
+      "x_realtime": 402.0,
+      "peak_gpu_gb": 1.03,
+      "files": 15,
+      "warm_up": "one recording per configuration run and discarded before timing",
+      "gpu": "NVIDIA L4 (g6.2xlarge)",
+      "batch_size": 1
+    },
+    "sortformer21_low_unpaced": {
+      "kind": "l4_batch",
+      "median_s_per_file": 36.35,
+      "total_s": 543.9,
+      "x_realtime": 16.0,
+      "peak_gpu_gb": 1.03,
+      "files": 15,
+      "warm_up": "one recording per configuration run and discarded before timing",
+      "gpu": "NVIDIA L4 (g6.2xlarge)",
+      "batch_size": 1
+    },
+    "model_x": {
+      "kind": "l4_batch",
+      "median_s_per_file": 0.67,
+      "total_s": 11.3,
+      "x_realtime": 768.0,
+      "peak_gpu_gb": 0.74,
+      "files": 15,
+      "warm_up": "one recording per configuration run and discarded before timing",
+      "gpu": "NVIDIA L4 (g6.2xlarge)",
+      "batch_size": 1
+    },
+    "model_x_streaming_unpaced": {
+      "kind": "l4_batch",
+      "median_s_per_file": 19.75,
+      "total_s": 296.3,
+      "x_realtime": 29.0,
+      "peak_gpu_gb": 0.94,
+      "files": 15,
+      "warm_up": "one recording per configuration run and discarded before timing",
+      "gpu": "NVIDIA L4 (g6.2xlarge)",
+      "batch_size": 1
+    },
+    "community1": {
+      "kind": "l4_batch",
+      "median_s_per_file": 18.52,
+      "total_s": 278.1,
+      "x_realtime": 31.0,
+      "files": 15,
+      "warm_up": "none; first file includes CUDA initialization",
+      "gpu": "NVIDIA L4 (g6.2xlarge)",
+      "batch_size": 1,
+      "note": "fresh run for timing; published accuracy row is the archived run"
+    },
+    "precision2": {
+      "kind": "api_round_trip",
+      "median_s_per_file": 12.1,
+      "p95_s_per_file": 17.6,
+      "total_s": 180.7,
+      "files": 15,
+      "note": "2026-08-29 API receipts; sequential requests including upload, queue and polling"
+    },
+    "muse": {
+      "kind": "api_round_trip",
+      "median_s_per_file": 92.0,
+      "p95_s_per_file": 110.6,
+      "batch_elapsed_s": 227.7,
+      "concurrency": 8,
+      "note": "2026-09-15 API receipts; 20 requests, five recordings split at the 600 s limit"
+    },
+    "vibe_original": {
+      "kind": "joint_server",
+      "median_s_per_file": 122.7,
+      "p95_s_per_file": 155.1,
+      "total_s": 1812.4,
+      "x_realtime": 4.8,
+      "files": 15,
+      "note": "2026-09-15 vLLM server, joint ASR+diarization 9B model; needed ~30 GB GPU memory, not an L4; wall time includes transcript generation"
+    }
+  },
+  "speed_policy": "L4 batch rows: same host, same session, batch size 1, sequential, median seconds per recording after a discarded warm-up recording; API rows: request round trip as recorded; joint-server row: not comparable diarizer compute."
 }

@@ -15,5 +15,6 @@
     "spkcache_len": 188
   },
   "snapshot_key": "sortformer21_low_unpaced",
-  "matmul_precision": "highest"
+  "matmul_precision": "highest",
+  "fold_to": 2
 }

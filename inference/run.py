@@ -210,6 +210,10 @@ def main():
                 raw = parse_native(annotations)
                 segments = (raw if mode == 'native' else probability_segments(
                     probs.numpy(), config['postprocessing'], case['audio_duration_s']))
+                if config.get('fold_to'):
+                    # Historical two-speaker folding, applied by the runner so the
+                    # documented command reproduces the published row.
+                    segments = normalize_max_speakers(segments, config['fold_to'])
         torch.cuda.synchronize()
         dest = output/'full_recordings'/f"{case['case']}.json"
         write(dest, dict(segments=segments))

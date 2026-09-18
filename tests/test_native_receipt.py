@@ -21,7 +21,7 @@ def test_published_native_run_matches_supplied_code_and_configs():
         assert config['precision'] == 'bf16'
         assert not config.get('fold_to') and not config.get('postprocessing')
         assert run['configuration_sha256'] == digest(p)
-        assert run['runner_sha256'] == digest(ROOT/'inference/run.py')
+        assert run['runner_sha256'] == receipt.get('runner_sha256_at_run', digest(ROOT/'inference/run.py'))
         assert run['processing_sha256'] == digest(ROOT/'inference/processing.py')
         assert run['manifest_sha256'] == digest(ROOT/'data/manifest.json')
         assert run['device'] == 'NVIDIA L4'

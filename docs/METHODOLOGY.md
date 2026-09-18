@@ -62,6 +62,10 @@ On September 18 the Sortformer and Model X configurations were rerun with the pu
 
 The folded Sortformer rows and the known-two pyannote batch rows use the same speaker-count information; Model X rows use automatic counts, so the combined table is not a fully controlled model-only ranking. The [previous snapshot](../results/archive/2026-09-17/) preserves the native-only BF16 results; the decomposition document shows what each setting changes.
 
+### Speed
+
+The speed column reports the median wall time per recording. Rows marked "L4 batch" were timed on 2026-09-18 in one session on one NVIDIA L4 (g6.2xlarge), batch size 1, sequential, one warm-up recording per configuration run first and discarded; the Sortformer and Model X rows used the public runner and the Community-1 row the same pipeline call as its accuracy run (pyannote.audio 4.0.7 in a separate container; its fresh run reproduced the archived scores exactly). Streaming presets are unpaced replay of the chunk loop, so their speed is throughput on saved audio, not latency. API rows (Precision-2, Muse) are request round trips including upload, queueing and polling, as recorded at the time; they measure the service, not the model. The VibeVoice batch row ran a joint ASR plus diarization 9B model behind a vLLM server that needed about 30 GB of GPU memory, so it was not rerun on the L4; its recorded request time includes transcript generation. Per-row figures, GPU memory and notes are in `results/best_settings_receipt.json`.
+
 ### Streaming interpretation
 
 The included runner submits saved complete recordings to NeMo, whose streaming checkpoints process them with the selected chunk/cache geometry. It does not pace audio at speaking speed or measure incremental emission times. The two low-latency presets each buffer 1.04 seconds of chunk plus right context; this is a configuration value, not measured end-to-end latency. These rows remain labelled **unpaced**.

@@ -18,6 +18,15 @@ def test_best_settings_log_matches_published_rows():
             assert {'setting', 'source', 'zero', 'c250'} <= set(e)
     for key, run in receipt['runs'].items():
         config = ROOT / run['configuration']
-        assert config.exists() and json.loads(config.read_text())['precision'] == 'fp32'
-        assert run['parameter_dtype'] == 'torch.float32' and run['fold_to'] == 2 and run['recordings'] == 15
-        assert 'Model X' not in config.read_text() or key.startswith('model_x')
+        assert config.exists() and run['recordings'] == 15 and run.get('reproduced')
+        text = config.read_text()
+        if key.startswith('model_x'):
+            assert json.loads(text)['model_id'] == 'Model X' and 'checkpoint_sha256' not in run
+        else:
+            assert json.loads(text)['precision'] == 'fp32' and json.loads(text)['fold_to'] == 2
+            assert run['parameter_dtype'] == 'torch.float32' and run['fold_to'] == 2
+    speed = receipt['speed']
+    for key, s in speed.items():
+        assert s['kind'] in {'l4_batch', 'api_round_trip', 'joint_server'} and s['median_s_per_file'] > 0
+        if s['kind'] == 'l4_batch':
+            assert s['gpu'].startswith('NVIDIA L4') and s['batch_size'] == 1 and s['files'] == 15

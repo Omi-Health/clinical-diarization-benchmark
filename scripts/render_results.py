@@ -5,6 +5,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def speed_cell(key):
+    """Batch processing speed from results/best_settings_receipt.json, when measured for this row."""
+    try:
+        speed = json.loads((ROOT / "results/best_settings_receipt.json").read_text()).get("speed", {})
+    except FileNotFoundError:
+        return "—"
+    s = speed.get(key)
+    if not s:
+        return "—"
+    if s.get("kind") == "l4_batch":
+        return f"{s['median_s_per_file']:.1f} s/file ({s['x_realtime']:.0f}×), L4 batch"
+    if s.get("kind") == "api_round_trip":
+        return f"{s['median_s_per_file']:.0f} s/file, API round trip"
+    if s.get("kind") == "joint_server":
+        return f"{s['median_s_per_file']:.0f} s/file, joint ASR+diarization server"
+    return "—"
+
+
 def table_lines(snapshot, heading_level=2, compact=False):
     lines = []
     for groups, title in [({"batch"}, "Batch / offline"), ({"paced_streaming", "supplemental_unpaced"}, "Streaming diarization")]:
@@ -13,8 +31,8 @@ def table_lines(snapshot, heading_level=2, compact=False):
         pacing_separator = "---|" if streaming else ""
         lines += ["", "#" * heading_level + " " + title, "",
                   *([] if compact else ["Ordered by **common-interval DER at ±250 ms**, lowest first. Speaker policies still differ.", ""]),
-                  f"| System |{pacing_header} Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy |",
-                  f"|---|{pacing_separator}---|---:|---:|---:|---:|---:|"]
+                  f"| System |{pacing_header} Speaker policy | Whole DER, zero | Whole DER, ±250 ms | Common DER, zero | Common DER, ±250 ms | Whole-file count accuracy | Speed |",
+                  f"|---|{pacing_separator}---|---:|---:|---:|---:|---:|---|"]
         models = sorted(
             (model for model in snapshot["models"] if model["group"] in groups),
             key=lambda model: (model["common_scoring_intervals"]["0.25"]["aggregate"]["der"], model["model"]),
@@ -36,7 +54,9 @@ def table_lines(snapshot, heading_level=2, compact=False):
                     interval_accuracy = model["common_scoring_intervals"]["0"]["aggregate"]["speaker_count_accuracy"]
                     count = f"{100*interval_accuracy:.1f}%\\*"
             pacing = ["Real-time paced" if model["group"] == "paced_streaming" else "Unpaced"] if streaming else []
-            lines.append("| " + " | ".join([model["model"], *pacing, model["speaker_policy"], *cells, count]) + " |")
+            lines.append("| " + " | ".join([model["model"], *pacing, model["speaker_policy"], *cells, count, speed_cell(model["key"])]) + " |")
+        if streaming:
+            lines += ["", "**Speed in this table:** unpaced replay of the chunk loop on one L4, batch size 1; it is throughput of the streaming preset on saved audio, not live latency."]
         if streaming:
             lines += ["", ("**Pacing:** real-time = normal speaking speed; unpaced = processed without waiting. Scores measure accuracy, not live latency." if compact else "**Input pacing:** real-time paced runs receive audio at normal speaking speed; unpaced runs process prerecorded audio without that timing constraint. DER measures diarization accuracy, not live latency. Speaker constraints remain specific to each row.")]
         if any(model["key"] == "muse" for model in models):

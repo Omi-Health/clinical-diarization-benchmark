@@ -370,7 +370,7 @@
   "data/references/full_recordings/day4_consultation04.json": "d0f7aec06f0fdbd72bf9395f133664ef76ec39f55b1a2b9dcbfb0150920c274c",
   "data/references/full_recordings/day5_consultation07.json": "2c21d0f05f113f567d5b5c3aadeabfd931166bddae46fe3a94dcbc166455fabc",
   "data/references/full_recordings/day5_consultation10.json": "651b797744f2e9ea6d4adee9a4dccec2b55db7626afc6ab7f6b3fc03395ce117",
-  "results/snapshot.json": "8b64899290359a0964785204ba77dcfbe02bda8a27ccc18aa8baee7aaeef03e1",
+  "results/snapshot.json": "f0ff2b28cf2bffc07f2d5a22845c2abec618dbf31ed53cd4d175711c40f7d27e",
   "data/hypotheses/pyannote_live/full_recordings/day3_consultation09.json": "ce2732033b81b2a68a8a03fca76cca2c2f83a6aaa913373f452b9573c8051c89",
   "data/hypotheses/pyannote_live/full_recordings/day1_consultation05.json": "cfd934676526a3f567396cc50bbc3ced57344d4ee9d57a71f9f4043381eb5e9c",
   "data/hypotheses/pyannote_live/full_recordings/day2_consultation05.json": "d2aea3349e48e686805ba0747eb3f4a8d958b511ca06caf02e9b860da6b2aa7b",
@@ -441,6 +441,6 @@
   "data/hypotheses/sortformer21_low_unpaced/common_scoring_intervals/day1_consultation10__part02.json": "56a3777166ac713072981b157c32c1e782526ace0597b7b8f8ff7eb1062752f3",
   "data/hypotheses/sortformer21_low_unpaced/common_scoring_intervals/day2_consultation05__part01.json": "7f96a65a95fbd643d7d44b7e77279050074ae05cfff9c7db1e306a4cad8ed6aa",
   "data/hypotheses/sortformer21_low_unpaced/common_scoring_intervals/day3_consultation09__part01.json": "961dc1399f9b1e1cf2981c663eb92c27355dbbe5ac0389a180adf03f03a1a407",
-  "results/native_l4_receipt.json": "7c66bc2b0b0a819b2bcdf17c444c8955e3915bfe6853bb163db8c168b63836a4",
-  "results/best_settings_receipt.json": "1c1f42197cd1565312d1622c639acfffd98874debf7f76a2490ba688c38a4868"
+  "results/native_l4_receipt.json": "66cff35bf555ee6125f1267223bf9483968e20082a341949e152b4f41c9d5cf8",
+  "results/best_settings_receipt.json": "ddc66f4141a4f82cb4b2d3e2050b99945313ffb33045e8a8c6b951350941412c"
 }
