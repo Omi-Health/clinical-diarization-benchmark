@@ -11,6 +11,7 @@ dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2"]
 
 [project.optional-dependencies]
 test = ["pytest>=8,<9"]
+crosscheck = ["pyannote.metrics==4.1"]
 
 [tool.setuptools.packages.find]
 include = ["clinical_diarization*", "inference*"]

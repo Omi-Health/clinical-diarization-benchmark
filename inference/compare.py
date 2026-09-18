@@ -40,7 +40,7 @@ def compare(output, key, expected=None):
             total = aggregate(rows)
             total['speaker_count_accuracy'] = sum(r['speaker_count_correct'] for r in rows)/len(rows)
             for field in (*COUNTS, 'speaker_count_accuracy'):
-                target = model[panel][collar]['aggregate'][field]
+                target = expected[panel][collar]['aggregate'][field]
                 if total[field] != target:
                     differences.append(dict(panel=panel, collar=collar, case='aggregate', field=field, actual=total[field], expected=target))
     return dict(scored_cases=checked, individual_expected_counts=bool(expected['full_recordings']['0'].get('rows')),

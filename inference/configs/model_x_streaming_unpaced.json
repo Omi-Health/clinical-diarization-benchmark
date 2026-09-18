@@ -2,8 +2,8 @@
   "snapshot_key": "model_x_streaming_unpaced",
   "model_id": "Model X",
   "strict": false,
-  "precision": "fp32",
-  "mode": "probabilities",
+  "precision": "bf16",
+  "mode": "native",
   "geometry": {
     "chunk_len": 9,
     "chunk_right_context": 4,
@@ -12,15 +12,5 @@
     "spkcache_len": 264,
     "spkcache_update_period": 222
   },
-  "postprocessing": {
-    "frame_stride_ms": 10,
-    "params": {
-      "constraint": "drop",
-      "min_duration_off": 0.3,
-      "offset": 0.55,
-      "onset": 0.55,
-      "pad_offset": 0.0,
-      "pad_onset": 0.0
-    }
-  }
+  "matmul_precision": "highest"
 }

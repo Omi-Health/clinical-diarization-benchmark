@@ -38,7 +38,7 @@ def table_lines(snapshot, heading_level=2, compact=False):
             pacing = ["Real-time paced" if model["group"] == "paced_streaming" else "Unpaced"] if streaming else []
             lines.append("| " + " | ".join([model["model"], *pacing, model["speaker_policy"], *cells, count]) + " |")
         if streaming:
-            lines += ["", ("**Pacing:** real-time = normal speaking speed; unpaced = processed without waiting. Scores measure accuracy, not live latency." if compact else "**Input pacing:** real-time paced runs receive audio at normal speaking speed; unpaced runs process prerecorded audio without that timing constraint. DER measures diarization accuracy, not live latency. Tuning and speaker constraints remain specific to each row.")]
+            lines += ["", ("**Pacing:** real-time = normal speaking speed; unpaced = processed without waiting. Scores measure accuracy, not live latency." if compact else "**Input pacing:** real-time paced runs receive audio at normal speaking speed; unpaced runs process prerecorded audio without that timing constraint. DER measures diarization accuracy, not live latency. Speaker constraints remain specific to each row.")]
         if any(model["key"] == "muse" for model in models):
             lines += ["", ("\\* Muse's starred values are interval results, not whole-recording results; count accuracy is 18/20 intervals." if compact else "\\* **Muse:** starred cells use the same **20 independently scored intervals** as its common-interval results, not whole-recording scores. Five recordings were split at the API's 10-minute limit; speaker-count accuracy is **18/20 intervals (90%)**. Speaker identity across chunk boundaries is not evaluated.")]
     return lines
@@ -46,12 +46,12 @@ def table_lines(snapshot, heading_level=2, compact=False):
 
 def main():
     snapshot = json.loads((ROOT / "results/snapshot.json").read_text())
-    lines = ["# Diarization results", "", "Snapshot: 2026-09-17. Same 15 PriMock mock consultations, 2.4152 audio hours.", "",
+    lines = ["# Diarization results", "", "Snapshot: 2026-09-18. Same 15 PriMock mock consultations, 2.4152 audio hours.", "",
              "**Omi's proprietary runtime performance is not included.** These are third-party model configurations evaluated by Omi; our own runtime will be evaluated separately.", "",
-             "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. These are historical system configurations, not a controlled model-only ranking."]
+             "DER ↓ is a percentage; lower is better. Speaker policies differ and are part of each result. Sortformer and Model X were rerun natively on one L4; other rows retain their recorded vendor settings."]
     lines += table_lines(snapshot)
     lines += ["", "## Reading the results", "",
-              "- **Model X:** anonymized system. Aggregate results only; inference code and presets are included. Replace the placeholder model name to run; historical individual outputs remain private. New runs can be compared with the published aggregates.",
+              "- **Model X:** anonymized system. Aggregate results only; inference code and presets are included. Replace the placeholder model name to run; individual outputs remain private. New runs can be compared with the published aggregates.",
               "- **±250 ms** means a 250 ms exclusion radius around each reference boundary (pyannote total collar **0.5 seconds**). Zero collar is also shown. This is a 10 ms frame scorer, not a claim of bitwise parity with a continuous-time scorer.",
               "- **Common intervals:** the same 20 scoring intervals for every system. Muse required five long recordings to be split at 600 seconds. Matching is independent in each interval. Inference context remains different, and cross-interval speaker continuity is not measured.",
               "- **Known/folded to 2:** these rows use information that automatic-count rows do not. A correct count for a constrained run does not demonstrate automatic speaker counting.",

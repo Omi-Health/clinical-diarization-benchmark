@@ -1,0 +1,128 @@
+{
+  "date": "2026-09-18",
+  "gpu": "NVIDIA L4",
+  "instance_type": "g6.2xlarge",
+  "container_image": "nvcr.io/nvidia/pytorch@sha256:ace9a848c0ae543317e3c4763b6b4248961c47902625abfe3c77a0fb931c50fb",
+  "nemo_source_revision": "2d902060e8dc5f65e6e49cf67341745b4a7e42b2",
+  "environment_constraints_sha256": "948851baca93bea38fc653b12a0bdfe164773b3dc9c5f2d65d0a3f4d70947827",
+  "dockerfile_sha256": "362e146156a6694802c60c9424cb593f2b47b7607bea22f84112672250a2136c",
+  "environment_rebuild": {
+    "packages_checked": 343,
+    "differences": 0
+  },
+  "models": {
+    "sortformer1": {
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.bfloat16",
+      "matmul_precision": "highest",
+      "input_pacing": "unpaced",
+      "effective_geometry": {},
+      "completed": true,
+      "configuration_sha256": "369562beb15ef3f9193e95ca2c9f0dcac121c4531d0d1159b23528d5b74bdcff",
+      "recordings": 15,
+      "checkpoint_sha256": "bc74dfd8ca314240abcdc7e2949901eeaa72947a04ce1fab893e373d81f1e689",
+      "resolved_model_revision": "9f17b10df44c0a4c8f3c86fbddc9ee2d6ab9ac08"
+    },
+    "sortformer21": {
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.bfloat16",
+      "matmul_precision": "highest",
+      "input_pacing": "unpaced",
+      "effective_geometry": {
+        "chunk_left_context": 1,
+        "chunk_len": 340,
+        "chunk_right_context": 40,
+        "fifo_len": 40,
+        "spkcache_len": 188,
+        "spkcache_update_period": 340
+      },
+      "completed": true,
+      "configuration_sha256": "6b535533dc3d0a7740e9e265315cb590d2a7874d70e07aa64b79da8a2fefcd53",
+      "recordings": 15,
+      "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
+      "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d"
+    },
+    "sortformer21_low_unpaced": {
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.bfloat16",
+      "matmul_precision": "highest",
+      "input_pacing": "unpaced",
+      "effective_geometry": {
+        "chunk_len": 6,
+        "chunk_left_context": 1,
+        "chunk_right_context": 7,
+        "fifo_len": 188,
+        "spkcache_update_period": 144,
+        "spkcache_len": 188
+      },
+      "completed": true,
+      "configuration_sha256": "0df4339ac278e079662bb3126268d00527b1605fa7de1444ea92cd830e5db211",
+      "recordings": 15,
+      "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
+      "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d"
+    },
+    "model_x": {
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.bfloat16",
+      "matmul_precision": "highest",
+      "input_pacing": "unpaced",
+      "effective_geometry": {
+        "spkcache_len": 264,
+        "fifo_len": 40,
+        "chunk_len": 340,
+        "chunk_right_context": 40,
+        "spkcache_update_period": 340
+      },
+      "completed": true,
+      "configuration_sha256": "4f089017573b5e1849d80ff9e6a548ffdce87f58998237e7664399bca44e5f91",
+      "recordings": 15
+    },
+    "model_x_streaming_unpaced": {
+      "runner_sha256": "b72cedcd86b74e2313ee7aba09c7c723ec2e6dca69ba43a79b5d64997c50e602",
+      "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+      "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+      "python": "3.12.3",
+      "torch": "2.8.0a0+34c6371d24.nv25.08",
+      "nemo": "3.1.0+2d902060e",
+      "device": "NVIDIA L4",
+      "parameter_dtype": "torch.bfloat16",
+      "matmul_precision": "highest",
+      "input_pacing": "unpaced",
+      "effective_geometry": {
+        "chunk_len": 9,
+        "chunk_right_context": 4,
+        "chunk_left_context": 0,
+        "fifo_len": 264,
+        "spkcache_len": 264,
+        "spkcache_update_period": 222
+      },
+      "completed": true,
+      "configuration_sha256": "33e0ee4dc3598381dd4980e3cfdc59b6efa0c397046501f8d1f99feb5bd1c4ec",
+      "recordings": 15
+    }
+  }
+}

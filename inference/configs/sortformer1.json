@@ -3,12 +3,10 @@
   "model_revision": "9f17b10df44c0a4c8f3c86fbddc9ee2d6ab9ac08",
   "checkpoint_sha256": "bc74dfd8ca314240abcdc7e2949901eeaa72947a04ce1fab893e373d81f1e689",
   "strict": true,
-  "precision": "fp32",
+  "precision": "bf16",
   "streaming_mode": false,
-  "mode": "legacy_windowed",
-  "window_s": 180,
-  "overlap_s": 12,
+  "mode": "native",
   "geometry": {},
-  "fold_to": 2,
-  "snapshot_key": "sortformer1"
+  "snapshot_key": "sortformer1",
+  "matmul_precision": "highest"
 }

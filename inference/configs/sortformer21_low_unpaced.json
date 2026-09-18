@@ -3,11 +3,9 @@
   "model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
   "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
   "strict": true,
-  "precision": "fp32",
+  "precision": "bf16",
   "streaming_mode": true,
-  "mode": "legacy_windowed",
-  "window_s": 3600,
-  "overlap_s": 12,
+  "mode": "native",
   "geometry": {
     "chunk_len": 6,
     "chunk_left_context": 1,
@@ -16,6 +14,6 @@
     "spkcache_update_period": 144,
     "spkcache_len": 188
   },
-  "fold_to": 2,
-  "snapshot_key": "sortformer21_low_unpaced"
+  "snapshot_key": "sortformer21_low_unpaced",
+  "matmul_precision": "highest"
 }

@@ -40,35 +40,32 @@ The common panel uses the same 20 intervals for every system: ten complete recor
 
 This equalizes scoring support, **not inference context**. It does not evaluate speaker identity continuity across the split. Extra boundaries and frame rounding can slightly change both the denominator and score. Exact interval durations and offsets are in the manifest.
 
-## Historical system policies
+## Inference policies
 
-These are third-party model configurations evaluated by Omi. The tables do not report Omi's proprietary runtime performance; a separate runtime evaluation is planned.
+These are third-party model configurations evaluated by Omi. Omi's proprietary runtime is not included.
 
-| System | Saved inference / output policy |
+On September 18, all five Sortformer/Model X configurations were rerun using the public `inference/run.py` on one dedicated NVIDIA L4, in the same pinned NeMo environment, BF16, batch size 1. Each model received all 15 frozen complete recordings. Native speaker predictions are preserved: no known-two setting, folding, speaker dropping, custom merging or threshold tuning. Different native speaker capacities and postprocessing defaults are retained.
+
+| System | Inference / output policy |
 |---|---|
-| Sortformer v1 | 180-second windows, 12-second overlap; historical two-speaker folding before scoring |
-| Sortformer v2.1 | Whole-file path through Omi's production runtime, which merges same-speaker gaps of up to about 0.5 s after inference; historical two-speaker folding before scoring. The public adapter omits that merge and scores 3.866 % at ±250 ms (see inference/README.md) |
-| pyannoteAI Community-1 | Known two speakers during inference, plus historical two-speaker normalization |
-| pyannoteAI Precision-2 | Whole-file API with the known count of two |
-| pyannoteAI live API | Real-time-paced WebSocket requests, 100 ms PCM chunks, automatic labels |
-| Sortformer v2.1, 1.04 s preset | Archived low-latency preset evaluated via whole-recording requests; historical two-speaker folding; supplementary unpaced results |
+| Sortformer v1 | Native full-file output; automatic speaker count |
+| Sortformer v2.1 offline | Native 30.4-second buffer preset; automatic speaker count |
+| Sortformer v2.1 streaming | Native 1.04-second buffer preset; unpaced replay; automatic speaker count |
+| Model X offline / streaming | Native offline / 1.04-second presets; automatic speaker count; aggregate-only public results |
+| pyannoteAI Community-1 | Historical known-two inference plus two-speaker normalization |
+| pyannoteAI Precision-2 | Historical whole-file API with the known count of two |
+| pyannoteAI live API | Real-time-paced requests; automatic labels |
 | Meta Muse | Automatic labels per request; five recordings split at 600 seconds |
-| VibeVoice-ASR | Native batch output; automatic speaker labels |
-| VibeVoice streaming 1.5B / 7B | Paced runs and separate supplemental unpaced runs; automatic labels |
-| Model X | Automatic labels; aggregate-only disclosure |
-| Model X, streaming preset (tuned) | Unpaced whole-recording replay; postprocessing selected on 42 separate tuning recordings, top two speakers retained; aggregate-only disclosure |
+| VibeVoice-ASR | Native batch output; automatic labels |
+| VibeVoice streaming 1.5B / 7B | Historical paced and separate unpaced runs; automatic labels |
 
-Historical folding sorts labels by total segment duration, retains the two longest, and assigns any remaining label to the second retained label. It is an explicit limitation of these archived baselines. The included normalized outputs already incorporate it. The public scorer never silently applies folding or a speaker cap.
+The native rerun removes the previous two-speaker advantage; the historical pyannote batch rows still use known-two information, so the combined table is not a fully controlled model-only ranking. The [previous snapshot](../results/archive/2026-09-17/) preserves the earlier folded/tuned results. The native rerun also changes precision, software and (for v1) inference context, so the difference from the archive is not an isolated test of speaker folding.
 
-### Archived streaming runs
+### Streaming interpretation
 
-The pyannoteAI live run covers the same 15 audio hashes. Its recorded requests used 16 kHz mono float32 PCM, fixed 100 ms chunks and wall-clock pacing at 1× audio speed. The historical `/v1/live` endpoint did not expose a model selector, so this is labelled **pyannoteAI live API**, not Precision-2 streaming or a retroactively assigned model version. Speaker start/end events were converted to intervals using the provider's timestamps. At stream close, any still-open speaker interval was closed at the recording duration; this occurred for 10 intervals across 9 recordings. No other anomalies were recorded. No speaker-count folding is applied to the published live row; the correct count was returned on 10/15 recordings.
+The included runner submits saved complete recordings to NeMo, whose streaming checkpoints process them with the selected chunk/cache geometry. It does not pace audio at speaking speed or measure incremental emission times. The two low-latency presets each buffer 1.04 seconds of chunk plus right context; this is a configuration value, not measured end-to-end latency. These rows remain labelled **unpaced**.
 
-The additional Sortformer v2.1 run uses the archived 1.04-second streaming preset and the same 15 audio hashes. Its harness submitted each complete WAV in a file request, with a 3,600-second outer window covering every recording. It did not pace input at speaking speed. This evaluates the streaming preset's segmentation through prerecorded replay; it is not a paced live-client latency test. The historical max-two normalization remains explicit. This row is separate from later tune-selected postprocessors and from Omi's proprietary runtime.
-
-Both added rows were rescored against the exact public frozen references at both collars. All whole-recording integer counts match their saved corrected-reference score files. Their common-interval scores were calculated by clipping predictions to the same published intervals. No inference was rerun to add these rows. No private server identifiers, event logs, access details or runtime code are included.
-
-Model X also has an archived streaming-preset run. It processed complete recordings without wall-clock pacing, so its input pacing is labelled unpaced in the streaming table. Its postprocessing was selected on 42 separate tuning recordings, then applied to the 15 frozen report recordings. Only the two most active speakers were retained; extra speakers were dropped, not folded. This is a tuned, constrained configuration and is not a direct default-settings comparison with the automatic offline Model X row. The saved probability outputs were postprocessed again locally, and every whole-recording integer count at ±250 ms matched the archived corrected-reference result. Zero-collar and common-interval scores were calculated with the public scorer. Only aggregate results are published; historical individual outputs remain private. Inference settings and postprocessing code are included with a placeholder model name. This recovery did not rerun inference or establish live latency.
+The historical pyannoteAI live run used 16 kHz mono float32 PCM, 100 ms chunks and wall-clock pacing at 1× audio speed. Its `/v1/live` endpoint did not expose a model selector. Provider speaker events were converted to intervals; open intervals at stream close were ended at the recording duration (10 intervals across 9 recordings). No speaker-count folding is applied.
 
 For VibeVoice, the saved official segment timing is used, including coarse/chunk-derived boundaries. Explicitly unlabelled `[Silence]`, `[Noise]` or empty annotations produce no attributed speaker activity. Other unlabelled content fails the historical normalization instead of being silently discarded. Speaker-labelled non-speech and segments spanning pauses remain scored; there is no reference-based silence masking or timestamp repair.
 
@@ -78,6 +75,7 @@ Correct speaker count in a constrained run is not a measure of automatic countin
 
 All named baseline rows include their normalized speaker/timestamp outputs, frozen references and per-case integer counts. `scripts/verify_snapshot.py` recomputes these scores and checks every exported data hash. Model X exposes aggregate counts and percentages only; its arithmetic is checkable. Inference code and presets are public with a placeholder model name; saved predictions remain private.
 
-Saved results were exported without rerunning every model. Standalone inference adapters for Sortformer and configurable Model X runs are included; see [inference code](../inference/README.md). Sortformer v1/v2.1 adapter reruns are documented in the inference README. Model X's new name-based loading path has not been freshly rerun on a GPU. Other baseline inference clients and a fully pinned end-to-end environment are not bundled. Checkpoint revisions and full inference settings are not uniformly captured in the public snapshot. The displayed names identify the historical runs; they are not assertions about the latest versions of those products.
+The Sortformer and Model X results come from fresh GPU inference with the included code and presets; see [run instructions](../inference/README.md). Exact Sortformer checkpoint pins, the container image and NeMo source revision are public. Runtime receipts record code/configuration hashes and native outputs; Model X receipts stay private because they can reveal its identity. Other vendor results remain historical exports, and their inference clients are not bundled. Displayed names identify the evaluated versions, not necessarily the latest products.
 
+The independent `scripts/crosscheck_pyannote.py` uses separate tracks for simultaneous speakers, unions overlapping hypothesis intervals for the same speaker, and scores the complete recording duration including silence. It compares the continuous-time scorer with the 10 ms scorer at both collars. Some small differences are expected from frame sampling and boundary placement.
 No throughput leaderboard is provided. Bare diarization, joint ASR/diarization and remote APIs perform different work; hardware, network and timing scopes differ. These numbers are not evidence of streaming latency, clinical safety or transcription accuracy.

@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import platform
+import subprocess
 import tempfile
 import time
 import wave
@@ -107,7 +108,13 @@ def configure(model, config):
         if checker is None:
             raise RuntimeError('Runtime has no geometry validator')
         checker()
-        return {key: int(getattr(modules, key)) for key in geometry}
+        effective = {key: int(getattr(modules, key)) for key in geometry}
+        # NeMo warns about this clamp without changing the stored attribute.
+        if all(k in effective for k in ('spkcache_update_period', 'chunk_len', 'fifo_len')):
+            effective['spkcache_update_period'] = min(
+                max(effective['spkcache_update_period'], effective['chunk_len']),
+                effective['chunk_len'] + effective['fifo_len'])
+        return effective
     return {}
 
 
@@ -161,6 +168,10 @@ def main():
     dtype = torch.bfloat16 if precision == 'bf16' else torch.float32
     model = model.to(device='cuda', dtype=dtype).eval()
     geometry = configure(model, config)
+    from omegaconf import OmegaConf
+    write(output/'model_config.json', OmegaConf.to_container(model.cfg, resolve=True))
+    (output/'environment.txt').write_text(subprocess.check_output([__import__('sys').executable, '-m', 'pip', 'freeze'], text=True))
+    (output/'gpu.txt').write_text(subprocess.check_output(['nvidia-smi'], text=True))
     receipt = dict(configuration=config, effective_geometry=geometry,
                    checkpoint_sha256=checkpoint_hash, resolved_model_revision=resolved_revision,
                    runner_sha256=sha(__file__),
@@ -171,8 +182,11 @@ def main():
                    input_pacing='unpaced', matmul_precision=torch.get_float32_matmul_precision(), rows=[])
     write(output/'runtime.json', receipt)
     for case in cases:
+        receipt['current_case'] = case['case']
+        write(output/'runtime.json', receipt)
         audio = args.audio_dir / (case['case']+'_conversation.wav')
         torch.cuda.synchronize()
+        torch.cuda.reset_peak_memory_stats()
         started = time.perf_counter()
         context = torch.autocast('cuda', dtype=torch.bfloat16) if precision == 'bf16' else nullcontext()
         with torch.inference_mode(), context:
@@ -200,9 +214,14 @@ def main():
         dest = output/'full_recordings'/f"{case['case']}.json"
         write(dest, dict(segments=segments))
         receipt['rows'].append(dict(case=case['case'], audio_sha256=case['audio_sha256'],
-            output_sha256=sha(dest), wall_s=time.perf_counter()-started))
+            output_sha256=sha(dest), wall_s=time.perf_counter()-started,
+            peak_gpu_allocated_bytes=torch.cuda.max_memory_allocated(),
+            hypothesis_speakers=len({s['speaker'] for s in segments})))
         write(output/'runtime.json', receipt)
         print(f"Completed {len(receipt['rows'])}/{len(cases)}", flush=True)
+    receipt.pop('current_case', None)
+    receipt['completed'] = True
+    write(output/'runtime.json', receipt)
 
 
 if __name__ == '__main__':

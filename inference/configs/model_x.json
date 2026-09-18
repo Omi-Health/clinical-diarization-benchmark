@@ -10,5 +10,6 @@
     "chunk_len": 340,
     "chunk_right_context": 40,
     "spkcache_update_period": 300
-  }
+  },
+  "matmul_precision": "highest"
 }

@@ -1,12 +1,12 @@
 {
-  "snapshot_date": "2026-09-17",
+  "snapshot_date": "2026-09-18",
   "recordings": 15,
   "audio_hours": 2.415184444444445,
   "frame_s": 0.01,
   "models": [
     {
       "key": "model_x",
-      "model": "Model X",
+      "model": "Model X, native offline",
       "speaker_policy": "Automatic",
       "group": "batch",
       "public_outputs": false,
@@ -14,24 +14,24 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 82071,
-            "false_alarm_frames": 8530,
-            "confusion_frames": 728,
-            "error_frames": 91329,
+            "miss_frames": 82101,
+            "false_alarm_frames": 8532,
+            "confusion_frames": 727,
+            "error_frames": 91360,
             "records": 15,
-            "der": 0.12589011752446014,
+            "der": 0.12593284867933163,
             "speaker_count_accuracy": 0.8
           }
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513167,
-            "miss_frames": 21881,
-            "false_alarm_frames": 2281,
-            "confusion_frames": 399,
-            "error_frames": 24561,
+            "miss_frames": 21887,
+            "false_alarm_frames": 2272,
+            "confusion_frames": 400,
+            "error_frames": 24559,
             "records": 15,
-            "der": 0.04786161230164839,
+            "der": 0.04785771493490423,
             "speaker_count_accuracy": 0.8
           }
         }
@@ -40,24 +40,24 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 82071,
-            "false_alarm_frames": 8530,
-            "confusion_frames": 728,
-            "error_frames": 91329,
+            "miss_frames": 82101,
+            "false_alarm_frames": 8532,
+            "confusion_frames": 727,
+            "error_frames": 91360,
             "records": 20,
-            "der": 0.12589011752446014,
+            "der": 0.12593284867933163,
             "speaker_count_accuracy": 0.85
           }
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513032,
-            "miss_frames": 21881,
-            "false_alarm_frames": 2281,
-            "confusion_frames": 399,
-            "error_frames": 24561,
+            "miss_frames": 21887,
+            "false_alarm_frames": 2272,
+            "confusion_frames": 400,
+            "error_frames": 24559,
             "records": 20,
-            "der": 0.04787420667716634,
+            "der": 0.04787030828486332,
             "speaker_count_accuracy": 0.85
           }
         }
@@ -65,396 +65,546 @@
     },
     {
       "key": "sortformer21",
-      "model": "Sortformer v2.1, whole-file",
-      "speaker_policy": "Folded to 2 after inference",
+      "model": "Sortformer v2.1, native offline",
+      "speaker_policy": "Automatic",
       "group": "batch",
       "public_outputs": true,
       "full_recordings": {
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 49501,
-            "false_alarm_frames": 36176,
-            "confusion_frames": 2637,
-            "error_frames": 88314,
+            "miss_frames": 52424,
+            "false_alarm_frames": 27804,
+            "confusion_frames": 21894,
+            "error_frames": 102122,
             "records": 15,
-            "der": 0.12173416810712011,
-            "speaker_count_accuracy": 1.0
+            "der": 0.14076745154149195,
+            "speaker_count_accuracy": 0.06666666666666667
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 46795,
-              "miss_frames": 3439,
-              "false_alarm_frames": 1924,
-              "confusion_frames": 11,
-              "error_frames": 5374,
+              "miss_frames": 3666,
+              "false_alarm_frames": 1431,
+              "confusion_frames": 75,
+              "error_frames": 5172,
+              "der": 0.1105246286996474,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 49402,
-              "miss_frames": 3840,
-              "false_alarm_frames": 1342,
-              "confusion_frames": 14,
-              "error_frames": 5196,
+              "miss_frames": 4149,
+              "false_alarm_frames": 1099,
+              "confusion_frames": 6,
+              "error_frames": 5254,
+              "der": 0.10635196955588842,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07",
-              "audio_s": 855.562,
               "reference_frames": 80473,
-              "miss_frames": 9212,
-              "false_alarm_frames": 3003,
-              "confusion_frames": 30,
-              "error_frames": 12245,
+              "miss_frames": 10265,
+              "false_alarm_frames": 2032,
+              "confusion_frames": 9072,
+              "error_frames": 21369,
+              "der": 0.2655424800864886,
+              "audio_s": 855.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10",
-              "audio_s": 616.678,
               "reference_frames": 56950,
-              "miss_frames": 4995,
-              "false_alarm_frames": 2997,
-              "confusion_frames": 125,
-              "error_frames": 8117,
+              "miss_frames": 4599,
+              "false_alarm_frames": 2865,
+              "confusion_frames": 255,
+              "error_frames": 7719,
+              "der": 0.13553994732221247,
+              "audio_s": 616.678,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11",
-              "audio_s": 801.531,
               "reference_frames": 69732,
-              "miss_frames": 3908,
-              "false_alarm_frames": 4809,
-              "confusion_frames": 1381,
-              "error_frames": 10098,
+              "miss_frames": 3889,
+              "false_alarm_frames": 4214,
+              "confusion_frames": 2458,
+              "error_frames": 10561,
+              "der": 0.15145127057878735,
+              "audio_s": 801.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 46765,
-              "miss_frames": 2671,
-              "false_alarm_frames": 2813,
+              "miss_frames": 3031,
+              "false_alarm_frames": 1877,
               "confusion_frames": 1,
-              "error_frames": 5485,
+              "error_frames": 4909,
+              "der": 0.10497166684486262,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05",
-              "audio_s": 634.555,
               "reference_frames": 49460,
-              "miss_frames": 2335,
-              "false_alarm_frames": 2387,
-              "confusion_frames": 35,
-              "error_frames": 4757,
+              "miss_frames": 2563,
+              "false_alarm_frames": 1655,
+              "confusion_frames": 6501,
+              "error_frames": 10719,
+              "der": 0.21672058228871816,
+              "audio_s": 634.555,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 51453,
-              "miss_frames": 2459,
-              "false_alarm_frames": 3558,
-              "confusion_frames": 93,
-              "error_frames": 6110,
+              "miss_frames": 2622,
+              "false_alarm_frames": 2489,
+              "confusion_frames": 461,
+              "error_frames": 5572,
+              "der": 0.10829300526694265,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 36280,
-              "miss_frames": 3333,
-              "false_alarm_frames": 1068,
-              "confusion_frames": 536,
-              "error_frames": 4937,
+              "miss_frames": 3467,
+              "false_alarm_frames": 787,
+              "confusion_frames": 589,
+              "error_frames": 4843,
+              "der": 0.13348952590959207,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09",
-              "audio_s": 710.939,
               "reference_frames": 65487,
-              "miss_frames": 3781,
-              "false_alarm_frames": 2990,
-              "confusion_frames": 199,
-              "error_frames": 6970,
+              "miss_frames": 3923,
+              "false_alarm_frames": 2180,
+              "confusion_frames": 365,
+              "error_frames": 6468,
+              "der": 0.0987676943515507,
+              "audio_s": 710.939,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 33792,
-              "miss_frames": 2689,
-              "false_alarm_frames": 1409,
-              "confusion_frames": 2,
-              "error_frames": 4100,
+              "miss_frames": 3046,
+              "false_alarm_frames": 958,
+              "confusion_frames": 18,
+              "error_frames": 4022,
+              "der": 0.11902225378787878,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 27169,
-              "miss_frames": 1402,
-              "false_alarm_frames": 1481,
-              "confusion_frames": 16,
-              "error_frames": 2899,
+              "miss_frames": 1511,
+              "false_alarm_frames": 1206,
+              "confusion_frames": 1566,
+              "error_frames": 4283,
+              "der": 0.15764290183665206,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 27712,
-              "miss_frames": 1995,
-              "false_alarm_frames": 1229,
-              "confusion_frames": 36,
-              "error_frames": 3260,
+              "miss_frames": 2123,
+              "false_alarm_frames": 1037,
+              "confusion_frames": 60,
+              "error_frames": 3220,
+              "der": 0.11619515011547345,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 38362,
-              "miss_frames": 2005,
-              "false_alarm_frames": 2075,
-              "confusion_frames": 0,
-              "error_frames": 4080,
+              "miss_frames": 1992,
+              "false_alarm_frames": 1694,
+              "confusion_frames": 219,
+              "error_frames": 3905,
+              "der": 0.10179344142641156,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 45634,
-              "miss_frames": 1437,
-              "false_alarm_frames": 3091,
-              "confusion_frames": 158,
-              "error_frames": 4686,
+              "miss_frames": 1578,
+              "false_alarm_frames": 2280,
+              "confusion_frames": 248,
+              "error_frames": 4106,
+              "der": 0.08997677170530745,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_3": "patient"
+              }
             }
           ]
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513167,
-            "miss_frames": 13881,
-            "false_alarm_frames": 3153,
-            "confusion_frames": 1491,
-            "error_frames": 18525,
+            "miss_frames": 15040,
+            "false_alarm_frames": 4059,
+            "confusion_frames": 14734,
+            "error_frames": 33833,
             "records": 15,
-            "der": 0.0360993594677756,
-            "speaker_count_accuracy": 1.0
+            "der": 0.06592980452757094,
+            "speaker_count_accuracy": 0.06666666666666667
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 34711,
-              "miss_frames": 1216,
-              "false_alarm_frames": 157,
-              "confusion_frames": 0,
-              "error_frames": 1373,
+              "miss_frames": 1311,
+              "false_alarm_frames": 153,
+              "confusion_frames": 10,
+              "error_frames": 1474,
+              "der": 0.042464924663651295,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 38325,
-              "miss_frames": 1142,
-              "false_alarm_frames": 193,
+              "miss_frames": 1314,
+              "false_alarm_frames": 191,
               "confusion_frames": 0,
-              "error_frames": 1335,
+              "error_frames": 1505,
+              "der": 0.039269406392694065,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07",
-              "audio_s": 855.562,
               "reference_frames": 54953,
-              "miss_frames": 3366,
-              "false_alarm_frames": 135,
-              "confusion_frames": 0,
-              "error_frames": 3501,
+              "miss_frames": 3767,
+              "false_alarm_frames": 556,
+              "confusion_frames": 6754,
+              "error_frames": 11077,
+              "der": 0.20157225265226647,
+              "audio_s": 855.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10",
-              "audio_s": 616.678,
               "reference_frames": 40325,
-              "miss_frames": 1735,
-              "false_alarm_frames": 371,
-              "confusion_frames": 47,
-              "error_frames": 2153,
+              "miss_frames": 1505,
+              "false_alarm_frames": 547,
+              "confusion_frames": 84,
+              "error_frames": 2136,
+              "der": 0.05296962182269064,
+              "audio_s": 616.678,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11",
-              "audio_s": 801.531,
               "reference_frames": 49302,
-              "miss_frames": 1547,
-              "false_alarm_frames": 363,
-              "confusion_frames": 871,
-              "error_frames": 2781,
+              "miss_frames": 1537,
+              "false_alarm_frames": 531,
+              "confusion_frames": 1528,
+              "error_frames": 3596,
+              "der": 0.07293821751653078,
+              "audio_s": 801.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 32782,
-              "miss_frames": 557,
-              "false_alarm_frames": 402,
+              "miss_frames": 733,
+              "false_alarm_frames": 456,
               "confusion_frames": 0,
-              "error_frames": 959,
+              "error_frames": 1189,
+              "der": 0.03626990421572814,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05",
-              "audio_s": 634.555,
               "reference_frames": 34254,
-              "miss_frames": 165,
+              "miss_frames": 277,
               "false_alarm_frames": 84,
-              "confusion_frames": 12,
-              "error_frames": 261,
+              "confusion_frames": 4505,
+              "error_frames": 4866,
+              "der": 0.1420564021720091,
+              "audio_s": 634.555,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 35821,
               "miss_frames": 649,
-              "false_alarm_frames": 171,
-              "confusion_frames": 29,
-              "error_frames": 849,
+              "false_alarm_frames": 223,
+              "confusion_frames": 159,
+              "error_frames": 1031,
+              "der": 0.028781999385835123,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 26095,
-              "miss_frames": 800,
+              "miss_frames": 906,
               "false_alarm_frames": 128,
-              "confusion_frames": 366,
-              "error_frames": 1294,
+              "confusion_frames": 413,
+              "error_frames": 1447,
+              "der": 0.05545123586894041,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09",
-              "audio_s": 710.939,
               "reference_frames": 49296,
-              "miss_frames": 1097,
-              "false_alarm_frames": 164,
-              "confusion_frames": 91,
-              "error_frames": 1352,
+              "miss_frames": 1158,
+              "false_alarm_frames": 163,
+              "confusion_frames": 109,
+              "error_frames": 1430,
+              "der": 0.0290084388185654,
+              "audio_s": 710.939,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 21617,
-              "miss_frames": 239,
-              "false_alarm_frames": 173,
+              "miss_frames": 354,
+              "false_alarm_frames": 184,
               "confusion_frames": 0,
-              "error_frames": 412,
+              "error_frames": 538,
+              "der": 0.024887819771476152,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 18066,
-              "miss_frames": 174,
-              "false_alarm_frames": 122,
-              "confusion_frames": 0,
-              "error_frames": 296,
+              "miss_frames": 262,
+              "false_alarm_frames": 137,
+              "confusion_frames": 977,
+              "error_frames": 1376,
+              "der": 0.07616517214657367,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 19330,
-              "miss_frames": 425,
+              "miss_frames": 493,
               "false_alarm_frames": 110,
-              "confusion_frames": 1,
-              "error_frames": 536,
+              "confusion_frames": 8,
+              "error_frames": 611,
+              "der": 0.03160889808587688,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 26690,
-              "miss_frames": 507,
-              "false_alarm_frames": 307,
-              "confusion_frames": 0,
-              "error_frames": 814,
+              "miss_frames": 512,
+              "false_alarm_frames": 315,
+              "confusion_frames": 113,
+              "error_frames": 940,
+              "der": 0.03521918321468715,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 31600,
               "miss_frames": 262,
-              "false_alarm_frames": 273,
+              "false_alarm_frames": 281,
               "confusion_frames": 74,
-              "error_frames": 609,
+              "error_frames": 617,
+              "der": 0.019525316455696204,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_3": "patient"
+              }
             }
           ]
         }
@@ -463,508 +613,708 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 49501,
-            "false_alarm_frames": 36176,
-            "confusion_frames": 2637,
-            "error_frames": 88314,
+            "miss_frames": 52424,
+            "false_alarm_frames": 27804,
+            "confusion_frames": 21674,
+            "error_frames": 101902,
             "records": 20,
-            "der": 0.12173416810712011,
-            "speaker_count_accuracy": 1.0
+            "der": 0.14046419818433944,
+            "speaker_count_accuracy": 0.15
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 46795,
-              "miss_frames": 3439,
-              "false_alarm_frames": 1924,
-              "confusion_frames": 11,
-              "error_frames": 5374,
+              "miss_frames": 3666,
+              "false_alarm_frames": 1431,
+              "confusion_frames": 75,
+              "error_frames": 5172,
+              "der": 0.1105246286996474,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 49402,
-              "miss_frames": 3840,
-              "false_alarm_frames": 1342,
-              "confusion_frames": 14,
-              "error_frames": 5196,
+              "miss_frames": 4149,
+              "false_alarm_frames": 1099,
+              "confusion_frames": 6,
+              "error_frames": 5254,
+              "der": 0.10635196955588842,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part01",
-              "audio_s": 600.0,
               "reference_frames": 56305,
-              "miss_frames": 6644,
-              "false_alarm_frames": 2035,
-              "confusion_frames": 6,
-              "error_frames": 8685,
+              "miss_frames": 7486,
+              "false_alarm_frames": 1269,
+              "confusion_frames": 8006,
+              "error_frames": 16761,
+              "der": 0.2976822662285765,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part02",
-              "audio_s": 255.562,
               "reference_frames": 24168,
-              "miss_frames": 2568,
-              "false_alarm_frames": 968,
-              "confusion_frames": 24,
-              "error_frames": 3560,
+              "miss_frames": 2779,
+              "false_alarm_frames": 763,
+              "confusion_frames": 1066,
+              "error_frames": 4608,
+              "der": 0.1906653426017875,
+              "audio_s": 255.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part01",
-              "audio_s": 600.0,
               "reference_frames": 55250,
-              "miss_frames": 4631,
-              "false_alarm_frames": 2981,
-              "confusion_frames": 125,
-              "error_frames": 7737,
+              "miss_frames": 4267,
+              "false_alarm_frames": 2849,
+              "confusion_frames": 255,
+              "error_frames": 7371,
+              "der": 0.13341176470588234,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part02",
-              "audio_s": 16.678,
               "reference_frames": 1700,
-              "miss_frames": 364,
+              "miss_frames": 332,
               "false_alarm_frames": 16,
               "confusion_frames": 0,
-              "error_frames": 380,
+              "error_frames": 348,
+              "der": 0.20470588235294118,
+              "audio_s": 16.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part01",
-              "audio_s": 600.0,
               "reference_frames": 51928,
-              "miss_frames": 2909,
-              "false_alarm_frames": 3837,
-              "confusion_frames": 1279,
-              "error_frames": 8025,
+              "miss_frames": 2932,
+              "false_alarm_frames": 3364,
+              "confusion_frames": 2316,
+              "error_frames": 8612,
+              "der": 0.16584501617624403,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part02",
-              "audio_s": 201.531,
               "reference_frames": 17804,
-              "miss_frames": 999,
-              "false_alarm_frames": 972,
-              "confusion_frames": 102,
-              "error_frames": 2073,
+              "miss_frames": 957,
+              "false_alarm_frames": 850,
+              "confusion_frames": 142,
+              "error_frames": 1949,
+              "der": 0.10946978207144462,
+              "audio_s": 201.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 46765,
-              "miss_frames": 2671,
-              "false_alarm_frames": 2813,
+              "miss_frames": 3031,
+              "false_alarm_frames": 1877,
               "confusion_frames": 1,
-              "error_frames": 5485,
+              "error_frames": 4909,
+              "der": 0.10497166684486262,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part01",
-              "audio_s": 600.0,
               "reference_frames": 46480,
-              "miss_frames": 2299,
-              "false_alarm_frames": 2203,
-              "confusion_frames": 35,
-              "error_frames": 4537,
+              "miss_frames": 2472,
+              "false_alarm_frames": 1528,
+              "confusion_frames": 6281,
+              "error_frames": 10281,
+              "der": 0.22119191049913942,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part02",
-              "audio_s": 34.555,
               "reference_frames": 2980,
-              "miss_frames": 36,
-              "false_alarm_frames": 184,
+              "miss_frames": 91,
+              "false_alarm_frames": 127,
               "confusion_frames": 0,
-              "error_frames": 220,
+              "error_frames": 218,
+              "der": 0.07315436241610739,
+              "audio_s": 34.555,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 51453,
-              "miss_frames": 2459,
-              "false_alarm_frames": 3558,
-              "confusion_frames": 93,
-              "error_frames": 6110,
+              "miss_frames": 2622,
+              "false_alarm_frames": 2489,
+              "confusion_frames": 461,
+              "error_frames": 5572,
+              "der": 0.10829300526694265,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 36280,
-              "miss_frames": 3333,
-              "false_alarm_frames": 1068,
-              "confusion_frames": 536,
-              "error_frames": 4937,
+              "miss_frames": 3467,
+              "false_alarm_frames": 787,
+              "confusion_frames": 589,
+              "error_frames": 4843,
+              "der": 0.13348952590959207,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part01",
-              "audio_s": 600.0,
               "reference_frames": 55133,
-              "miss_frames": 3017,
-              "false_alarm_frames": 2300,
-              "confusion_frames": 186,
-              "error_frames": 5503,
+              "miss_frames": 3096,
+              "false_alarm_frames": 1715,
+              "confusion_frames": 267,
+              "error_frames": 5078,
+              "der": 0.09210454718589592,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part02",
-              "audio_s": 110.939,
               "reference_frames": 10354,
-              "miss_frames": 764,
-              "false_alarm_frames": 690,
-              "confusion_frames": 13,
-              "error_frames": 1467,
+              "miss_frames": 827,
+              "false_alarm_frames": 465,
+              "confusion_frames": 98,
+              "error_frames": 1390,
+              "der": 0.13424763376472862,
+              "audio_s": 110.939,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 33792,
-              "miss_frames": 2689,
-              "false_alarm_frames": 1409,
-              "confusion_frames": 2,
-              "error_frames": 4100,
+              "miss_frames": 3046,
+              "false_alarm_frames": 958,
+              "confusion_frames": 18,
+              "error_frames": 4022,
+              "der": 0.11902225378787878,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 27169,
-              "miss_frames": 1402,
-              "false_alarm_frames": 1481,
-              "confusion_frames": 16,
-              "error_frames": 2899,
+              "miss_frames": 1511,
+              "false_alarm_frames": 1206,
+              "confusion_frames": 1566,
+              "error_frames": 4283,
+              "der": 0.15764290183665206,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 27712,
-              "miss_frames": 1995,
-              "false_alarm_frames": 1229,
-              "confusion_frames": 36,
-              "error_frames": 3260,
+              "miss_frames": 2123,
+              "false_alarm_frames": 1037,
+              "confusion_frames": 60,
+              "error_frames": 3220,
+              "der": 0.11619515011547345,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 38362,
-              "miss_frames": 2005,
-              "false_alarm_frames": 2075,
-              "confusion_frames": 0,
-              "error_frames": 4080,
+              "miss_frames": 1992,
+              "false_alarm_frames": 1694,
+              "confusion_frames": 219,
+              "error_frames": 3905,
+              "der": 0.10179344142641156,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 45634,
-              "miss_frames": 1437,
-              "false_alarm_frames": 3091,
-              "confusion_frames": 158,
-              "error_frames": 4686,
+              "miss_frames": 1578,
+              "false_alarm_frames": 2280,
+              "confusion_frames": 248,
+              "error_frames": 4106,
+              "der": 0.08997677170530745,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_3": "patient"
+              }
             }
           ]
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513032,
-            "miss_frames": 13881,
-            "false_alarm_frames": 3153,
-            "confusion_frames": 1491,
-            "error_frames": 18525,
+            "miss_frames": 15040,
+            "false_alarm_frames": 4059,
+            "confusion_frames": 14617,
+            "error_frames": 33716,
             "records": 20,
-            "der": 0.03610885870666937,
-            "speaker_count_accuracy": 1.0
+            "der": 0.065719097444214,
+            "speaker_count_accuracy": 0.15
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 34711,
-              "miss_frames": 1216,
-              "false_alarm_frames": 157,
-              "confusion_frames": 0,
-              "error_frames": 1373,
+              "miss_frames": 1311,
+              "false_alarm_frames": 153,
+              "confusion_frames": 10,
+              "error_frames": 1474,
+              "der": 0.042464924663651295,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 38325,
-              "miss_frames": 1142,
-              "false_alarm_frames": 193,
+              "miss_frames": 1314,
+              "false_alarm_frames": 191,
               "confusion_frames": 0,
-              "error_frames": 1335,
+              "error_frames": 1505,
+              "der": 0.039269406392694065,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part01",
-              "audio_s": 600.0,
               "reference_frames": 38624,
-              "miss_frames": 2410,
-              "false_alarm_frames": 42,
-              "confusion_frames": 0,
-              "error_frames": 2452,
+              "miss_frames": 2801,
+              "false_alarm_frames": 367,
+              "confusion_frames": 5920,
+              "error_frames": 9088,
+              "der": 0.23529411764705882,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part02",
-              "audio_s": 255.562,
               "reference_frames": 16305,
-              "miss_frames": 956,
-              "false_alarm_frames": 93,
-              "confusion_frames": 0,
-              "error_frames": 1049,
+              "miss_frames": 966,
+              "false_alarm_frames": 189,
+              "confusion_frames": 834,
+              "error_frames": 1989,
+              "der": 0.12198712051517939,
+              "audio_s": 255.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part01",
-              "audio_s": 600.0,
               "reference_frames": 39294,
-              "miss_frames": 1566,
-              "false_alarm_frames": 371,
-              "confusion_frames": 47,
-              "error_frames": 1984,
+              "miss_frames": 1368,
+              "false_alarm_frames": 547,
+              "confusion_frames": 84,
+              "error_frames": 1999,
+              "der": 0.050872906805110196,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part02",
-              "audio_s": 16.678,
               "reference_frames": 1017,
-              "miss_frames": 169,
+              "miss_frames": 137,
               "false_alarm_frames": 0,
               "confusion_frames": 0,
-              "error_frames": 169,
+              "error_frames": 137,
+              "der": 0.13470993117010815,
+              "audio_s": 16.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part01",
-              "audio_s": 600.0,
               "reference_frames": 36717,
-              "miss_frames": 1174,
-              "false_alarm_frames": 293,
-              "confusion_frames": 811,
-              "error_frames": 2278,
+              "miss_frames": 1173,
+              "false_alarm_frames": 445,
+              "confusion_frames": 1436,
+              "error_frames": 3054,
+              "der": 0.08317673012501021,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part02",
-              "audio_s": 201.531,
               "reference_frames": 12544,
-              "miss_frames": 373,
-              "false_alarm_frames": 70,
-              "confusion_frames": 60,
-              "error_frames": 503,
+              "miss_frames": 364,
+              "false_alarm_frames": 86,
+              "confusion_frames": 92,
+              "error_frames": 542,
+              "der": 0.04320790816326531,
+              "audio_s": 201.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 32782,
-              "miss_frames": 557,
-              "false_alarm_frames": 402,
+              "miss_frames": 733,
+              "false_alarm_frames": 456,
               "confusion_frames": 0,
-              "error_frames": 959,
+              "error_frames": 1189,
+              "der": 0.03626990421572814,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part01",
-              "audio_s": 600.0,
               "reference_frames": 31874,
-              "miss_frames": 165,
+              "miss_frames": 261,
               "false_alarm_frames": 54,
-              "confusion_frames": 12,
-              "error_frames": 231,
+              "confusion_frames": 4388,
+              "error_frames": 4703,
+              "der": 0.1475497270502604,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part02",
-              "audio_s": 34.555,
               "reference_frames": 2330,
-              "miss_frames": 0,
+              "miss_frames": 16,
               "false_alarm_frames": 30,
               "confusion_frames": 0,
-              "error_frames": 30,
+              "error_frames": 46,
+              "der": 0.019742489270386267,
+              "audio_s": 34.555,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 35821,
               "miss_frames": 649,
-              "false_alarm_frames": 171,
-              "confusion_frames": 29,
-              "error_frames": 849,
+              "false_alarm_frames": 223,
+              "confusion_frames": 159,
+              "error_frames": 1031,
+              "der": 0.028781999385835123,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 26095,
-              "miss_frames": 800,
+              "miss_frames": 906,
               "false_alarm_frames": 128,
-              "confusion_frames": 366,
-              "error_frames": 1294,
+              "confusion_frames": 413,
+              "error_frames": 1447,
+              "der": 0.05545123586894041,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part01",
-              "audio_s": 600.0,
               "reference_frames": 42401,
-              "miss_frames": 866,
-              "false_alarm_frames": 164,
-              "confusion_frames": 91,
-              "error_frames": 1121,
+              "miss_frames": 925,
+              "false_alarm_frames": 157,
+              "confusion_frames": 101,
+              "error_frames": 1183,
+              "der": 0.027900285370628053,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part02",
-              "audio_s": 110.939,
               "reference_frames": 6889,
-              "miss_frames": 231,
-              "false_alarm_frames": 0,
-              "confusion_frames": 0,
-              "error_frames": 231,
+              "miss_frames": 233,
+              "false_alarm_frames": 6,
+              "confusion_frames": 8,
+              "error_frames": 247,
+              "der": 0.0358542604151546,
+              "audio_s": 110.939,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 21617,
-              "miss_frames": 239,
-              "false_alarm_frames": 173,
+              "miss_frames": 354,
+              "false_alarm_frames": 184,
               "confusion_frames": 0,
-              "error_frames": 412,
+              "error_frames": 538,
+              "der": 0.024887819771476152,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 18066,
-              "miss_frames": 174,
-              "false_alarm_frames": 122,
-              "confusion_frames": 0,
-              "error_frames": 296,
+              "miss_frames": 262,
+              "false_alarm_frames": 137,
+              "confusion_frames": 977,
+              "error_frames": 1376,
+              "der": 0.07616517214657367,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 19330,
-              "miss_frames": 425,
+              "miss_frames": 493,
               "false_alarm_frames": 110,
-              "confusion_frames": 1,
-              "error_frames": 536,
+              "confusion_frames": 8,
+              "error_frames": 611,
+              "der": 0.03160889808587688,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 26690,
-              "miss_frames": 507,
-              "false_alarm_frames": 307,
-              "confusion_frames": 0,
-              "error_frames": 814,
+              "miss_frames": 512,
+              "false_alarm_frames": 315,
+              "confusion_frames": 113,
+              "error_frames": 940,
+              "der": 0.03521918321468715,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 31600,
               "miss_frames": 262,
-              "false_alarm_frames": 273,
+              "false_alarm_frames": 281,
               "confusion_frames": 74,
-              "error_frames": 609,
+              "error_frames": 617,
+              "der": 0.019525316455696204,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_3": "patient"
+              }
             }
           ]
         }
@@ -972,396 +1322,546 @@
     },
     {
       "key": "sortformer1",
-      "model": "Sortformer v1, 180s windows",
-      "speaker_policy": "Folded to 2 after inference",
+      "model": "Sortformer v1, native whole-file",
+      "speaker_policy": "Automatic",
       "group": "batch",
       "public_outputs": true,
       "full_recordings": {
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 48843,
-            "false_alarm_frames": 41999,
-            "confusion_frames": 1338,
-            "error_frames": 92180,
+            "miss_frames": 66895,
+            "false_alarm_frames": 24362,
+            "confusion_frames": 15998,
+            "error_frames": 107255,
             "records": 15,
-            "der": 0.12706315664690007,
-            "speaker_count_accuracy": 1.0
+            "der": 0.1478429037336002,
+            "speaker_count_accuracy": 0.9333333333333333
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 46795,
-              "miss_frames": 2517,
-              "false_alarm_frames": 2002,
-              "confusion_frames": 31,
-              "error_frames": 4550,
+              "miss_frames": 3005,
+              "false_alarm_frames": 1250,
+              "confusion_frames": 7,
+              "error_frames": 4262,
+              "der": 0.09107810663532429,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 49402,
-              "miss_frames": 2328,
-              "false_alarm_frames": 2502,
-              "confusion_frames": 12,
-              "error_frames": 4842,
+              "miss_frames": 2800,
+              "false_alarm_frames": 1742,
+              "confusion_frames": 8,
+              "error_frames": 4550,
+              "der": 0.092101534350836,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07",
-              "audio_s": 855.562,
               "reference_frames": 80473,
-              "miss_frames": 7500,
-              "false_alarm_frames": 5539,
-              "confusion_frames": 53,
-              "error_frames": 13092,
+              "miss_frames": 7830,
+              "false_alarm_frames": 4909,
+              "confusion_frames": 79,
+              "error_frames": 12818,
+              "der": 0.15928323785617537,
+              "audio_s": 855.562,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10",
-              "audio_s": 616.678,
               "reference_frames": 56950,
-              "miss_frames": 5627,
-              "false_alarm_frames": 2944,
-              "confusion_frames": 124,
-              "error_frames": 8695,
+              "miss_frames": 6181,
+              "false_alarm_frames": 2447,
+              "confusion_frames": 136,
+              "error_frames": 8764,
+              "der": 0.15388937664618085,
+              "audio_s": 616.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11",
-              "audio_s": 801.531,
               "reference_frames": 69732,
-              "miss_frames": 5026,
-              "false_alarm_frames": 3639,
-              "confusion_frames": 83,
-              "error_frames": 8748,
+              "miss_frames": 13111,
+              "false_alarm_frames": 1019,
+              "confusion_frames": 10503,
+              "error_frames": 24633,
+              "der": 0.3532524522457408,
+              "audio_s": 801.531,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 46765,
-              "miss_frames": 3189,
-              "false_alarm_frames": 2387,
-              "confusion_frames": 17,
-              "error_frames": 5593,
+              "miss_frames": 4243,
+              "false_alarm_frames": 1081,
+              "confusion_frames": 25,
+              "error_frames": 5349,
+              "der": 0.1143804127018069,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05",
-              "audio_s": 634.555,
               "reference_frames": 49460,
-              "miss_frames": 2293,
-              "false_alarm_frames": 3433,
-              "confusion_frames": 8,
-              "error_frames": 5734,
+              "miss_frames": 4533,
+              "false_alarm_frames": 337,
+              "confusion_frames": 4826,
+              "error_frames": 9696,
+              "der": 0.19603720177921552,
+              "audio_s": 634.555,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 51453,
-              "miss_frames": 2749,
-              "false_alarm_frames": 4632,
-              "confusion_frames": 56,
-              "error_frames": 7437,
+              "miss_frames": 2753,
+              "false_alarm_frames": 4588,
+              "confusion_frames": 62,
+              "error_frames": 7403,
+              "der": 0.1438788797543389,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 36280,
-              "miss_frames": 2235,
-              "false_alarm_frames": 2434,
-              "confusion_frames": 46,
-              "error_frames": 4715,
+              "miss_frames": 2927,
+              "false_alarm_frames": 1247,
+              "confusion_frames": 5,
+              "error_frames": 4179,
+              "der": 0.11518743109151047,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09",
-              "audio_s": 710.939,
               "reference_frames": 65487,
-              "miss_frames": 3834,
-              "false_alarm_frames": 3739,
-              "confusion_frames": 617,
-              "error_frames": 8190,
+              "miss_frames": 5247,
+              "false_alarm_frames": 1576,
+              "confusion_frames": 161,
+              "error_frames": 6984,
+              "der": 0.10664712080260204,
+              "audio_s": 710.939,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 33792,
-              "miss_frames": 3169,
-              "false_alarm_frames": 1180,
-              "confusion_frames": 38,
-              "error_frames": 4387,
+              "miss_frames": 3283,
+              "false_alarm_frames": 899,
+              "confusion_frames": 26,
+              "error_frames": 4208,
+              "der": 0.12452651515151515,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 27169,
-              "miss_frames": 1844,
-              "false_alarm_frames": 1075,
-              "confusion_frames": 32,
-              "error_frames": 2951,
+              "miss_frames": 2380,
+              "false_alarm_frames": 547,
+              "confusion_frames": 48,
+              "error_frames": 2975,
+              "der": 0.10949979756339946,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 27712,
-              "miss_frames": 1945,
-              "false_alarm_frames": 1083,
+              "miss_frames": 2296,
+              "false_alarm_frames": 674,
               "confusion_frames": 26,
-              "error_frames": 3054,
+              "error_frames": 2996,
+              "der": 0.10811200923787528,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 38362,
-              "miss_frames": 2498,
-              "false_alarm_frames": 2216,
+              "miss_frames": 3384,
+              "false_alarm_frames": 734,
               "confusion_frames": 0,
-              "error_frames": 4714,
+              "error_frames": 4118,
+              "der": 0.10734581095876128,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 45634,
-              "miss_frames": 2089,
-              "false_alarm_frames": 3194,
-              "confusion_frames": 195,
-              "error_frames": 5478,
+              "miss_frames": 2922,
+              "false_alarm_frames": 1312,
+              "confusion_frames": 86,
+              "error_frames": 4320,
+              "der": 0.09466625761493623,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513167,
-            "miss_frames": 12476,
-            "false_alarm_frames": 3235,
-            "confusion_frames": 490,
-            "error_frames": 16201,
+            "miss_frames": 19267,
+            "false_alarm_frames": 2540,
+            "confusion_frames": 12977,
+            "error_frames": 34784,
             "records": 15,
-            "der": 0.03157061931106248,
-            "speaker_count_accuracy": 1.0
+            "der": 0.0677830024144187,
+            "speaker_count_accuracy": 0.9333333333333333
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 34711,
-              "miss_frames": 558,
-              "false_alarm_frames": 140,
-              "confusion_frames": 8,
-              "error_frames": 706,
+              "miss_frames": 696,
+              "false_alarm_frames": 112,
+              "confusion_frames": 0,
+              "error_frames": 808,
+              "der": 0.02327792342485091,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 38325,
-              "miss_frames": 571,
-              "false_alarm_frames": 199,
+              "miss_frames": 689,
+              "false_alarm_frames": 170,
               "confusion_frames": 0,
-              "error_frames": 770,
+              "error_frames": 859,
+              "der": 0.022413568166992824,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07",
-              "audio_s": 855.562,
               "reference_frames": 54953,
-              "miss_frames": 2811,
-              "false_alarm_frames": 223,
-              "confusion_frames": 16,
-              "error_frames": 3050,
+              "miss_frames": 2877,
+              "false_alarm_frames": 167,
+              "confusion_frames": 24,
+              "error_frames": 3068,
+              "der": 0.05582952705038852,
+              "audio_s": 855.562,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10",
-              "audio_s": 616.678,
               "reference_frames": 40325,
-              "miss_frames": 1802,
-              "false_alarm_frames": 411,
-              "confusion_frames": 79,
-              "error_frames": 2292,
+              "miss_frames": 1935,
+              "false_alarm_frames": 419,
+              "confusion_frames": 95,
+              "error_frames": 2449,
+              "der": 0.060731556106633604,
+              "audio_s": 616.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11",
-              "audio_s": 801.531,
               "reference_frames": 49302,
-              "miss_frames": 1686,
-              "false_alarm_frames": 239,
-              "confusion_frames": 20,
-              "error_frames": 1945,
+              "miss_frames": 6092,
+              "false_alarm_frames": 166,
+              "confusion_frames": 9400,
+              "error_frames": 15658,
+              "der": 0.31759360675023324,
+              "audio_s": 801.531,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 32782,
-              "miss_frames": 622,
-              "false_alarm_frames": 490,
-              "confusion_frames": 16,
-              "error_frames": 1128,
+              "miss_frames": 1095,
+              "false_alarm_frames": 399,
+              "confusion_frames": 24,
+              "error_frames": 1518,
+              "der": 0.046305899579037274,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05",
-              "audio_s": 634.555,
               "reference_frames": 34254,
-              "miss_frames": 140,
-              "false_alarm_frames": 136,
-              "confusion_frames": 0,
-              "error_frames": 276,
+              "miss_frames": 690,
+              "false_alarm_frames": 47,
+              "confusion_frames": 3275,
+              "error_frames": 4012,
+              "der": 0.1171250072984177,
+              "audio_s": 634.555,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 35821,
-              "miss_frames": 711,
-              "false_alarm_frames": 241,
-              "confusion_frames": 37,
-              "error_frames": 989,
+              "miss_frames": 719,
+              "false_alarm_frames": 176,
+              "confusion_frames": 29,
+              "error_frames": 924,
+              "der": 0.02579492476480277,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 26095,
-              "miss_frames": 631,
-              "false_alarm_frames": 134,
+              "miss_frames": 679,
+              "false_alarm_frames": 88,
               "confusion_frames": 0,
-              "error_frames": 765,
+              "error_frames": 767,
+              "der": 0.029392603947116305,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09",
-              "audio_s": 710.939,
               "reference_frames": 49296,
-              "miss_frames": 1065,
-              "false_alarm_frames": 171,
-              "confusion_frames": 202,
-              "error_frames": 1438,
+              "miss_frames": 1405,
+              "false_alarm_frames": 129,
+              "confusion_frames": 77,
+              "error_frames": 1611,
+              "der": 0.03268013631937683,
+              "audio_s": 710.939,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 21617,
-              "miss_frames": 377,
-              "false_alarm_frames": 238,
+              "miss_frames": 412,
+              "false_alarm_frames": 230,
               "confusion_frames": 16,
-              "error_frames": 631,
+              "error_frames": 658,
+              "der": 0.030439006337604664,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 18066,
-              "miss_frames": 161,
-              "false_alarm_frames": 107,
+              "miss_frames": 303,
+              "false_alarm_frames": 92,
               "confusion_frames": 13,
-              "error_frames": 281,
+              "error_frames": 408,
+              "der": 0.022583859182995682,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 19330,
-              "miss_frames": 366,
-              "false_alarm_frames": 80,
+              "miss_frames": 493,
+              "false_alarm_frames": 72,
               "confusion_frames": 1,
-              "error_frames": 447,
+              "error_frames": 566,
+              "der": 0.029280910501810656,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 26690,
-              "miss_frames": 634,
-              "false_alarm_frames": 170,
+              "miss_frames": 679,
+              "false_alarm_frames": 128,
               "confusion_frames": 0,
-              "error_frames": 804,
+              "error_frames": 807,
+              "der": 0.030236043461970775,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 31600,
-              "miss_frames": 341,
-              "false_alarm_frames": 256,
-              "confusion_frames": 82,
-              "error_frames": 679,
+              "miss_frames": 503,
+              "false_alarm_frames": 145,
+              "confusion_frames": 23,
+              "error_frames": 671,
+              "der": 0.021234177215189873,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         }
@@ -1370,508 +1870,708 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 48843,
-            "false_alarm_frames": 41999,
-            "confusion_frames": 1338,
-            "error_frames": 92180,
+            "miss_frames": 66895,
+            "false_alarm_frames": 24362,
+            "confusion_frames": 15998,
+            "error_frames": 107255,
             "records": 20,
-            "der": 0.12706315664690007,
-            "speaker_count_accuracy": 1.0
+            "der": 0.1478429037336002,
+            "speaker_count_accuracy": 0.95
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 46795,
-              "miss_frames": 2517,
-              "false_alarm_frames": 2002,
-              "confusion_frames": 31,
-              "error_frames": 4550,
+              "miss_frames": 3005,
+              "false_alarm_frames": 1250,
+              "confusion_frames": 7,
+              "error_frames": 4262,
+              "der": 0.09107810663532429,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 49402,
-              "miss_frames": 2328,
-              "false_alarm_frames": 2502,
-              "confusion_frames": 12,
-              "error_frames": 4842,
+              "miss_frames": 2800,
+              "false_alarm_frames": 1742,
+              "confusion_frames": 8,
+              "error_frames": 4550,
+              "der": 0.092101534350836,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part01",
-              "audio_s": 600.0,
               "reference_frames": 56305,
-              "miss_frames": 5230,
-              "false_alarm_frames": 3685,
-              "confusion_frames": 27,
-              "error_frames": 8942,
+              "miss_frames": 5517,
+              "false_alarm_frames": 3260,
+              "confusion_frames": 63,
+              "error_frames": 8840,
+              "der": 0.15700204244738478,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part02",
-              "audio_s": 255.562,
               "reference_frames": 24168,
-              "miss_frames": 2270,
-              "false_alarm_frames": 1854,
-              "confusion_frames": 26,
-              "error_frames": 4150,
+              "miss_frames": 2313,
+              "false_alarm_frames": 1649,
+              "confusion_frames": 16,
+              "error_frames": 3978,
+              "der": 0.16459781529294937,
+              "audio_s": 255.562,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part01",
-              "audio_s": 600.0,
               "reference_frames": 55250,
-              "miss_frames": 5224,
-              "false_alarm_frames": 2902,
-              "confusion_frames": 124,
-              "error_frames": 8250,
+              "miss_frames": 5769,
+              "false_alarm_frames": 2447,
+              "confusion_frames": 136,
+              "error_frames": 8352,
+              "der": 0.15116742081447965,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part02",
-              "audio_s": 16.678,
               "reference_frames": 1700,
-              "miss_frames": 403,
-              "false_alarm_frames": 42,
+              "miss_frames": 412,
+              "false_alarm_frames": 0,
               "confusion_frames": 0,
-              "error_frames": 445,
+              "error_frames": 412,
+              "der": 0.24235294117647058,
+              "audio_s": 16.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part01",
-              "audio_s": 600.0,
               "reference_frames": 51928,
-              "miss_frames": 3852,
-              "false_alarm_frames": 2700,
-              "confusion_frames": 19,
-              "error_frames": 6571,
+              "miss_frames": 9218,
+              "false_alarm_frames": 746,
+              "confusion_frames": 4455,
+              "error_frames": 14419,
+              "der": 0.27767293175165614,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part02",
-              "audio_s": 201.531,
               "reference_frames": 17804,
-              "miss_frames": 1174,
-              "false_alarm_frames": 939,
-              "confusion_frames": 64,
-              "error_frames": 2177,
+              "miss_frames": 3893,
+              "false_alarm_frames": 273,
+              "confusion_frames": 6048,
+              "error_frames": 10214,
+              "der": 0.5736913053246462,
+              "audio_s": 201.531,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 46765,
-              "miss_frames": 3189,
-              "false_alarm_frames": 2387,
-              "confusion_frames": 17,
-              "error_frames": 5593,
+              "miss_frames": 4243,
+              "false_alarm_frames": 1081,
+              "confusion_frames": 25,
+              "error_frames": 5349,
+              "der": 0.1143804127018069,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part01",
-              "audio_s": 600.0,
               "reference_frames": 46480,
-              "miss_frames": 2256,
-              "false_alarm_frames": 3232,
-              "confusion_frames": 0,
-              "error_frames": 5488,
+              "miss_frames": 4339,
+              "false_alarm_frames": 315,
+              "confusion_frames": 4818,
+              "error_frames": 9472,
+              "der": 0.20378657487091223,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part02",
-              "audio_s": 34.555,
               "reference_frames": 2980,
-              "miss_frames": 37,
-              "false_alarm_frames": 201,
+              "miss_frames": 194,
+              "false_alarm_frames": 22,
               "confusion_frames": 8,
-              "error_frames": 246,
+              "error_frames": 224,
+              "der": 0.07516778523489932,
+              "audio_s": 34.555,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 51453,
-              "miss_frames": 2749,
-              "false_alarm_frames": 4632,
-              "confusion_frames": 56,
-              "error_frames": 7437,
+              "miss_frames": 2753,
+              "false_alarm_frames": 4588,
+              "confusion_frames": 62,
+              "error_frames": 7403,
+              "der": 0.1438788797543389,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 36280,
-              "miss_frames": 2235,
-              "false_alarm_frames": 2434,
-              "confusion_frames": 46,
-              "error_frames": 4715,
+              "miss_frames": 2927,
+              "false_alarm_frames": 1247,
+              "confusion_frames": 5,
+              "error_frames": 4179,
+              "der": 0.11518743109151047,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part01",
-              "audio_s": 600.0,
               "reference_frames": 55133,
-              "miss_frames": 3043,
-              "false_alarm_frames": 2886,
-              "confusion_frames": 129,
-              "error_frames": 6058,
+              "miss_frames": 4230,
+              "false_alarm_frames": 1137,
+              "confusion_frames": 158,
+              "error_frames": 5525,
+              "der": 0.100212214100448,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part02",
-              "audio_s": 110.939,
               "reference_frames": 10354,
-              "miss_frames": 791,
-              "false_alarm_frames": 853,
-              "confusion_frames": 488,
-              "error_frames": 2132,
+              "miss_frames": 1017,
+              "false_alarm_frames": 439,
+              "confusion_frames": 3,
+              "error_frames": 1459,
+              "der": 0.14091172493722232,
+              "audio_s": 110.939,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 33792,
-              "miss_frames": 3169,
-              "false_alarm_frames": 1180,
-              "confusion_frames": 38,
-              "error_frames": 4387,
+              "miss_frames": 3283,
+              "false_alarm_frames": 899,
+              "confusion_frames": 26,
+              "error_frames": 4208,
+              "der": 0.12452651515151515,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 27169,
-              "miss_frames": 1844,
-              "false_alarm_frames": 1075,
-              "confusion_frames": 32,
-              "error_frames": 2951,
+              "miss_frames": 2380,
+              "false_alarm_frames": 547,
+              "confusion_frames": 48,
+              "error_frames": 2975,
+              "der": 0.10949979756339946,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 27712,
-              "miss_frames": 1945,
-              "false_alarm_frames": 1083,
+              "miss_frames": 2296,
+              "false_alarm_frames": 674,
               "confusion_frames": 26,
-              "error_frames": 3054,
+              "error_frames": 2996,
+              "der": 0.10811200923787528,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 38362,
-              "miss_frames": 2498,
-              "false_alarm_frames": 2216,
+              "miss_frames": 3384,
+              "false_alarm_frames": 734,
               "confusion_frames": 0,
-              "error_frames": 4714,
+              "error_frames": 4118,
+              "der": 0.10734581095876128,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 45634,
-              "miss_frames": 2089,
-              "false_alarm_frames": 3194,
-              "confusion_frames": 195,
-              "error_frames": 5478,
+              "miss_frames": 2922,
+              "false_alarm_frames": 1312,
+              "confusion_frames": 86,
+              "error_frames": 4320,
+              "der": 0.09466625761493623,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513032,
-            "miss_frames": 12476,
-            "false_alarm_frames": 3235,
-            "confusion_frames": 490,
-            "error_frames": 16201,
+            "miss_frames": 19267,
+            "false_alarm_frames": 2540,
+            "confusion_frames": 12205,
+            "error_frames": 34012,
             "records": 20,
-            "der": 0.031578926850566826,
-            "speaker_count_accuracy": 1.0
+            "der": 0.06629605950506011,
+            "speaker_count_accuracy": 0.95
           },
           "rows": [
             {
               "case": "day1_consultation03",
-              "audio_s": 542.299,
               "reference_frames": 34711,
-              "miss_frames": 558,
-              "false_alarm_frames": 140,
-              "confusion_frames": 8,
-              "error_frames": 706,
+              "miss_frames": 696,
+              "false_alarm_frames": 112,
+              "confusion_frames": 0,
+              "error_frames": 808,
+              "der": 0.02327792342485091,
+              "audio_s": 542.299,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
-              "audio_s": 576.178,
               "reference_frames": 38325,
-              "miss_frames": 571,
-              "false_alarm_frames": 199,
+              "miss_frames": 689,
+              "false_alarm_frames": 170,
               "confusion_frames": 0,
-              "error_frames": 770,
+              "error_frames": 859,
+              "der": 0.022413568166992824,
+              "audio_s": 576.178,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part01",
-              "audio_s": 600.0,
               "reference_frames": 38624,
-              "miss_frames": 2012,
-              "false_alarm_frames": 69,
-              "confusion_frames": 16,
-              "error_frames": 2097,
+              "miss_frames": 2099,
+              "false_alarm_frames": 37,
+              "confusion_frames": 24,
+              "error_frames": 2160,
+              "der": 0.05592377796188898,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part02",
-              "audio_s": 255.562,
               "reference_frames": 16305,
-              "miss_frames": 799,
-              "false_alarm_frames": 154,
+              "miss_frames": 778,
+              "false_alarm_frames": 130,
               "confusion_frames": 0,
-              "error_frames": 953,
+              "error_frames": 908,
+              "der": 0.0556884391291015,
+              "audio_s": 255.562,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part01",
-              "audio_s": 600.0,
               "reference_frames": 39294,
-              "miss_frames": 1637,
-              "false_alarm_frames": 411,
-              "confusion_frames": 79,
-              "error_frames": 2127,
+              "miss_frames": 1771,
+              "false_alarm_frames": 419,
+              "confusion_frames": 95,
+              "error_frames": 2285,
+              "der": 0.05815137171069375,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part02",
-              "audio_s": 16.678,
               "reference_frames": 1017,
-              "miss_frames": 165,
+              "miss_frames": 164,
               "false_alarm_frames": 0,
               "confusion_frames": 0,
-              "error_frames": 165,
+              "error_frames": 164,
+              "der": 0.16125860373647985,
+              "audio_s": 16.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part01",
-              "audio_s": 600.0,
               "reference_frames": 36717,
-              "miss_frames": 1322,
-              "false_alarm_frames": 152,
-              "confusion_frames": 0,
-              "error_frames": 1474,
+              "miss_frames": 4325,
+              "false_alarm_frames": 105,
+              "confusion_frames": 3900,
+              "error_frames": 8330,
+              "der": 0.2268703870141896,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part02",
-              "audio_s": 201.531,
               "reference_frames": 12544,
-              "miss_frames": 364,
-              "false_alarm_frames": 87,
-              "confusion_frames": 20,
-              "error_frames": 471,
+              "miss_frames": 1767,
+              "false_alarm_frames": 61,
+              "confusion_frames": 4728,
+              "error_frames": 6556,
+              "der": 0.5226403061224489,
+              "audio_s": 201.531,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
-              "audio_s": 576.835,
               "reference_frames": 32782,
-              "miss_frames": 622,
-              "false_alarm_frames": 490,
-              "confusion_frames": 16,
-              "error_frames": 1128,
+              "miss_frames": 1095,
+              "false_alarm_frames": 399,
+              "confusion_frames": 24,
+              "error_frames": 1518,
+              "der": 0.046305899579037274,
+              "audio_s": 576.835,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part01",
-              "audio_s": 600.0,
               "reference_frames": 31874,
-              "miss_frames": 140,
-              "false_alarm_frames": 112,
-              "confusion_frames": 0,
-              "error_frames": 252,
+              "miss_frames": 634,
+              "false_alarm_frames": 31,
+              "confusion_frames": 3275,
+              "error_frames": 3940,
+              "der": 0.12361172115203614,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part02",
-              "audio_s": 34.555,
               "reference_frames": 2330,
-              "miss_frames": 0,
-              "false_alarm_frames": 24,
+              "miss_frames": 56,
+              "false_alarm_frames": 16,
               "confusion_frames": 0,
-              "error_frames": 24,
+              "error_frames": 72,
+              "der": 0.030901287553648068,
+              "audio_s": 34.555,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
-              "audio_s": 597.05,
               "reference_frames": 35821,
-              "miss_frames": 711,
-              "false_alarm_frames": 241,
-              "confusion_frames": 37,
-              "error_frames": 989,
+              "miss_frames": 719,
+              "false_alarm_frames": 176,
+              "confusion_frames": 29,
+              "error_frames": 924,
+              "der": 0.02579492476480277,
+              "audio_s": 597.05,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
-              "audio_s": 431.924,
               "reference_frames": 26095,
-              "miss_frames": 631,
-              "false_alarm_frames": 134,
+              "miss_frames": 679,
+              "false_alarm_frames": 88,
               "confusion_frames": 0,
-              "error_frames": 765,
+              "error_frames": 767,
+              "der": 0.029392603947116305,
+              "audio_s": 431.924,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part01",
-              "audio_s": 600.0,
               "reference_frames": 42401,
-              "miss_frames": 819,
-              "false_alarm_frames": 164,
-              "confusion_frames": 61,
-              "error_frames": 1044,
+              "miss_frames": 1126,
+              "false_alarm_frames": 129,
+              "confusion_frames": 77,
+              "error_frames": 1332,
+              "der": 0.031414353435060494,
+              "audio_s": 600.0,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part02",
-              "audio_s": 110.939,
               "reference_frames": 6889,
-              "miss_frames": 246,
-              "false_alarm_frames": 7,
-              "confusion_frames": 141,
-              "error_frames": 394,
+              "miss_frames": 279,
+              "false_alarm_frames": 0,
+              "confusion_frames": 0,
+              "error_frames": 279,
+              "der": 0.04049934678472928,
+              "audio_s": 110.939,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
-              "audio_s": 502.755,
               "reference_frames": 21617,
-              "miss_frames": 377,
-              "false_alarm_frames": 238,
+              "miss_frames": 412,
+              "false_alarm_frames": 230,
               "confusion_frames": 16,
-              "error_frames": 631,
+              "error_frames": 658,
+              "der": 0.030439006337604664,
+              "audio_s": 502.755,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
-              "audio_s": 380.107,
               "reference_frames": 18066,
-              "miss_frames": 161,
-              "false_alarm_frames": 107,
+              "miss_frames": 303,
+              "false_alarm_frames": 92,
               "confusion_frames": 13,
-              "error_frames": 281,
+              "error_frames": 408,
+              "der": 0.022583859182995682,
+              "audio_s": 380.107,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
-              "audio_s": 393.3,
               "reference_frames": 19330,
-              "miss_frames": 366,
-              "false_alarm_frames": 80,
+              "miss_frames": 493,
+              "false_alarm_frames": 72,
               "confusion_frames": 1,
-              "error_frames": 447,
+              "error_frames": 566,
+              "der": 0.029280910501810656,
+              "audio_s": 393.3,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
-              "audio_s": 489.239,
               "reference_frames": 26690,
-              "miss_frames": 634,
-              "false_alarm_frames": 170,
+              "miss_frames": 679,
+              "false_alarm_frames": 128,
               "confusion_frames": 0,
-              "error_frames": 804,
+              "error_frames": 807,
+              "der": 0.030236043461970775,
+              "audio_s": 489.239,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
-              "audio_s": 585.712,
               "reference_frames": 31600,
-              "miss_frames": 341,
-              "false_alarm_frames": 256,
-              "confusion_frames": 82,
-              "error_frames": 679,
+              "miss_frames": 503,
+              "false_alarm_frames": 145,
+              "confusion_frames": 23,
+              "error_frames": 671,
+              "der": 0.021234177215189873,
+              "audio_s": 585.712,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         }
@@ -9653,396 +10353,546 @@
     },
     {
       "key": "sortformer21_low_unpaced",
-      "model": "Sortformer v2.1, 1.04 s preset, unpaced",
-      "speaker_policy": "Folded to 2 after inference",
+      "model": "Sortformer v2.1, native 1.04 s preset",
+      "speaker_policy": "Automatic",
       "group": "supplemental_unpaced",
       "public_outputs": true,
       "full_recordings": {
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 52266,
-            "false_alarm_frames": 30698,
-            "confusion_frames": 11574,
-            "error_frames": 94538,
+            "miss_frames": 51651,
+            "false_alarm_frames": 30939,
+            "confusion_frames": 30940,
+            "error_frames": 113530,
             "records": 15,
-            "der": 0.13031348126583464,
-            "speaker_count_accuracy": 1.0
+            "der": 0.1564925165342001,
+            "speaker_count_accuracy": 0.0
           },
           "rows": [
             {
               "case": "day1_consultation03",
               "reference_frames": 46795,
-              "miss_frames": 3377,
-              "false_alarm_frames": 1694,
-              "confusion_frames": 305,
-              "error_frames": 5376,
+              "miss_frames": 3065,
+              "false_alarm_frames": 1806,
+              "confusion_frames": 1173,
+              "error_frames": 6044,
+              "der": 0.12915909819425153,
               "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
               "reference_frames": 49402,
-              "miss_frames": 4149,
-              "false_alarm_frames": 1123,
-              "confusion_frames": 6,
-              "error_frames": 5278,
+              "miss_frames": 3703,
+              "false_alarm_frames": 1269,
+              "confusion_frames": 166,
+              "error_frames": 5138,
+              "der": 0.10400388648232865,
               "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07",
               "reference_frames": 80473,
-              "miss_frames": 10202,
-              "false_alarm_frames": 2217,
-              "confusion_frames": 7731,
-              "error_frames": 20150,
+              "miss_frames": 9503,
+              "false_alarm_frames": 2606,
+              "confusion_frames": 11760,
+              "error_frames": 23869,
+              "der": 0.2966088004672375,
               "audio_s": 855.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10",
               "reference_frames": 56950,
-              "miss_frames": 5111,
-              "false_alarm_frames": 2921,
-              "confusion_frames": 290,
-              "error_frames": 8322,
+              "miss_frames": 4517,
+              "false_alarm_frames": 2927,
+              "confusion_frames": 460,
+              "error_frames": 7904,
+              "der": 0.13878841088674276,
               "audio_s": 616.678,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11",
               "reference_frames": 69732,
-              "miss_frames": 4073,
-              "false_alarm_frames": 4462,
-              "confusion_frames": 1894,
-              "error_frames": 10429,
+              "miss_frames": 5446,
+              "false_alarm_frames": 3770,
+              "confusion_frames": 2934,
+              "error_frames": 12150,
+              "der": 0.17423851316468766,
               "audio_s": 801.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
               "reference_frames": 46765,
-              "miss_frames": 3606,
-              "false_alarm_frames": 1425,
-              "confusion_frames": 1,
-              "error_frames": 5032,
+              "miss_frames": 3686,
+              "false_alarm_frames": 1417,
+              "confusion_frames": 118,
+              "error_frames": 5221,
+              "der": 0.11164332299796857,
               "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05",
               "reference_frames": 49460,
-              "miss_frames": 1981,
-              "false_alarm_frames": 2113,
-              "confusion_frames": 106,
-              "error_frames": 4200,
+              "miss_frames": 2170,
+              "false_alarm_frames": 2110,
+              "confusion_frames": 2836,
+              "error_frames": 7116,
+              "der": 0.14387383744439952,
               "audio_s": 634.555,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
               "reference_frames": 51453,
-              "miss_frames": 2592,
-              "false_alarm_frames": 2587,
-              "confusion_frames": 168,
-              "error_frames": 5347,
+              "miss_frames": 2567,
+              "false_alarm_frames": 2522,
+              "confusion_frames": 739,
+              "error_frames": 5828,
+              "der": 0.11326841972285387,
               "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
               "reference_frames": 36280,
-              "miss_frames": 3480,
-              "false_alarm_frames": 911,
-              "confusion_frames": 572,
-              "error_frames": 4963,
+              "miss_frames": 3315,
+              "false_alarm_frames": 1075,
+              "confusion_frames": 4118,
+              "error_frames": 8508,
+              "der": 0.23450937155457552,
               "audio_s": 431.924,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09",
               "reference_frames": 65487,
-              "miss_frames": 3626,
-              "false_alarm_frames": 2571,
-              "confusion_frames": 181,
-              "error_frames": 6378,
+              "miss_frames": 3638,
+              "false_alarm_frames": 2655,
+              "confusion_frames": 381,
+              "error_frames": 6674,
+              "der": 0.10191335684945103,
               "audio_s": 710.939,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
               "reference_frames": 33792,
-              "miss_frames": 2632,
-              "false_alarm_frames": 1744,
-              "confusion_frames": 2,
-              "error_frames": 4378,
+              "miss_frames": 2471,
+              "false_alarm_frames": 1767,
+              "confusion_frames": 57,
+              "error_frames": 4295,
+              "der": 0.12710108901515152,
               "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
               "reference_frames": 27169,
-              "miss_frames": 2032,
-              "false_alarm_frames": 1199,
-              "confusion_frames": 128,
-              "error_frames": 3359,
+              "miss_frames": 2308,
+              "false_alarm_frames": 987,
+              "confusion_frames": 211,
+              "error_frames": 3506,
+              "der": 0.12904413117891714,
               "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
               "reference_frames": 27712,
-              "miss_frames": 1488,
-              "false_alarm_frames": 1882,
-              "confusion_frames": 28,
-              "error_frames": 3398,
+              "miss_frames": 1537,
+              "false_alarm_frames": 1699,
+              "confusion_frames": 4650,
+              "error_frames": 7886,
+              "der": 0.2845698614318707,
               "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
               "reference_frames": 38362,
-              "miss_frames": 2248,
-              "false_alarm_frames": 1486,
-              "confusion_frames": 0,
-              "error_frames": 3734,
+              "miss_frames": 2018,
+              "false_alarm_frames": 1856,
+              "confusion_frames": 593,
+              "error_frames": 4467,
+              "der": 0.11644335540378499,
               "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
               "reference_frames": 45634,
-              "miss_frames": 1669,
-              "false_alarm_frames": 2363,
-              "confusion_frames": 162,
-              "error_frames": 4194,
+              "miss_frames": 1707,
+              "false_alarm_frames": 2473,
+              "confusion_frames": 744,
+              "error_frames": 4924,
+              "der": 0.10790200289258009,
               "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513167,
-            "miss_frames": 15624,
-            "false_alarm_frames": 4054,
-            "confusion_frames": 8018,
-            "error_frames": 27696,
+            "miss_frames": 15554,
+            "false_alarm_frames": 4300,
+            "confusion_frames": 20975,
+            "error_frames": 40829,
             "records": 15,
-            "der": 0.05397073467311811,
-            "speaker_count_accuracy": 1.0
+            "der": 0.07956279339864021,
+            "speaker_count_accuracy": 0.0
           },
           "rows": [
             {
               "case": "day1_consultation03",
               "reference_frames": 34711,
-              "miss_frames": 1131,
-              "false_alarm_frames": 171,
-              "confusion_frames": 244,
-              "error_frames": 1546,
+              "miss_frames": 1030,
+              "false_alarm_frames": 177,
+              "confusion_frames": 976,
+              "error_frames": 2183,
+              "der": 0.06289072628273458,
               "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
               "reference_frames": 38325,
-              "miss_frames": 1283,
-              "false_alarm_frames": 201,
-              "confusion_frames": 0,
-              "error_frames": 1484,
+              "miss_frames": 1175,
+              "false_alarm_frames": 177,
+              "confusion_frames": 144,
+              "error_frames": 1496,
+              "der": 0.03903457273320287,
               "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07",
               "reference_frames": 54953,
-              "miss_frames": 3735,
-              "false_alarm_frames": 466,
-              "confusion_frames": 5690,
-              "error_frames": 9891,
+              "miss_frames": 3475,
+              "false_alarm_frames": 687,
+              "confusion_frames": 8690,
+              "error_frames": 12852,
+              "der": 0.23387258202463923,
               "audio_s": 855.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10",
               "reference_frames": 40325,
-              "miss_frames": 1839,
+              "miss_frames": 1548,
               "false_alarm_frames": 583,
-              "confusion_frames": 183,
-              "error_frames": 2605,
+              "confusion_frames": 261,
+              "error_frames": 2392,
+              "der": 0.059318040917544945,
               "audio_s": 616.678,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11",
               "reference_frames": 49302,
-              "miss_frames": 1689,
-              "false_alarm_frames": 738,
-              "confusion_frames": 1232,
-              "error_frames": 3659,
+              "miss_frames": 2513,
+              "false_alarm_frames": 374,
+              "confusion_frames": 1685,
+              "error_frames": 4572,
+              "der": 0.0927345746622855,
               "audio_s": 801.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
               "reference_frames": 32782,
-              "miss_frames": 854,
-              "false_alarm_frames": 370,
-              "confusion_frames": 0,
-              "error_frames": 1224,
+              "miss_frames": 921,
+              "false_alarm_frames": 393,
+              "confusion_frames": 68,
+              "error_frames": 1382,
+              "der": 0.0421572814349338,
               "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05",
               "reference_frames": 34254,
-              "miss_frames": 329,
-              "false_alarm_frames": 72,
-              "confusion_frames": 57,
-              "error_frames": 458,
+              "miss_frames": 252,
+              "false_alarm_frames": 94,
+              "confusion_frames": 1862,
+              "error_frames": 2208,
+              "der": 0.06445962515326677,
               "audio_s": 634.555,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
               "reference_frames": 35821,
-              "miss_frames": 710,
-              "false_alarm_frames": 162,
-              "confusion_frames": 61,
-              "error_frames": 933,
+              "miss_frames": 665,
+              "false_alarm_frames": 183,
+              "confusion_frames": 305,
+              "error_frames": 1153,
+              "der": 0.03218782278551688,
               "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
               "reference_frames": 26095,
-              "miss_frames": 961,
-              "false_alarm_frames": 136,
-              "confusion_frames": 326,
-              "error_frames": 1423,
+              "miss_frames": 892,
+              "false_alarm_frames": 221,
+              "confusion_frames": 2787,
+              "error_frames": 3900,
+              "der": 0.14945391837516767,
               "audio_s": 431.924,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09",
               "reference_frames": 49296,
-              "miss_frames": 1140,
-              "false_alarm_frames": 159,
-              "confusion_frames": 83,
-              "error_frames": 1382,
+              "miss_frames": 1069,
+              "false_alarm_frames": 176,
+              "confusion_frames": 107,
+              "error_frames": 1352,
+              "der": 0.027426160337552744,
               "audio_s": 710.939,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
               "reference_frames": 21617,
-              "miss_frames": 330,
-              "false_alarm_frames": 263,
-              "confusion_frames": 0,
-              "error_frames": 593,
+              "miss_frames": 350,
+              "false_alarm_frames": 260,
+              "confusion_frames": 9,
+              "error_frames": 619,
+              "der": 0.028634870703612897,
               "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
               "reference_frames": 18066,
-              "miss_frames": 301,
-              "false_alarm_frames": 145,
-              "confusion_frames": 59,
-              "error_frames": 505,
+              "miss_frames": 323,
+              "false_alarm_frames": 142,
+              "confusion_frames": 78,
+              "error_frames": 543,
+              "der": 0.03005645964795749,
               "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
               "reference_frames": 19330,
-              "miss_frames": 458,
-              "false_alarm_frames": 89,
-              "confusion_frames": 1,
-              "error_frames": 548,
+              "miss_frames": 455,
+              "false_alarm_frames": 124,
+              "confusion_frames": 3286,
+              "error_frames": 3865,
+              "der": 0.1999482669425763,
               "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
               "reference_frames": 26690,
-              "miss_frames": 570,
-              "false_alarm_frames": 210,
-              "confusion_frames": 0,
-              "error_frames": 780,
+              "miss_frames": 595,
+              "false_alarm_frames": 327,
+              "confusion_frames": 351,
+              "error_frames": 1273,
+              "der": 0.047695766204571,
               "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
               "reference_frames": 31600,
-              "miss_frames": 294,
-              "false_alarm_frames": 289,
-              "confusion_frames": 82,
-              "error_frames": 665,
+              "miss_frames": 291,
+              "false_alarm_frames": 382,
+              "confusion_frames": 366,
+              "error_frames": 1039,
+              "der": 0.032879746835443036,
               "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         }
@@ -10051,508 +10901,708 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 52266,
-            "false_alarm_frames": 30698,
-            "confusion_frames": 11574,
-            "error_frames": 94538,
+            "miss_frames": 51651,
+            "false_alarm_frames": 30939,
+            "confusion_frames": 30940,
+            "error_frames": 113530,
             "records": 20,
-            "der": 0.13031348126583464,
-            "speaker_count_accuracy": 1.0
+            "der": 0.1564925165342001,
+            "speaker_count_accuracy": 0.15
           },
           "rows": [
             {
               "case": "day1_consultation03",
               "reference_frames": 46795,
-              "miss_frames": 3377,
-              "false_alarm_frames": 1694,
-              "confusion_frames": 305,
-              "error_frames": 5376,
+              "miss_frames": 3065,
+              "false_alarm_frames": 1806,
+              "confusion_frames": 1173,
+              "error_frames": 6044,
+              "der": 0.12915909819425153,
               "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
               "reference_frames": 49402,
-              "miss_frames": 4149,
-              "false_alarm_frames": 1123,
-              "confusion_frames": 6,
-              "error_frames": 5278,
+              "miss_frames": 3703,
+              "false_alarm_frames": 1269,
+              "confusion_frames": 166,
+              "error_frames": 5138,
+              "der": 0.10400388648232865,
               "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part01",
               "reference_frames": 56305,
-              "miss_frames": 7329,
-              "false_alarm_frames": 1392,
-              "confusion_frames": 6126,
-              "error_frames": 14847,
+              "miss_frames": 6807,
+              "false_alarm_frames": 1742,
+              "confusion_frames": 9703,
+              "error_frames": 18252,
+              "der": 0.32416304058254153,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part02",
               "reference_frames": 24168,
-              "miss_frames": 2873,
-              "false_alarm_frames": 825,
-              "confusion_frames": 1605,
-              "error_frames": 5303,
+              "miss_frames": 2696,
+              "false_alarm_frames": 864,
+              "confusion_frames": 2057,
+              "error_frames": 5617,
+              "der": 0.23241476332340286,
               "audio_s": 255.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part01",
               "reference_frames": 55250,
-              "miss_frames": 4755,
-              "false_alarm_frames": 2897,
-              "confusion_frames": 290,
-              "error_frames": 7942,
+              "miss_frames": 4193,
+              "false_alarm_frames": 2903,
+              "confusion_frames": 460,
+              "error_frames": 7556,
+              "der": 0.1367601809954751,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part02",
               "reference_frames": 1700,
-              "miss_frames": 356,
+              "miss_frames": 324,
               "false_alarm_frames": 24,
               "confusion_frames": 0,
-              "error_frames": 380,
+              "error_frames": 348,
+              "der": 0.20470588235294118,
               "audio_s": 16.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part01",
               "reference_frames": 51928,
-              "miss_frames": 3038,
-              "false_alarm_frames": 3598,
-              "confusion_frames": 1539,
-              "error_frames": 8175,
+              "miss_frames": 3784,
+              "false_alarm_frames": 3040,
+              "confusion_frames": 1465,
+              "error_frames": 8289,
+              "der": 0.15962486519796643,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part02",
               "reference_frames": 17804,
-              "miss_frames": 1035,
-              "false_alarm_frames": 864,
-              "confusion_frames": 355,
-              "error_frames": 2254,
+              "miss_frames": 1662,
+              "false_alarm_frames": 730,
+              "confusion_frames": 1469,
+              "error_frames": 3861,
+              "der": 0.2168613794652887,
               "audio_s": 201.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
               "reference_frames": 46765,
-              "miss_frames": 3606,
-              "false_alarm_frames": 1425,
-              "confusion_frames": 1,
-              "error_frames": 5032,
+              "miss_frames": 3686,
+              "false_alarm_frames": 1417,
+              "confusion_frames": 118,
+              "error_frames": 5221,
+              "der": 0.11164332299796857,
               "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part01",
               "reference_frames": 46480,
-              "miss_frames": 1913,
-              "false_alarm_frames": 2025,
-              "confusion_frames": 106,
-              "error_frames": 4044,
+              "miss_frames": 2095,
+              "false_alarm_frames": 1991,
+              "confusion_frames": 2836,
+              "error_frames": 6922,
+              "der": 0.14892426850258175,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part02",
               "reference_frames": 2980,
-              "miss_frames": 68,
-              "false_alarm_frames": 88,
+              "miss_frames": 75,
+              "false_alarm_frames": 119,
               "confusion_frames": 0,
-              "error_frames": 156,
+              "error_frames": 194,
+              "der": 0.06510067114093959,
               "audio_s": 34.555,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
               "reference_frames": 51453,
-              "miss_frames": 2592,
-              "false_alarm_frames": 2587,
-              "confusion_frames": 168,
-              "error_frames": 5347,
+              "miss_frames": 2567,
+              "false_alarm_frames": 2522,
+              "confusion_frames": 739,
+              "error_frames": 5828,
+              "der": 0.11326841972285387,
               "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
               "reference_frames": 36280,
-              "miss_frames": 3480,
-              "false_alarm_frames": 911,
-              "confusion_frames": 572,
-              "error_frames": 4963,
+              "miss_frames": 3315,
+              "false_alarm_frames": 1075,
+              "confusion_frames": 4118,
+              "error_frames": 8508,
+              "der": 0.23450937155457552,
               "audio_s": 431.924,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part01",
               "reference_frames": 55133,
-              "miss_frames": 2827,
-              "false_alarm_frames": 2022,
-              "confusion_frames": 154,
-              "error_frames": 5003,
+              "miss_frames": 2887,
+              "false_alarm_frames": 2042,
+              "confusion_frames": 357,
+              "error_frames": 5286,
+              "der": 0.09587724230497162,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part02",
               "reference_frames": 10354,
-              "miss_frames": 799,
-              "false_alarm_frames": 549,
-              "confusion_frames": 27,
-              "error_frames": 1375,
+              "miss_frames": 751,
+              "false_alarm_frames": 613,
+              "confusion_frames": 24,
+              "error_frames": 1388,
+              "der": 0.13405447170175777,
               "audio_s": 110.939,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
               "reference_frames": 33792,
-              "miss_frames": 2632,
-              "false_alarm_frames": 1744,
-              "confusion_frames": 2,
-              "error_frames": 4378,
+              "miss_frames": 2471,
+              "false_alarm_frames": 1767,
+              "confusion_frames": 57,
+              "error_frames": 4295,
+              "der": 0.12710108901515152,
               "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
               "reference_frames": 27169,
-              "miss_frames": 2032,
-              "false_alarm_frames": 1199,
-              "confusion_frames": 128,
-              "error_frames": 3359,
+              "miss_frames": 2308,
+              "false_alarm_frames": 987,
+              "confusion_frames": 211,
+              "error_frames": 3506,
+              "der": 0.12904413117891714,
               "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
               "reference_frames": 27712,
-              "miss_frames": 1488,
-              "false_alarm_frames": 1882,
-              "confusion_frames": 28,
-              "error_frames": 3398,
+              "miss_frames": 1537,
+              "false_alarm_frames": 1699,
+              "confusion_frames": 4650,
+              "error_frames": 7886,
+              "der": 0.2845698614318707,
               "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
               "reference_frames": 38362,
-              "miss_frames": 2248,
-              "false_alarm_frames": 1486,
-              "confusion_frames": 0,
-              "error_frames": 3734,
+              "miss_frames": 2018,
+              "false_alarm_frames": 1856,
+              "confusion_frames": 593,
+              "error_frames": 4467,
+              "der": 0.11644335540378499,
               "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
               "reference_frames": 45634,
-              "miss_frames": 1669,
-              "false_alarm_frames": 2363,
-              "confusion_frames": 162,
-              "error_frames": 4194,
+              "miss_frames": 1707,
+              "false_alarm_frames": 2473,
+              "confusion_frames": 744,
+              "error_frames": 4924,
+              "der": 0.10790200289258009,
               "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513032,
-            "miss_frames": 15624,
-            "false_alarm_frames": 4054,
-            "confusion_frames": 8018,
-            "error_frames": 27696,
+            "miss_frames": 15554,
+            "false_alarm_frames": 4300,
+            "confusion_frames": 20975,
+            "error_frames": 40829,
             "records": 20,
-            "der": 0.053984936612141154,
-            "speaker_count_accuracy": 1.0
+            "der": 0.07958372966988414,
+            "speaker_count_accuracy": 0.15
           },
           "rows": [
             {
               "case": "day1_consultation03",
               "reference_frames": 34711,
-              "miss_frames": 1131,
-              "false_alarm_frames": 171,
-              "confusion_frames": 244,
-              "error_frames": 1546,
+              "miss_frames": 1030,
+              "false_alarm_frames": 177,
+              "confusion_frames": 976,
+              "error_frames": 2183,
+              "der": 0.06289072628273458,
               "audio_s": 542.299,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation05",
               "reference_frames": 38325,
-              "miss_frames": 1283,
-              "false_alarm_frames": 201,
-              "confusion_frames": 0,
-              "error_frames": 1484,
+              "miss_frames": 1175,
+              "false_alarm_frames": 177,
+              "confusion_frames": 144,
+              "error_frames": 1496,
+              "der": 0.03903457273320287,
               "audio_s": 576.178,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part01",
               "reference_frames": 38624,
-              "miss_frames": 2685,
-              "false_alarm_frames": 269,
-              "confusion_frames": 4522,
-              "error_frames": 7476,
+              "miss_frames": 2497,
+              "false_alarm_frames": 504,
+              "confusion_frames": 7183,
+              "error_frames": 10184,
+              "der": 0.2636702568351284,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation07__part02",
               "reference_frames": 16305,
-              "miss_frames": 1050,
-              "false_alarm_frames": 197,
-              "confusion_frames": 1168,
-              "error_frames": 2415,
+              "miss_frames": 978,
+              "false_alarm_frames": 183,
+              "confusion_frames": 1507,
+              "error_frames": 2668,
+              "der": 0.16363078810180925,
               "audio_s": 255.562,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part01",
               "reference_frames": 39294,
-              "miss_frames": 1670,
+              "miss_frames": 1411,
               "false_alarm_frames": 583,
-              "confusion_frames": 183,
-              "error_frames": 2436,
+              "confusion_frames": 261,
+              "error_frames": 2255,
+              "der": 0.05738789637094722,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation10__part02",
               "reference_frames": 1017,
-              "miss_frames": 169,
+              "miss_frames": 137,
               "false_alarm_frames": 0,
               "confusion_frames": 0,
-              "error_frames": 169,
+              "error_frames": 137,
+              "der": 0.13470993117010815,
               "audio_s": 16.678,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part01",
               "reference_frames": 36717,
-              "miss_frames": 1332,
-              "false_alarm_frames": 623,
-              "confusion_frames": 1007,
-              "error_frames": 2962,
+              "miss_frames": 1748,
+              "false_alarm_frames": 294,
+              "confusion_frames": 905,
+              "error_frames": 2947,
+              "der": 0.08026254868317129,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day1_consultation11__part02",
               "reference_frames": 12544,
-              "miss_frames": 357,
-              "false_alarm_frames": 115,
-              "confusion_frames": 225,
-              "error_frames": 697,
+              "miss_frames": 765,
+              "false_alarm_frames": 80,
+              "confusion_frames": 780,
+              "error_frames": 1625,
+              "der": 0.1295440051020408,
               "audio_s": 201.531,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation04",
               "reference_frames": 32782,
-              "miss_frames": 854,
-              "false_alarm_frames": 370,
-              "confusion_frames": 0,
-              "error_frames": 1224,
+              "miss_frames": 921,
+              "false_alarm_frames": 393,
+              "confusion_frames": 68,
+              "error_frames": 1382,
+              "der": 0.0421572814349338,
               "audio_s": 576.835,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part01",
               "reference_frames": 31874,
-              "miss_frames": 313,
-              "false_alarm_frames": 48,
-              "confusion_frames": 57,
-              "error_frames": 418,
+              "miss_frames": 244,
+              "false_alarm_frames": 64,
+              "confusion_frames": 1862,
+              "error_frames": 2170,
+              "der": 0.06808056723348184,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation05__part02",
               "reference_frames": 2330,
-              "miss_frames": 16,
-              "false_alarm_frames": 24,
+              "miss_frames": 8,
+              "false_alarm_frames": 30,
               "confusion_frames": 0,
-              "error_frames": 40,
+              "error_frames": 38,
+              "der": 0.01630901287553648,
               "audio_s": 34.555,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day2_consultation06",
               "reference_frames": 35821,
-              "miss_frames": 710,
-              "false_alarm_frames": 162,
-              "confusion_frames": 61,
-              "error_frames": 933,
+              "miss_frames": 665,
+              "false_alarm_frames": 183,
+              "confusion_frames": 305,
+              "error_frames": 1153,
+              "der": 0.03218782278551688,
               "audio_s": 597.05,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_2": "doctor",
+                "speaker_3": "patient"
+              }
             },
             {
               "case": "day3_consultation04",
               "reference_frames": 26095,
-              "miss_frames": 961,
-              "false_alarm_frames": 136,
-              "confusion_frames": 326,
-              "error_frames": 1423,
+              "miss_frames": 892,
+              "false_alarm_frames": 221,
+              "confusion_frames": 2787,
+              "error_frames": 3900,
+              "der": 0.14945391837516767,
               "audio_s": 431.924,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part01",
               "reference_frames": 42401,
-              "miss_frames": 907,
-              "false_alarm_frames": 159,
-              "confusion_frames": 83,
-              "error_frames": 1149,
+              "miss_frames": 848,
+              "false_alarm_frames": 170,
+              "confusion_frames": 107,
+              "error_frames": 1125,
+              "der": 0.02653239310393623,
               "audio_s": 600.0,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day3_consultation09__part02",
               "reference_frames": 6889,
-              "miss_frames": 233,
-              "false_alarm_frames": 0,
+              "miss_frames": 221,
+              "false_alarm_frames": 6,
               "confusion_frames": 0,
-              "error_frames": 233,
+              "error_frames": 227,
+              "der": 0.032951081434170415,
               "audio_s": 110.939,
               "ref_speaker_count": 2,
               "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "speaker_count_correct": true,
+              "mapping": {
+                "speaker_1": "doctor",
+                "speaker_0": "patient"
+              }
             },
             {
               "case": "day4_consultation02",
               "reference_frames": 21617,
-              "miss_frames": 330,
-              "false_alarm_frames": 263,
-              "confusion_frames": 0,
-              "error_frames": 593,
+              "miss_frames": 350,
+              "false_alarm_frames": 260,
+              "confusion_frames": 9,
+              "error_frames": 619,
+              "der": 0.028634870703612897,
               "audio_s": 502.755,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation03",
               "reference_frames": 18066,
-              "miss_frames": 301,
-              "false_alarm_frames": 145,
-              "confusion_frames": 59,
-              "error_frames": 505,
+              "miss_frames": 323,
+              "false_alarm_frames": 142,
+              "confusion_frames": 78,
+              "error_frames": 543,
+              "der": 0.03005645964795749,
               "audio_s": 380.107,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day4_consultation04",
               "reference_frames": 19330,
-              "miss_frames": 458,
-              "false_alarm_frames": 89,
-              "confusion_frames": 1,
-              "error_frames": 548,
+              "miss_frames": 455,
+              "false_alarm_frames": 124,
+              "confusion_frames": 3286,
+              "error_frames": 3865,
+              "der": 0.1999482669425763,
               "audio_s": 393.3,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_2": "patient"
+              }
             },
             {
               "case": "day5_consultation07",
               "reference_frames": 26690,
-              "miss_frames": 570,
-              "false_alarm_frames": 210,
-              "confusion_frames": 0,
-              "error_frames": 780,
+              "miss_frames": 595,
+              "false_alarm_frames": 327,
+              "confusion_frames": 351,
+              "error_frames": 1273,
+              "der": 0.047695766204571,
               "audio_s": 489.239,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 3,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             },
             {
               "case": "day5_consultation10",
               "reference_frames": 31600,
-              "miss_frames": 294,
-              "false_alarm_frames": 289,
-              "confusion_frames": 82,
-              "error_frames": 665,
+              "miss_frames": 291,
+              "false_alarm_frames": 382,
+              "confusion_frames": 366,
+              "error_frames": 1039,
+              "der": 0.032879746835443036,
               "audio_s": 585.712,
               "ref_speaker_count": 2,
-              "hyp_speaker_count": 2,
-              "speaker_count_correct": true
+              "hyp_speaker_count": 4,
+              "speaker_count_correct": false,
+              "mapping": {
+                "speaker_0": "doctor",
+                "speaker_1": "patient"
+              }
             }
           ]
         }
@@ -10560,33 +11610,33 @@
     },
     {
       "key": "model_x_streaming_unpaced",
-      "model": "Model X, streaming preset, unpaced (tuned)",
-      "speaker_policy": "Tuned; top 2 speakers retained",
+      "model": "Model X, native 1.04 s preset",
+      "speaker_policy": "Automatic",
       "group": "supplemental_unpaced",
       "public_outputs": false,
       "full_recordings": {
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 76534,
-            "false_alarm_frames": 14078,
-            "confusion_frames": 552,
-            "error_frames": 91164,
+            "miss_frames": 82844,
+            "false_alarm_frames": 8044,
+            "confusion_frames": 1581,
+            "error_frames": 92469,
             "records": 15,
-            "der": 0.12566267750659577,
-            "speaker_count_accuracy": 1.0
+            "der": 0.1274615212842504,
+            "speaker_count_accuracy": 0.6
           }
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513167,
-            "miss_frames": 19438,
-            "false_alarm_frames": 2187,
-            "confusion_frames": 293,
-            "error_frames": 21918,
+            "miss_frames": 22194,
+            "false_alarm_frames": 2164,
+            "confusion_frames": 1103,
+            "error_frames": 25461,
             "records": 15,
-            "der": 0.042711242149241865,
-            "speaker_count_accuracy": 1.0
+            "der": 0.04961542733652008,
+            "speaker_count_accuracy": 0.6
           }
         }
       },
@@ -10594,25 +11644,25 @@
         "0": {
           "aggregate": {
             "reference_frames": 725466,
-            "miss_frames": 76534,
-            "false_alarm_frames": 14078,
-            "confusion_frames": 552,
-            "error_frames": 91164,
+            "miss_frames": 82844,
+            "false_alarm_frames": 8044,
+            "confusion_frames": 1581,
+            "error_frames": 92469,
             "records": 20,
-            "der": 0.12566267750659577,
-            "speaker_count_accuracy": 1.0
+            "der": 0.1274615212842504,
+            "speaker_count_accuracy": 0.7
           }
         },
         "0.25": {
           "aggregate": {
             "reference_frames": 513032,
-            "miss_frames": 19438,
-            "false_alarm_frames": 2187,
-            "confusion_frames": 293,
-            "error_frames": 21918,
+            "miss_frames": 22194,
+            "false_alarm_frames": 2164,
+            "confusion_frames": 1103,
+            "error_frames": 25461,
             "records": 20,
-            "der": 0.04272248124873302,
-            "speaker_count_accuracy": 1.0
+            "der": 0.04962848321352274,
+            "speaker_count_accuracy": 0.7
           }
         }
       }

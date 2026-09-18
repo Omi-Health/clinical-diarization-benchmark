@@ -1,49 +1,66 @@
-"""Cross-check the published whole-recording DER with pyannote.metrics (continuous time).
+"""Independently score whole recordings in continuous time with pyannote.metrics.
 
-Usage: pip install pyannote.metrics && python scripts/crosscheck_pyannote.py
-Differences of a few tenths of a point against results/snapshot.json are the 10 ms frame
-grid and collar edge handling of clinical_diarization/score.py, in either direction."""
-import json, os, sys
+Install the 'crosscheck' extra. Optionally use --private-runs DIR to check Model X
+outputs locally; predictions and model identity are never written by this script.
+"""
+import argparse
+import json
 from pathlib import Path
-from pyannote.core import Annotation, Segment
+from pyannote.core import Annotation, Segment, Timeline
 from pyannote.metrics.diarization import DiarizationErrorRate
 
 ROOT = Path(__file__).resolve().parents[1]
-snapshot = json.loads((ROOT / "results/snapshot.json").read_text())
-cases = [r["case"] for r in json.loads((ROOT / "data/manifest.json").read_text())["recordings"]]
 
 
-def annotation(path: Path) -> Annotation:
+def annotation(path):
     ann = Annotation()
-    for s in json.loads(path.read_text())["segments"]:
-        if s["end"] > s["start"]:
-            ann[Segment(s["start"], s["end"])] = s["speaker"]
+    for s in json.loads(Path(path).read_text())['segments']:
+        if s['end'] > s['start']:
+            # Distinct tracks preserve two speakers with identical boundaries.
+            ann[Segment(s['start'], s['end']), s['speaker']] = s['speaker']
     return ann
 
 
-references = {c: annotation(ROOT / f"data/references/full_recordings/{c}.json") for c in cases}
-print(f"{'row':32} {'pyannote c=0':>13} {'snapshot':>9} {'pyannote c=0.5':>15} {'snapshot':>9}")
-worst = 0.0
-for model in snapshot["models"]:
-    panel = model.get("full_recordings") or {}
+def crosscheck(private_runs=None):
+    snapshot = json.loads((ROOT/'results/snapshot.json').read_text())
+    cases = json.loads((ROOT/'data/manifest.json').read_text())['recordings']
+    references = {c['case']: annotation(ROOT/'data/references/full_recordings'/f"{c['case']}.json") for c in cases}
+    results = []
+    for model in snapshot['models']:
+        if not model['full_recordings']:
+            continue
+        if model['public_outputs']:
+            directory = ROOT/'data/hypotheses'/model['key']/'full_recordings'
+        elif private_runs is not None:
+            directory = private_runs/model['key']/'full_recordings'
+        else:
+            continue
+        # Missing cases are errors, never a silently reduced evaluation subset.
+        hypotheses = {c['case']: annotation(directory/f"{c['case']}.json").support() for c in cases}
+        row = dict(key=model['key'])
+        for key, collar in [('0', 0.0), ('0.25', 0.5)]:
+            metric = DiarizationErrorRate(collar=collar, skip_overlap=False)
+            for c in cases:
+                metric(references[c['case']], hypotheses[c['case']],
+                       uem=Timeline([Segment(0, c['audio_duration_s'])]))
+            expected = model['full_recordings'][key]['aggregate']['der']
+            row[key] = dict(pyannote_der=abs(metric), snapshot_der=expected,
+                            difference_percentage_points=100*(abs(metric)-expected))
+        results.append(row)
+    return results
 
-    def der(collar_key: str):
-        block = panel.get(collar_key) or {}
-        block = block.get("aggregate") if isinstance(block.get("aggregate"), dict) else block
-        return block.get("der")
 
-    if der("0") is None or not (ROOT / f"data/hypotheses/{model['key']}/full_recordings").exists():
-        continue  # aggregate-only rows (private outputs) cannot be cross-checked publicly
-    scores = []
-    for collar in (0.0, 0.5):
-        metric = DiarizationErrorRate(collar=collar, skip_overlap=False)
-        for c in cases:
-            hyp = ROOT / f"data/hypotheses/{model['key']}/full_recordings/{c}.json"
-            if hyp.exists():
-                metric(references[c], annotation(hyp))
-        scores.append(abs(metric))
-    s0, s25 = der("0"), der("0.25")
-    worst = max(worst, abs(scores[0] - s0), abs(scores[1] - s25))
-    print(f"{model['key']:32} {100*scores[0]:12.3f}% {100*s0:8.3f}% {100*scores[1]:14.3f}% {100*s25:8.3f}%")
-print(f"largest absolute difference: {100*worst:.3f} points")
-sys.exit(0 if worst < 0.005 else 1)
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--private-runs', type=Path)
+    args = parser.parse_args()
+    rows = crosscheck(args.private_runs)
+    print(json.dumps(rows, indent=2))
+    worst = max(abs(r[c]['difference_percentage_points']) for r in rows for c in ['0', '0.25'])
+    print(f'Largest difference: {worst:.6f} percentage points')
+    # At zero collar, dense boundaries amplify the 10 ms discretization difference.
+    raise SystemExit(0 if worst < .5 else 1)
+
+
+if __name__ == '__main__':
+    main()

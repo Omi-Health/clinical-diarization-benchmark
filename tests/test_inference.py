@@ -82,7 +82,8 @@ def test_geometry_is_validated_and_model_x_presets_are_ready():
         assert config['geometry']
         assert 'checkpoint_sha256' not in config and 'model_revision' not in config
     streaming = json.loads((configs/'model_x_streaming_unpaced.json').read_text())
-    assert streaming['postprocessing']['params']['constraint'] == 'drop'
+    assert streaming['mode'] == 'native'
+    assert 'postprocessing' not in streaming and 'fold_to' not in streaming
 
 
 def test_model_name_alone_resolves_checkpoint_and_records_revision(tmp_path):
@@ -120,3 +121,58 @@ def test_placeholder_and_ambiguous_download_fail_without_guessing(tmp_path):
     with pytest.raises(ValueError, match='hash mismatch'):
         resolve_checkpoint(dict(model_id='Model X', checkpoint_sha256='wrong'), checkpoint)
     assert resolve_checkpoint(dict(model_id='Model X'), checkpoint)[0] == checkpoint
+
+
+def test_native_parser_preserves_extra_speakers_and_overlap():
+    # The native path must not silently merge/drop a third speaker or overlap.
+    rows = [['0.1 0.6 speaker_0', '0.1 0.6 speaker_1', '0.3 0.8 speaker_2']]
+    parsed = parse_native(rows)
+    assert len(parsed) == 3
+    assert len({s['speaker'] for s in parsed}) == 3
+    assert [s['start'] for s in parsed] == [.1, .1, .3]
+
+
+def test_common_interval_clipping_retains_overlapping_speakers():
+    from inference.score_run import clip
+    segments = [dict(start=0, end=2, speaker='a'), dict(start=1, end=3, speaker='b'),
+                dict(start=4, end=5, speaker='c')]
+    assert clip(segments, 1.5, 1) == [dict(start=0, end=.5, speaker='a'), dict(start=0, end=1, speaker='b')]
+
+
+def test_geometry_receipt_reports_native_effective_cache_period():
+    class Modules:
+        chunk_len = 340
+        fifo_len = 40
+        spkcache_update_period = 300
+        def _check_streaming_parameters(self):
+            pass
+    class Model:
+        streaming_mode = True
+        sortformer_modules = Modules()
+    model = Model()
+    result = configure(model, dict(geometry=dict(chunk_len=340, fifo_len=40, spkcache_update_period=300)))
+    assert result['spkcache_update_period'] == 340
+    assert model.sortformer_modules.spkcache_update_period == 300
+
+
+def test_score_run_scores_both_panels_and_collars(tmp_path, monkeypatch):
+    import inference.score_run as scorer
+    monkeypatch.setattr(scorer, 'ROOT', tmp_path)
+    data = tmp_path/'data'
+    data.mkdir()
+    (data/'manifest.json').write_text(json.dumps(dict(
+        recordings=[dict(case='a', audio_duration_s=1)],
+        common_intervals=[dict(case='a_part', source_case='a', offset_s=0, duration_s=1)])))
+    for panel, name in [('full_recordings', 'a'), ('common_scoring_intervals', 'a_part')]:
+        d = data/'references'/panel
+        d.mkdir(parents=True)
+        (d/f'{name}.json').write_text(json.dumps(dict(segments=[dict(start=0, end=.8, speaker='r')])))
+    out = tmp_path/'output/full_recordings'
+    out.mkdir(parents=True)
+    (out/'a.json').write_text(json.dumps(dict(segments=[dict(start=0, end=.4, speaker='h')])))
+    result = scorer.score_run(out.parent)
+    for panel in result.values():
+        for block in panel.values():
+            assert block['aggregate']['der'] == .5
+            assert block['rows'][0]['audio_s'] == 1
+            assert block['aggregate']['speaker_count_accuracy'] == 1
