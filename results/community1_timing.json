@@ -1,0 +1,174 @@
+{
+ "gpu": "NVIDIA L4",
+ "recordings": 15,
+ "speaker_policy": "automatic",
+ "concurrency": 1,
+ "measurement_dates": "21–22 September 2026",
+ "timing_scope": "pipeline processing per whole recording; model loading and output serialization excluded",
+ "models": {
+  "community1": {
+   "median_s": 18.691,
+   "correct_counts": 9,
+   "source_sha256": "c85647cc6faf1f8e1b89c5a39eb33acd4b33289d08f253f5b0ce8f6c01a80daa",
+   "rows": [
+    {
+     "case": "day1_consultation03",
+     "total_s": 17.512,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation05",
+     "total_s": 18.686,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation07",
+     "total_s": 27.723,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation10",
+     "total_s": 20.419,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation11",
+     "total_s": 26.14,
+     "hyp_speakers": 3
+    },
+    {
+     "case": "day2_consultation04",
+     "total_s": 18.691,
+     "hyp_speakers": 3
+    },
+    {
+     "case": "day2_consultation05",
+     "total_s": 20.442,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day2_consultation06",
+     "total_s": 19.158,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day3_consultation04",
+     "total_s": 13.882,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day3_consultation09",
+     "total_s": 23.202,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day4_consultation02",
+     "total_s": 16.265,
+     "hyp_speakers": 3
+    },
+    {
+     "case": "day4_consultation03",
+     "total_s": 12.344,
+     "hyp_speakers": 3
+    },
+    {
+     "case": "day4_consultation04",
+     "total_s": 12.579,
+     "hyp_speakers": 3
+    },
+    {
+     "case": "day5_consultation07",
+     "total_s": 15.81,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day5_consultation10",
+     "total_s": 19.023,
+     "hyp_speakers": 3
+    }
+   ]
+  },
+  "community1_omi_runtime_auto": {
+   "median_s": 0.778,
+   "correct_counts": 14,
+   "source_sha256": "0ec09fe47c751f1cc14640d31834abcefca48a8c0bfd49566cd9286951140070",
+   "rows": [
+    {
+     "case": "day1_consultation03",
+     "total_s": 0.742,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation05",
+     "total_s": 0.778,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation07",
+     "total_s": 1.14,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation10",
+     "total_s": 0.83,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day1_consultation11",
+     "total_s": 1.064,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day2_consultation04",
+     "total_s": 0.77,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day2_consultation05",
+     "total_s": 0.844,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day2_consultation06",
+     "total_s": 0.798,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day3_consultation04",
+     "total_s": 0.583,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day3_consultation09",
+     "total_s": 0.956,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day4_consultation02",
+     "total_s": 0.69,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day4_consultation03",
+     "total_s": 0.536,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day4_consultation04",
+     "total_s": 0.53,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day5_consultation07",
+     "total_s": 0.661,
+     "hyp_speakers": 2
+    },
+    {
+     "case": "day5_consultation10",
+     "total_s": 0.812,
+     "hyp_speakers": 3
+    }
+   ]
+  }
+ }
+}

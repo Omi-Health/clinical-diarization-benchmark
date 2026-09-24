@@ -1,0 +1,119 @@
+{
+  "ga_off_bf16": {
+    "view": "model_card",
+    "0": {
+      "pyannote_der": 0.1273130003930253,
+      "grid_der": 0.12719686380891732,
+      "difference_pp": 0.011613658410797312
+    },
+    "0.25": {
+      "pyannote_der": 0.04805724696228725,
+      "grid_der": 0.04803114775501932,
+      "difference_pp": 0.0026099207267926694
+    }
+  },
+  "ga_off_fp32": {
+    "view": "model_card",
+    "0": {
+      "pyannote_der": 0.12730059477513567,
+      "grid_der": 0.12718445798976105,
+      "difference_pp": 0.011613678537461536
+    },
+    "0.25": {
+      "pyannote_der": 0.047977141027412656,
+      "grid_der": 0.04795125173676405,
+      "difference_pp": 0.002588929064860357
+    }
+  },
+  "ga_omi_graph": {
+    "view": "omi_automatic",
+    "0": {
+      "pyannote_der": 0.1321030290410394,
+      "grid_der": 0.13203099800679838,
+      "difference_pp": 0.007203103424102686
+    },
+    "0.25": {
+      "pyannote_der": 0.03176504612379958,
+      "grid_der": 0.03174015476443341,
+      "difference_pp": 0.0024891359366167876
+    }
+  },
+  "v21_off_fp32": {
+    "view": "model_card_known2",
+    "0": {
+      "pyannote_der": 0.1143268299549407,
+      "grid_der": 0.11406737186856448,
+      "difference_pp": 0.02594580863762158
+    },
+    "0.25": {
+      "pyannote_der": 0.03945923880411182,
+      "grid_der": 0.039447197501008446,
+      "difference_pp": 0.001204130310337309
+    }
+  },
+  "v21_omi_tf32": {
+    "view": "omi_automatic_known2",
+    "0": {
+      "pyannote_der": 0.1412467253728682,
+      "grid_der": 0.14108586756650207,
+      "difference_pp": 0.0160857806366127
+    },
+    "0.25": {
+      "pyannote_der": 0.03641254360942453,
+      "grid_der": 0.0364150461740525,
+      "difference_pp": -0.0002502564627970827
+    }
+  },
+  "v1_win_fp32": {
+    "view": "native_known2",
+    "0": {
+      "pyannote_der": 0.12719730750035801,
+      "grid_der": 0.12705350767644522,
+      "difference_pp": 0.01437998239127991
+    },
+    "0.25": {
+      "pyannote_der": 0.0315857505125084,
+      "grid_der": 0.03157061931106248,
+      "difference_pp": 0.0015131201445917064
+    }
+  },
+  "v1_omi_tf32": {
+    "view": "native_known2",
+    "0": {
+      "pyannote_der": 0.12720833471626003,
+      "grid_der": 0.12706453507125076,
+      "difference_pp": 0.014379964500926823
+    },
+    "0.25": {
+      "pyannote_der": 0.03160133933685397,
+      "grid_der": 0.03158620877803912,
+      "difference_pp": 0.0015130558814850648
+    }
+  },
+  "ga_live_graph": {
+    "view": "delivered_causal",
+    "0": {
+      "pyannote_der": 0.13101873763866123,
+      "grid_der": 0.1309296369505945,
+      "difference_pp": 0.008910068806672333
+    },
+    "0.25": {
+      "pyannote_der": 0.04577592110034133,
+      "grid_der": 0.045745342159569886,
+      "difference_pp": 0.003057894077144324
+    }
+  },
+  "v21_live_tf32": {
+    "view": "delivered_causal",
+    "0": {
+      "pyannote_der": 0.15517958361811746,
+      "grid_der": 0.1550051966598021,
+      "difference_pp": 0.017438695831534234
+    },
+    "0.25": {
+      "pyannote_der": 0.06457536375245741,
+      "grid_der": 0.06458131563409182,
+      "difference_pp": -0.0005951881634408407
+    }
+  }
+}

@@ -1,0 +1,19 @@
+name: Benchmark checks
+on: [push, pull_request]
+jobs:
+  score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -e '.[test,crosscheck]'
+      - run: pytest -q
+      - run: python scripts/verify_audio.py --allow-lfs-pointers
+      - run: python scripts/verify_snapshot.py
+      - run: python scripts/verify_ga.py
+      - run: python scripts/verify_speaker_policies.py
+      - run: python scripts/crosscheck_pyannote.py
+      - run: python scripts/crosscheck_pyannote.py --speaker-policies
+      - run: python scripts/render_results.py && git diff --exit-code -- README.md results/RESULTS.md

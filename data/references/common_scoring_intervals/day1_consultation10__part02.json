@@ -1,0 +1,64 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.14495373,
+      "speaker": "doctor"
+    },
+    {
+      "start": 2.06910499,
+      "end": 2.11,
+      "speaker": "doctor"
+    },
+    {
+      "start": 2.274,
+      "end": 8.094,
+      "speaker": "doctor"
+    },
+    {
+      "start": 11.47610832,
+      "end": 12.414,
+      "speaker": "doctor"
+    },
+    {
+      "start": 12.546,
+      "end": 13.022,
+      "speaker": "doctor"
+    },
+    {
+      "start": 13.442,
+      "end": 14.526,
+      "speaker": "doctor"
+    },
+    {
+      "start": 14.818,
+      "end": 16.42099277,
+      "speaker": "doctor"
+    },
+    {
+      "start": 1.25,
+      "end": 2.11,
+      "speaker": "patient"
+    },
+    {
+      "start": 2.274,
+      "end": 2.89881839,
+      "speaker": "patient"
+    },
+    {
+      "start": 9.538,
+      "end": 12.414,
+      "speaker": "patient"
+    },
+    {
+      "start": 13.83388206,
+      "end": 14.526,
+      "speaker": "patient"
+    },
+    {
+      "start": 14.818,
+      "end": 16.678,
+      "speaker": "patient"
+    }
+  ]
+}

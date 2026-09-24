@@ -1,0 +1,470 @@
+{
+ "date": "2026-09-18",
+ "policy": "Each NVIDIA row is shown at its best measured setting on this material; every other setting tried is logged below with its full-recording score. Folded rows use the known count of two, as the pyannote batch rows do.",
+ "runs": {
+  "sortformer1": {
+   "configuration_sha256": "6426cd88de0a45562b4ca5232bf2e5cc636590c1863353b0ef4af3e27754f34f",
+   "configuration": "inference/configs/rerun-20260918/v1_windowed_fp32.json",
+   "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
+   "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+   "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+   "python": "3.12.3",
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "nemo": "3.1.0+2d902060e",
+   "device": "NVIDIA L4",
+   "parameter_dtype": "torch.float32",
+   "checkpoint_sha256": "bc74dfd8ca314240abcdc7e2949901eeaa72947a04ce1fab893e373d81f1e689",
+   "resolved_model_revision": "9f17b10df44c0a4c8f3c86fbddc9ee2d6ab9ac08",
+   "recordings": 15,
+   "fold_to": 2,
+   "fold_applied_by": "runner (fold_to: 2)",
+   "reproduced": "2026-09-18 timed session: runner output identical to published hypotheses"
+  },
+  "sortformer21": {
+   "configuration_sha256": "afc811770b2e0f5b7dc48650d5d9053ee91a1a870b3ec68748bfeb6b4b97a81c",
+   "configuration": "inference/configs/rerun-20260918/v21_offline_fp32_a.json",
+   "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
+   "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+   "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+   "python": "3.12.3",
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "nemo": "3.1.0+2d902060e",
+   "device": "NVIDIA L4",
+   "parameter_dtype": "torch.float32",
+   "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
+   "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
+   "recordings": 15,
+   "fold_to": 2,
+   "fold_applied_by": "runner (fold_to: 2)",
+   "reproduced": "2026-09-18 timed session: runner output identical to published hypotheses"
+  },
+  "sortformer21_low_unpaced": {
+   "configuration_sha256": "64015f591f6c3addae80a52b5df202f12d9e64ef78b901c396109e1cc8bde9fc",
+   "configuration": "inference/configs/rerun-20260918/v21_low_fp32.json",
+   "runner_sha256": "1862bbdc83fb4d2e78a75e5eb38de015bbf63067f854edee1c684af47b815cd4",
+   "processing_sha256": "a24dcb68a142d25b0f050ae92d83b698bbe50ae6e1322fd3c815b370dbb55041",
+   "manifest_sha256": "4f796228b983a87305c7e0dae4b920d5819bede0015ed0f7ad19cc7c1268b12d",
+   "python": "3.12.3",
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "nemo": "3.1.0+2d902060e",
+   "device": "NVIDIA L4",
+   "parameter_dtype": "torch.float32",
+   "checkpoint_sha256": "8abd32832159c6ac1148c926b7276f35ba34582c444e559dce1f1253fea42ef8",
+   "resolved_model_revision": "fafaab5faa1617a0ca52d38dd3dc4bd636800d3d",
+   "recordings": 15,
+   "fold_to": 2,
+   "fold_applied_by": "runner (fold_to: 2)",
+   "reproduced": "2026-09-18 timed session: runner output identical to published hypotheses"
+  }
+ },
+ "settings_log": {
+  "sortformer1": [
+   {
+    "setting": "180 s windows, 12 s overlap, FP32, folded to 2",
+    "chosen": true,
+    "source": "L4 run 2026-09-18",
+    "zero": 12.706,
+    "c250": 3.159,
+    "automatic_count_zero": 18.555,
+    "automatic_count_c250": 9.474,
+    "two_speaker_files": 5
+   },
+   {
+    "setting": "180 s windows, 12 s overlap, BF16, folded to 2",
+    "source": "L4 run 2026-09-18",
+    "zero": 12.689,
+    "c250": 3.165,
+    "automatic_count_zero": 18.541,
+    "automatic_count_c250": 9.483,
+    "two_speaker_files": 5
+   },
+   {
+    "setting": "whole file, BF16, automatic count (FP32 whole file: CUDA out of memory on the L4)",
+    "source": "L4 run 2026-09-18",
+    "zero": 14.784,
+    "c250": 6.778,
+    "folded_zero": 14.122,
+    "folded_c250": 6.143,
+    "two_speaker_files": 14
+   },
+   {
+    "setting": "180 s windows, FP32, folded to 2 (2026-09-17 run, NeMo 2.7.3)",
+    "source": "2026-09-17 run",
+    "zero": 12.706,
+    "c250": 3.157
+   }
+  ],
+  "sortformer21": [
+   {
+    "setting": "30.4 s preset, FP32, folded to 2 (run twice, identical)",
+    "chosen": true,
+    "source": "L4 run 2026-09-18",
+    "zero": 11.407,
+    "c250": 3.945,
+    "automatic_count_zero": 15.768,
+    "automatic_count_c250": 7.974,
+    "two_speaker_files": 3
+   },
+   {
+    "setting": "30.4 s preset, BF16, automatic count",
+    "source": "L4 run 2026-09-18",
+    "zero": 14.077,
+    "c250": 6.593,
+    "folded_zero": 12.731,
+    "folded_c250": 5.392,
+    "two_speaker_files": 1
+   },
+   {
+    "setting": "30.4 s preset, FP32, Omi production runtime post-processing, folded to 2 (not reproducible with the public runner)",
+    "source": "2026-09-07 run",
+    "zero": 12.173,
+    "c250": 3.61
+   }
+  ],
+  "sortformer21_low_unpaced": [
+   {
+    "setting": "1.04 s preset, unpaced, FP32, folded to 2",
+    "chosen": true,
+    "source": "L4 run 2026-09-18",
+    "zero": 12.496,
+    "c250": 4.815,
+    "automatic_count_zero": 14.841,
+    "automatic_count_c250": 6.958,
+    "two_speaker_files": 0
+   },
+   {
+    "setting": "1.04 s preset, unpaced, BF16, automatic count",
+    "source": "L4 run 2026-09-18",
+    "zero": 15.649,
+    "c250": 7.956,
+    "folded_zero": 13.446,
+    "folded_c250": 5.927,
+    "two_speaker_files": 0
+   },
+   {
+    "setting": "1.04 s preset, unpaced, FP32, folded to 2 (2026-09-17 run)",
+    "source": "2026-09-17 run",
+    "zero": 13.031,
+    "c250": 5.397
+   }
+  ],
+  "community1": [
+   {
+    "setting": "whole file, known two speakers (2026-09-17 run)",
+    "chosen": true,
+    "source": "2026-09-17 run",
+    "zero": 15.856,
+    "c250": 6.323
+   },
+   {
+    "setting": "whole file, known two speakers, fresh L4 run for timing (pyannote.audio 4.0.7)",
+    "source": "L4 run 2026-09-18",
+    "zero": 15.856,
+    "c250": 6.323
+   }
+  ],
+  "community1_omi_runtime": [
+   {
+    "setting": "Omi runtime configuration 1; two-speaker constraint",
+    "chosen": true,
+    "source": "lab 2026-09-21",
+    "zero": 15.006,
+    "c250": 5.407
+   },
+   {
+    "setting": "Omi runtime configuration 2; two-speaker constraint",
+    "source": "lab 2026-09-21",
+    "zero": 14.931,
+    "c250": 5.367
+   },
+   {
+    "setting": "Omi runtime configuration 3; two-speaker constraint",
+    "source": "lab 2026-09-21",
+    "zero": 15.772,
+    "c250": 6.274
+   },
+   {
+    "setting": "Public baseline; two-speaker constraint",
+    "source": "lab 2026-09-21",
+    "zero": 15.856,
+    "c250": 6.323
+   }
+  ],
+  "community1_omi_runtime_auto": [
+   {
+    "setting": "Omi runtime configuration 1; automatic speaker counts",
+    "chosen": true,
+    "source": "lab 2026-09-21",
+    "zero": 15.059,
+    "c250": 5.435
+   },
+   {
+    "setting": "Omi runtime configuration 2; automatic speaker counts",
+    "source": "lab 2026-09-21",
+    "zero": 15.342,
+    "c250": 5.69
+   },
+   {
+    "setting": "Public baseline; automatic speaker counts",
+    "source": "lab 2026-09-21",
+    "zero": 16.243,
+    "c250": 6.62
+   }
+  ],
+  "sortformer21_omi_runtime": [
+   {
+    "setting": "Omi runtime configuration 1; two-speaker constraint",
+    "chosen": true,
+    "source": "2026-09-07 run, production path",
+    "zero": 12.173,
+    "c250": 3.61
+   },
+   {
+    "setting": "Public baseline; two-speaker constraint",
+    "source": "L4 run 2026-09-18",
+    "zero": 11.407,
+    "c250": 3.945
+   }
+  ],
+  "sortformer21_low_omi_runtime": [
+   {
+    "setting": "Omi runtime configuration 1; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 14.99,
+    "c250": 4.369,
+    "chosen": true
+   },
+   {
+    "setting": "Omi runtime configuration 2; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 15.127,
+    "c250": 4.484
+   },
+   {
+    "setting": "Public baseline; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 12.368,
+    "c250": 4.669
+   },
+   {
+    "setting": "Omi runtime configuration 4; automatic speaker counts",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 17.291,
+    "c250": 6.531
+   },
+   {
+    "setting": "Omi runtime configuration 5; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 21.36,
+    "c250": 9.882
+   }
+  ],
+  "sortformer1_omi_runtime": [
+   {
+    "setting": "Omi runtime configuration 1; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 12.706,
+    "c250": 3.159,
+    "chosen": true
+   },
+   {
+    "setting": "Omi runtime configuration 2; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 13.518,
+    "c250": 3.159
+   },
+   {
+    "setting": "Public baseline; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 12.705,
+    "c250": 3.157
+   },
+   {
+    "setting": "Omi runtime configuration 4; automatic speaker counts",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 18.555,
+    "c250": 9.474
+   },
+   {
+    "setting": "Omi runtime configuration 5; two-speaker constraint",
+    "source": "lab 2026-09-22 (L4, public adapter + Omi post-processing)",
+    "zero": 21.593,
+    "c250": 10.175
+   }
+  ]
+ },
+ "speed": {
+  "sortformer1": {
+   "kind": "l4_batch",
+   "median_s_per_file": 1.74,
+   "total_s": 31.7,
+   "x_realtime": 274.0,
+   "peak_gpu_gb": 1.77,
+   "files": 15,
+   "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
+  },
+  "sortformer21": {
+   "kind": "l4_batch",
+   "median_s_per_file": 1.1,
+   "total_s": 21.6,
+   "x_realtime": 402.0,
+   "peak_gpu_gb": 1.03,
+   "files": 15,
+   "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
+  },
+  "sortformer21_low_unpaced": {
+   "kind": "l4_batch",
+   "median_s_per_file": 36.35,
+   "total_s": 543.9,
+   "x_realtime": 16.0,
+   "peak_gpu_gb": 1.03,
+   "files": 15,
+   "warm_up": "separate one-recording process before measured process; all 15 timed files retained, including first-file initialization",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "timing_scope": "audio loading, inference, postprocessing and output writes; model loading excluded"
+  },
+  "community1": {
+   "kind": "l4_batch",
+   "median_s_per_file": 18.52,
+   "total_s": 278.1,
+   "x_realtime": 31.0,
+   "files": 15,
+   "warm_up": "each known-two call followed an automatic-count call on the same audio in the same process",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "note": "timing run; the accuracy row is the 2026-09-07 run",
+   "torch": "2.14.0+cu130",
+   "pyannote_audio": "4.0.7",
+   "timing_scope": "pipeline call including audio loading, excluding model loading and output serialization"
+  },
+  "precision2": {
+   "kind": "api_round_trip",
+   "median_s_per_file": 12.1,
+   "p95_s_per_file": 17.6,
+   "total_s": 180.7,
+   "files": 15,
+   "note": "2026-08-29 API receipts; sequential requests including upload, queue and polling"
+  },
+  "muse": {
+   "kind": "api_round_trip",
+   "median_s_per_file": 92.0,
+   "p95_s_per_file": 110.6,
+   "batch_elapsed_s": 227.7,
+   "concurrency": 8,
+   "note": "2026-09-15 API receipts; 20 requests, five recordings split at the 600 s limit",
+   "unit": "request",
+   "requests": 20
+  },
+  "vibe_original": {
+   "kind": "joint_server",
+   "median_s_per_file": 122.7,
+   "p95_s_per_file": 155.1,
+   "total_s": 1812.4,
+   "x_realtime": 4.8,
+   "files": 15,
+   "note": "2026-09-15 vLLM server, joint ASR+diarization 9B model; needed ~30 GB GPU memory, not an L4; wall time includes transcript generation"
+  },
+  "community1_omi_runtime": {
+   "kind": "l4_batch",
+   "median_s_per_file": 1.28,
+   "total_s": 18.7,
+   "x_realtime": 466.0,
+   "files": 15,
+   "warm_up": "two warm-up passes per policy in the same process; known-two ran before automatic; cuDNN autotuning enabled, so per-recording times are a range across cache state (0.8–1.3 s)",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "torch": "2.14.0+cu130",
+   "pyannote_audio": "4.0.7",
+   "note": "one recording at a time (batch size 1 = files in flight); pipeline-internal segmentation/embedding batch sizes 128; modified inference path (Omi optimized runner), selected on these 15 recordings; not vanilla pyannote",
+   "timing_scope": "pipeline call including audio loading, excluding model loading and output serialization"
+  },
+  "community1_omi_runtime_auto": {
+   "kind": "l4_batch",
+   "median_s_per_file": 0.78,
+   "total_s": 11.8,
+   "x_realtime": 736.0,
+   "files": 15,
+   "warm_up": "two warm-up passes per policy in the same process; known-two ran before automatic; cuDNN autotuning enabled, so per-recording times are a range across cache state (0.8–1.3 s)",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "torch": "2.14.0+cu130",
+   "pyannote_audio": "4.0.7",
+   "note": "one recording at a time (batch size 1 = files in flight); pipeline-internal segmentation/embedding batch sizes 128; modified inference path (Omi optimized runner), selected on these 15 recordings; not vanilla pyannote",
+   "timing_scope": "pipeline call including audio loading, excluding model loading and output serialization"
+  },
+  "sortformer21_omi_runtime": {
+   "kind": "l4_batch",
+   "median_s_per_file": 1.88,
+   "total_s": 28.1,
+   "x_realtime": 309.7,
+   "peak_gpu_gb": 1.24,
+   "files": 15,
+   "warm_up": "one warm-up recording before the timed 15 (excluded)",
+   "gpu": "NVIDIA L4 (g6.2xlarge, production Sortformer tenant)",
+   "batch_size": 1,
+   "note": "production runtime path (production image, NeMo 2.7.3, whole-file native channels, identity resolver disabled); timing scope = tenant diarize call including audio decode and segment post-processing; run 2026-09-07, receipt schema omi.sortformer_prod_offline_matmul_probe.v1",
+   "timing_scope": "backend diarize_with_telemetry call per recording"
+  },
+  "sortformer21_low_omi_runtime": {
+   "kind": "l4_batch",
+   "median_s_per_file": 35.33,
+   "total_s": 528.6,
+   "x_realtime": 16.4,
+   "peak_gpu_gb": 0.96,
+   "files": 15,
+   "warm_up": "separate one-recording process before measured process; all 15 timed files retained",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "nemo": "3.1.0 (2d902060)",
+   "note": "unpaced replay of the 1.04-s chunk loop, TF32; run 2026-09-22",
+   "timing_scope": "public adapter inference.run: audio loading, inference, probability export and output writes; model loading excluded; Omi post-processing is applied offline to the saved outputs and costs milliseconds"
+  },
+  "sortformer1_omi_runtime": {
+   "kind": "l4_batch",
+   "median_s_per_file": 1.75,
+   "total_s": 30.6,
+   "x_realtime": 284.0,
+   "peak_gpu_gb": 1.77,
+   "files": 15,
+   "warm_up": "separate one-recording process before measured process; all 15 timed files retained",
+   "gpu": "NVIDIA L4 (g6.2xlarge)",
+   "batch_size": 1,
+   "torch": "2.8.0a0+34c6371d24.nv25.08",
+   "nemo": "3.1.0 (2d902060)",
+   "note": "TF32 (torch matmul precision high), 180-s windows with 12-s overlap; run 2026-09-22",
+   "timing_scope": "public adapter inference.run legacy_windowed: audio loading, windowed inference, stitching and output writes; model loading excluded"
+  },
+  "pyannote_live": {
+   "kind": "paced_live",
+   "note": "/v1/live run, 100 ms chunks paced at 1x audio speed; wall time equals audio duration by design; provider event latency was not measured"
+  },
+  "precision3": {
+   "kind": "api_round_trip",
+   "median_s_per_file": 18.9,
+   "p95_s_per_file": 28.4,
+   "total_s": 318.2,
+   "files": 15,
+   "note": "2026-09-21 API receipts; sequential requests, upload from a laptop (median 10.8 s) plus job wall time (median 7.2 s); no polling overhead separated"
+  },
+  "precision3_known2": {
+   "kind": "api_round_trip",
+   "median_s_per_file": 17.9,
+   "p95_s_per_file": 25.3,
+   "total_s": 292.6,
+   "files": 15,
+   "note": "2026-09-21 API receipts; sequential requests, upload from a laptop (median 9.3 s) plus job wall time (median 7.3 s)"
+  }
+ },
+ "speed_policy": "Observed times on the same L4, batch size 1, with differing software and warm-up. All 15 timed files included. Median wall time per file; x_realtime = total audio / summed processing time. API values are per request, not always per recording. See docs/METHODOLOGY.md#speed."
+}

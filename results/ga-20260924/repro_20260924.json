@@ -1,0 +1,81 @@
+{
+ "date": "2026-09-24",
+ "purpose": "Clean-clone execution of the published reproduction path (docs/GA_20260924.md#reproduce) on a fresh NVIDIA L4 (g6.2xlarge, Frankfurt), independent of the campaign host.",
+ "repository_commit": "08b572c11b59c70f53b442ae877f0fbbc654bf01",
+ "image": "inference/Dockerfile.ga as published",
+ "audio": "git lfs pull, 15 WAVs, verify_audio.py passed",
+ "cpu_checks": [
+  "scripts/verify_audio.py",
+  "scripts/verify_snapshot.py",
+  "scripts/verify_ga.py"
+ ],
+ "arms": {
+  "ga_off_bf16": {
+   "completed": true,
+   "checkpoint_sha256_matches_receipt": true,
+   "device": "NVIDIA L4",
+   "public_hypotheses_identical": "15/15",
+   "score_leaves_compared": 32,
+   "score_max_abs_diff": 0.0,
+   "der_0.25_full_recordings_pct": 4.803,
+   "inference_median_s_clean_clone": 0.6852,
+   "inference_median_s_published": 0.674
+  },
+  "ga_off_fp32": {
+   "completed": true,
+   "checkpoint_sha256_matches_receipt": true,
+   "device": "NVIDIA L4",
+   "public_hypotheses_identical": "15/15",
+   "score_leaves_compared": 32,
+   "score_max_abs_diff": 0.0,
+   "der_0.25_full_recordings_pct": 4.795,
+   "inference_median_s_clean_clone": 0.9496,
+   "inference_median_s_published": 0.9363
+  },
+  "v21_off_fp32": {
+   "completed": true,
+   "checkpoint_sha256_matches_receipt": true,
+   "device": "NVIDIA L4",
+   "public_hypotheses_identical": "15/15",
+   "score_leaves_compared": 32,
+   "score_max_abs_diff": 0.0,
+   "der_0.25_full_recordings_pct": 7.974,
+   "inference_median_s_clean_clone": 1.0759,
+   "inference_median_s_published": 1.0653
+  },
+  "v1_whole_bf16": {
+   "completed": true,
+   "checkpoint_sha256_matches_receipt": true,
+   "device": "NVIDIA L4",
+   "public_hypotheses_identical": "15/15",
+   "score_leaves_compared": 32,
+   "score_max_abs_diff": 0.0,
+   "der_0.25_full_recordings_pct": 6.778,
+   "inference_median_s_clean_clone": 3.8461,
+   "inference_median_s_published": 3.8566
+  },
+  "ga_stream_bf16": {
+   "completed": true,
+   "checkpoint_sha256_matches_receipt": true,
+   "device": "NVIDIA L4",
+   "public_hypotheses_identical": "15/15",
+   "score_leaves_compared": 32,
+   "score_max_abs_diff": 0.0,
+   "der_0.25_full_recordings_pct": 4.971,
+   "inference_median_s_clean_clone": 21.6961,
+   "inference_median_s_published": 21.095
+  },
+  "v21_stream_fp32": {
+   "completed": true,
+   "checkpoint_sha256_matches_receipt": true,
+   "device": "NVIDIA L4",
+   "public_hypotheses_identical": "15/15",
+   "score_leaves_compared": 32,
+   "score_max_abs_diff": 0.0,
+   "der_0.25_full_recordings_pct": 6.958,
+   "inference_median_s_clean_clone": 35.6521,
+   "inference_median_s_published": 36.2912
+  }
+ },
+ "note": "The public helper times inference only; the published headline batch time adds the separately timed decoding (combined_median_s in the snapshot). Timing on a different L4 is expected to vary by a few percent."
+}

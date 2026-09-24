@@ -1,0 +1,18 @@
+{
+  "snapshot_key": "nemotron3",
+  "model_id": "nvidia/Nemotron-3-Diarization",
+  "strict": true,
+  "precision": "bf16",
+  "mode": "native",
+  "geometry": {
+    "spkcache_len": 264,
+    "fifo_len": 40,
+    "chunk_len": 340,
+    "chunk_right_context": 40,
+    "spkcache_update_period": 300
+  },
+  "matmul_precision": "highest",
+  "model_revision": "a435e9867d79e789e90053f9b6d6834053af564a",
+  "checkpoint_file": "Nemotron-3-Diarization.nemo",
+  "checkpoint_sha256": "867c53f552998f772e5b5e5c082962ae85ee7ca5669c2bc17d7f615133d4e96d"
+}

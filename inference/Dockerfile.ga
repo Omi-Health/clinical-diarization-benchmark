@@ -1,0 +1,7 @@
+# GA campaign base environment, pinned to the tested NeMo commit.
+FROM nvcr.io/nvidia/pytorch@sha256:ace9a848c0ae543317e3c4763b6b4248961c47902625abfe3c77a0fb931c50fb
+RUN apt-get update -qq && apt-get install -y -qq libsndfile1 ffmpeg git && \
+    python -m pip install Cython packaging soundfile huggingface_hub && \
+    python -m pip install 'nemo_toolkit[asr] @ git+https://github.com/NVIDIA-NeMo/Speech.git@cf724ac337d1ebc7d0dda1e23fb80916f52927a5'
+RUN python -m pip install "numpy==1.26.4"
+WORKDIR /work/repo

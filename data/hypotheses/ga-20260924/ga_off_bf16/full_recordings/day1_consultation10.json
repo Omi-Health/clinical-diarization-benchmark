@@ -1,0 +1,1714 @@
+{
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 0.55,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 1.48,
+      "end": 1.9,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 3.36,
+      "end": 3.56,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 4.08,
+      "end": 4.81,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 7.43,
+      "end": 10.93,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 16.4,
+      "end": 19.16,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 28.51,
+      "end": 28.56,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 39.85,
+      "end": 40.27,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 45.97,
+      "end": 49.32,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 49.68,
+      "end": 54.23,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 54.66,
+      "end": 57.72,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 63.46,
+      "end": 64.33,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 64.71,
+      "end": 64.78,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 65.49,
+      "end": 66.09,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 66.25,
+      "end": 66.56,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 68.44,
+      "end": 68.56,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 68.99,
+      "end": 69.03,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 71.35,
+      "end": 71.86,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 76.45,
+      "end": 76.48,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 77.17,
+      "end": 82.46,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 89.28,
+      "end": 89.52,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 91.96,
+      "end": 92.42,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 93.14,
+      "end": 93.33,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 94.69,
+      "end": 98.41,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 99.46,
+      "end": 99.6,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 100.4,
+      "end": 100.62,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 100.82,
+      "end": 101.01,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 104.14,
+      "end": 107.52,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 107.82,
+      "end": 108.87,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 109.23,
+      "end": 109.69,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 110.03,
+      "end": 113.09,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 122.17,
+      "end": 122.53,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 123.32,
+      "end": 126.86,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 134.04,
+      "end": 134.27,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 138.65,
+      "end": 141.85,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 142.24,
+      "end": 143.3,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 145.93,
+      "end": 146.9,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 147.21,
+      "end": 147.79,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 148.05,
+      "end": 150.81,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 155.54,
+      "end": 157.52,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 163.09,
+      "end": 163.75,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 164.12,
+      "end": 166.23,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 174.62,
+      "end": 175.43,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 176.58,
+      "end": 178.66,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 185.91,
+      "end": 186.1,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 196.16,
+      "end": 197.97,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 200.09,
+      "end": 202.76,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 203.07,
+      "end": 205.11,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 206.16,
+      "end": 206.42,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 207.79,
+      "end": 207.97,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 208.41,
+      "end": 208.82,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 209.14,
+      "end": 213.18,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 213.52,
+      "end": 214.41,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 214.63,
+      "end": 217.23,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 217.81,
+      "end": 218.2,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 225.26,
+      "end": 225.62,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 226.18,
+      "end": 227.49,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 228.18,
+      "end": 230.92,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 231.69,
+      "end": 232.8,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 238.68,
+      "end": 238.85,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 239.84,
+      "end": 240.12,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 240.54,
+      "end": 242.78,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 248.01,
+      "end": 250.57,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 252.75,
+      "end": 253.09,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 253.95,
+      "end": 254.31,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 254.63,
+      "end": 255.21,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 256.22,
+      "end": 257.95,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 259.14,
+      "end": 260.01,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 261.66,
+      "end": 262.46,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 267.48,
+      "end": 268.35,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 277.94,
+      "end": 278.28,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 279.03,
+      "end": 279.56,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 279.76,
+      "end": 280.56,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 281.07,
+      "end": 283.22,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 283.76,
+      "end": 289.09,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 289.56,
+      "end": 290.55,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 290.77,
+      "end": 291.87,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 295.89,
+      "end": 300.87,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 301.33,
+      "end": 302.17,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 302.81,
+      "end": 307.08,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 307.55,
+      "end": 309.09,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 316.44,
+      "end": 316.66,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 328.93,
+      "end": 329.05,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 329.78,
+      "end": 330.26,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 330.68,
+      "end": 332.07,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 332.44,
+      "end": 333.81,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 334.48,
+      "end": 337.17,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 337.2,
+      "end": 337.22,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 337.24,
+      "end": 338.61,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 339.06,
+      "end": 339.62,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 340.47,
+      "end": 343.8,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 344.25,
+      "end": 345.81,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 346.6,
+      "end": 347.69,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 348.0,
+      "end": 350.13,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 350.85,
+      "end": 351.37,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 351.8,
+      "end": 352.13,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 352.76,
+      "end": 358.35,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 360.31,
+      "end": 360.62,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 361.01,
+      "end": 361.37,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 361.59,
+      "end": 362.0,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 362.38,
+      "end": 365.55,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 365.69,
+      "end": 366.97,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 375.55,
+      "end": 375.69,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 375.88,
+      "end": 376.39,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 376.93,
+      "end": 377.76,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 378.23,
+      "end": 378.98,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 380.78,
+      "end": 382.96,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 384.69,
+      "end": 385.36,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 385.69,
+      "end": 387.53,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 395.27,
+      "end": 395.97,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 396.36,
+      "end": 396.6,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 396.96,
+      "end": 397.24,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 402.29,
+      "end": 402.76,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 403.16,
+      "end": 403.97,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 404.22,
+      "end": 405.18,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 405.56,
+      "end": 410.35,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 412.65,
+      "end": 414.77,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 415.23,
+      "end": 418.37,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 429.42,
+      "end": 429.53,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 436.73,
+      "end": 436.85,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 437.78,
+      "end": 438.16,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 440.33,
+      "end": 441.71,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 445.08,
+      "end": 445.92,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 446.19,
+      "end": 447.48,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 450.92,
+      "end": 451.02,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 454.3,
+      "end": 454.67,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 454.92,
+      "end": 455.24,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 455.66,
+      "end": 455.9,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 456.23,
+      "end": 456.69,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 457.24,
+      "end": 460.95,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 469.62,
+      "end": 469.78,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 470.32,
+      "end": 470.48,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 471.96,
+      "end": 472.13,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 474.03,
+      "end": 476.45,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 476.69,
+      "end": 477.06,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 477.31,
+      "end": 477.78,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 478.5,
+      "end": 478.74,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 481.89,
+      "end": 482.18,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 488.4,
+      "end": 488.56,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 494.63,
+      "end": 498.64,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 499.08,
+      "end": 499.9,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 500.42,
+      "end": 502.6,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 503.06,
+      "end": 506.7,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 507.09,
+      "end": 508.41,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 509.19,
+      "end": 510.8,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 511.23,
+      "end": 511.79,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 512.08,
+      "end": 515.94,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 516.53,
+      "end": 516.98,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 517.14,
+      "end": 518.79,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 519.05,
+      "end": 522.99,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 523.47,
+      "end": 526.11,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 526.53,
+      "end": 531.57,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 531.87,
+      "end": 534.22,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 534.67,
+      "end": 536.96,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 537.62,
+      "end": 539.86,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 540.53,
+      "end": 541.68,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 541.97,
+      "end": 543.55,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 543.66,
+      "end": 545.84,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 546.49,
+      "end": 548.61,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 549.02,
+      "end": 553.69,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 554.21,
+      "end": 555.01,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 555.22,
+      "end": 559.22,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 559.79,
+      "end": 560.42,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 560.67,
+      "end": 565.68,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 566.1,
+      "end": 567.96,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 568.6,
+      "end": 569.14,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 569.46,
+      "end": 572.49,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 573.03,
+      "end": 574.09,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 582.82,
+      "end": 583.86,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 584.31,
+      "end": 588.91,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 589.23,
+      "end": 590.41,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 590.95,
+      "end": 595.79,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 596.46,
+      "end": 600.02,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 602.28,
+      "end": 602.53,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 602.91,
+      "end": 608.02,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 611.81,
+      "end": 611.98,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 612.59,
+      "end": 612.89,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 613.45,
+      "end": 613.99,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 614.82,
+      "end": 615.07,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 615.98,
+      "end": 616.0,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 616.01,
+      "end": 616.06,
+      "speaker": "speaker_0"
+    },
+    {
+      "start": 3.35,
+      "end": 3.76,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 5.61,
+      "end": 5.66,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 5.68,
+      "end": 6.51,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 6.91,
+      "end": 7.06,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 12.15,
+      "end": 15.86,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 20.54,
+      "end": 23.29,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 23.6,
+      "end": 25.25,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 25.41,
+      "end": 27.83,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 28.46,
+      "end": 28.96,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 29.49,
+      "end": 32.98,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 33.52,
+      "end": 35.17,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 35.39,
+      "end": 36.0,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 36.32,
+      "end": 39.6,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 40.34,
+      "end": 41.06,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 41.3,
+      "end": 42.85,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 43.53,
+      "end": 45.67,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 58.82,
+      "end": 63.41,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 64.17,
+      "end": 64.54,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 66.3,
+      "end": 67.15,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 67.4,
+      "end": 71.3,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 71.73,
+      "end": 72.21,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 72.69,
+      "end": 74.58,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 74.96,
+      "end": 76.65,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 83.69,
+      "end": 88.7,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 89.34,
+      "end": 90.61,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 92.21,
+      "end": 92.47,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 93.22,
+      "end": 93.9,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 99.47,
+      "end": 100.38,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 100.97,
+      "end": 101.49,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 101.74,
+      "end": 102.01,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 102.29,
+      "end": 104.01,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 115.01,
+      "end": 120.42,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 120.87,
+      "end": 121.86,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 129.22,
+      "end": 129.93,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 130.55,
+      "end": 133.65,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 134.1,
+      "end": 135.84,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 136.6,
+      "end": 138.55,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 143.86,
+      "end": 143.98,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 144.87,
+      "end": 145.46,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 153.25,
+      "end": 153.46,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 154.33,
+      "end": 155.14,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 160.17,
+      "end": 161.44,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 161.84,
+      "end": 162.71,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 169.06,
+      "end": 172.19,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 172.44,
+      "end": 173.46,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 173.75,
+      "end": 174.27,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 175.3,
+      "end": 176.07,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 180.22,
+      "end": 183.02,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 183.58,
+      "end": 186.15,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 186.79,
+      "end": 187.13,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 187.27,
+      "end": 189.03,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 189.27,
+      "end": 189.85,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 190.45,
+      "end": 197.53,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 197.89,
+      "end": 198.41,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 198.85,
+      "end": 199.79,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 201.01,
+      "end": 201.28,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 202.14,
+      "end": 202.16,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 206.51,
+      "end": 207.34,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 207.63,
+      "end": 207.98,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 218.58,
+      "end": 218.9,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 219.16,
+      "end": 221.36,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 221.62,
+      "end": 222.61,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 223.22,
+      "end": 225.03,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 235.42,
+      "end": 236.26,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 236.73,
+      "end": 238.37,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 238.69,
+      "end": 239.54,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 244.43,
+      "end": 245.37,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 245.77,
+      "end": 247.59,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 251.49,
+      "end": 252.5,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 262.3,
+      "end": 262.56,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 263.97,
+      "end": 267.48,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 268.87,
+      "end": 268.97,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 270.09,
+      "end": 270.2,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 270.42,
+      "end": 271.16,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 271.34,
+      "end": 273.22,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 273.6,
+      "end": 274.1,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 274.65,
+      "end": 277.54,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 278.24,
+      "end": 278.75,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 279.05,
+      "end": 279.68,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 280.67,
+      "end": 281.33,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 290.42,
+      "end": 290.49,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 293.83,
+      "end": 294.59,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 294.86,
+      "end": 295.4,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 310.92,
+      "end": 313.08,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 313.43,
+      "end": 316.34,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 317.65,
+      "end": 317.92,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 318.17,
+      "end": 318.98,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 319.2,
+      "end": 319.92,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 320.16,
+      "end": 323.04,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 323.56,
+      "end": 329.58,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 336.9,
+      "end": 337.22,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 347.53,
+      "end": 347.73,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 351.67,
+      "end": 351.77,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 359.79,
+      "end": 360.02,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 360.46,
+      "end": 360.65,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 368.25,
+      "end": 374.34,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 374.53,
+      "end": 376.67,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 376.94,
+      "end": 377.79,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 378.96,
+      "end": 379.26,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 379.41,
+      "end": 379.68,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 379.9,
+      "end": 380.83,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 384.23,
+      "end": 384.44,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 385.06,
+      "end": 385.2,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 389.23,
+      "end": 395.26,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 395.61,
+      "end": 396.16,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 397.18,
+      "end": 399.71,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 400.15,
+      "end": 400.56,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 401.14,
+      "end": 401.83,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 402.55,
+      "end": 402.91,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 412.19,
+      "end": 412.42,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 413.02,
+      "end": 413.2,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 420.29,
+      "end": 425.24,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 425.64,
+      "end": 426.63,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 426.92,
+      "end": 428.11,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 428.47,
+      "end": 429.95,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 430.34,
+      "end": 434.57,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 434.94,
+      "end": 437.57,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 438.08,
+      "end": 438.11,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 438.25,
+      "end": 439.05,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 439.24,
+      "end": 440.05,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 443.37,
+      "end": 444.88,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 448.66,
+      "end": 452.26,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 452.47,
+      "end": 454.07,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 454.44,
+      "end": 454.72,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 455.03,
+      "end": 455.3,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 462.63,
+      "end": 463.08,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 463.4,
+      "end": 468.32,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 468.55,
+      "end": 469.21,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 469.66,
+      "end": 470.9,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 472.08,
+      "end": 472.92,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 478.61,
+      "end": 479.19,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 479.53,
+      "end": 481.54,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 482.06,
+      "end": 484.49,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 485.18,
+      "end": 487.9,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 488.42,
+      "end": 489.7,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 490.14,
+      "end": 490.5,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 490.84,
+      "end": 494.51,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 499.43,
+      "end": 499.67,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 516.75,
+      "end": 516.96,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 524.1,
+      "end": 524.18,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 527.08,
+      "end": 527.2,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 531.44,
+      "end": 531.63,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 537.24,
+      "end": 537.46,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 543.41,
+      "end": 543.52,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 547.05,
+      "end": 547.21,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 554.86,
+      "end": 555.04,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 560.37,
+      "end": 560.51,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 575.57,
+      "end": 575.93,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 576.19,
+      "end": 577.6,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 577.99,
+      "end": 580.29,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 580.83,
+      "end": 582.48,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 582.93,
+      "end": 584.25,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 596.99,
+      "end": 597.27,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 601.27,
+      "end": 602.0,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 602.56,
+      "end": 602.73,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 609.53,
+      "end": 611.42,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 611.6,
+      "end": 612.27,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 614.08,
+      "end": 614.41,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 614.91,
+      "end": 616.14,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 616.16,
+      "end": 616.23,
+      "speaker": "speaker_1"
+    },
+    {
+      "start": 616.24,
+      "end": 616.55,
+      "speaker": "speaker_1"
+    }
+  ]
+}

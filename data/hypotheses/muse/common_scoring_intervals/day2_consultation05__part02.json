@@ -1,0 +1,39 @@
+{
+  "segments": [
+    {
+      "start": 0.06,
+      "end": 17.34,
+      "speaker": "A"
+    },
+    {
+      "start": 17.66,
+      "end": 18.3,
+      "speaker": "B"
+    },
+    {
+      "start": 18.62,
+      "end": 20.86,
+      "speaker": "A"
+    },
+    {
+      "start": 20.94,
+      "end": 23.1,
+      "speaker": "B"
+    },
+    {
+      "start": 23.5,
+      "end": 31.82,
+      "speaker": "A"
+    },
+    {
+      "start": 31.9,
+      "end": 32.94,
+      "speaker": "B"
+    },
+    {
+      "start": 33.34,
+      "end": 34.06,
+      "speaker": "A"
+    }
+  ]
+}
