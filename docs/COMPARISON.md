@@ -38,4 +38,4 @@ A future latency panel needs a common paced sender and explicit event semantics:
 
 This is a small set of simulated two-party consultations, with VAD-refined turn references rather than adjudicated speaker truth. Several runtime choices were developed on this cohort. It is not an eight-speaker benchmark, held-out clinical qualification or evidence that tiny score differences are statistically significant.
 
-Baseline hypotheses are public and rescored in CI. Nemotron 3 and Sortformer Omi runtime outputs are aggregate-only; public checks verify their arithmetic, not private inference. The Community-1 Omi runtime hypotheses are public and can be rescored.
+Saved baseline and Omi runtime outputs are public and rescored in CI. They contain speaker labels and timestamps only. Omi’s implementation remains private; score verification does not reproduce its inference.

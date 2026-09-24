@@ -37,7 +37,7 @@ Local L4 processing and hosted API round trips have different timing scopes. Sta
 | Sortformer v2.1 | 7.974% → 7.487% | -0.487 pp | 3/15 → 3/15 | 1.077 → 0.854 | 1.26× |
 | Pyannote Community-1 | 6.620% → 5.435% | -1.186 pp | 9/15 → 14/15 | 18.691 → 0.778 | 24.02× |
 
-Same model weights with Omi’s proprietary runtime; no retraining. Nemotron 3 Diarization and Sortformer runtime outputs are private; Community-1 runtime outputs are public. Strict DER can worsen while collared DER improves; both scores remain in the full results.
+Same weights, no retraining. Saved speaker/timestamp outputs are public for every row; Omi’s runtime implementation stays private. Strict DER can worsen while collared DER improves; both scores remain in the full results.
 
 ### Streaming: automatic speaker counts
 
@@ -59,13 +59,13 @@ All configurations, common-interval scores and alternative Omi settings are in t
 
 - **Scoring:** “Whole” scores complete recordings; “Common” uses the same 20 intervals for every system. ±250 ms allows timing tolerance around speech boundaries.
 - **Speaker policy:** headline rows discover the count automatically; known-two and folded results are supplementary.
-- **Scope:** 15 simulated consultations with VAD-refined references. Baseline hypotheses are public. Nemotron 3 and Sortformer Omi runtime rows share aggregates only; the Community-1 Omi runtime outputs are public. Omi runtime rows (a modified inference path) are listed separately and are not claims about the vanilla models.
+- **Scope:** 15 simulated consultations with VAD-refined references. Saved speaker/timestamp outputs are public for all models, including Omi runtime variants. Omi’s implementation stays private; its rows are separate from vanilla-model results.
 
 [Full results](results/RESULTS.md) · [Methodology](docs/METHODOLOGY.md) · [L4 run scores and error counts](results/ga-20260924/snapshot.json)
 
 ## Reproduce the scores
 
-Python 3.10+. Includes the scorer, reference timings and saved baseline outputs. `scripts/crosscheck_pyannote.py` rescores the public whole-recording outputs with pyannote.metrics as an independent check. [Inference code](inference/README.md) includes a pinned [baseline runner](docs/GA_20260924.md#reproduce) for the NVIDIA models.
+Python 3.10+. Includes the scorer, reference timings and saved outputs for baseline and Omi runtime rows. `scripts/crosscheck_pyannote.py` rescores the public whole-recording outputs with pyannote.metrics as an independent check. [Inference code](inference/README.md) includes a pinned [baseline runner](docs/GA_20260924.md#reproduce) for the NVIDIA models.
 
 ```bash
 GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/Omi-Health/clinical-diarization-benchmark.git

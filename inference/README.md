@@ -67,5 +67,5 @@ every public pair.
 `Dockerfile` pins the earlier NeMo revision used for the Sortformer study; `environment-constraints.txt` lists the
 captured package versions. Build either on a CUDA-capable machine and mount this repository at `/work/repo`.
 
-Omi's runtime is not included. Omi rows in the results are aggregate-only for Nemotron 3 and Sortformer; the
-Community-1 Omi-runtime outputs are public under `data/hypotheses/community1_omi_runtime`.
+Omi’s runtime implementation is private. Saved speaker/timestamp outputs are public for every
+model and Omi runtime variant; see [score reproduction](../docs/REPRODUCING.md).

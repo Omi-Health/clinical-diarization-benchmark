@@ -19,10 +19,11 @@ pip install -e '.[test]'
 pytest -q
 python scripts/verify_audio.py
 python scripts/verify_snapshot.py
+python scripts/verify_ga.py
 python scripts/render_results.py
 ```
 
-The audio verifier checks all 15 WAV hashes, formats and durations against the frozen manifest. The score verifier recomputes all public recording/interval/collar scores for the public baseline outputs and checks their integer error counts against the snapshot. For aggregate-only Omi runtime rows it checks arithmetic only. It also checks the hashes of the exported timing data and numeric results. The renderer updates both this README's tables and the detailed results page from the same snapshot.
+The audio verifier checks all 15 WAV hashes, formats and durations against the frozen manifest. The score verifiers rescore saved outputs for both baseline and Omi runtime rows against the frozen references. Omi’s implementation is private: its saved outputs can be rescored, but its inference cannot be reproduced from this repository. The verifiers also check the hashes of the exported timing data and numeric results. The renderer updates both this README's tables and the detailed results page from the same snapshot.
 
 For scoring only, clone with `GIT_LFS_SKIP_SMUDGE=1 git clone ...` and omit `git lfs pull` and `verify_audio.py`; the saved outputs can be rescored without downloading audio. CI checks LFS pointer hashes and expected sizes without downloading the WAVs on each run.
 
@@ -51,7 +52,8 @@ clinical-diarization-benchmark/
 │   ├── manifest.json         # Frozen recording IDs, audio hashes and intervals
 │   ├── raw_audio/            # Exact 15 mixed WAVs, stored with Git LFS
 │   ├── references/           # Speaker/timestamp references, no transcript text
-│   ├── hypotheses/           # Named baselines' normalized speaker/timestamp outputs
+│   ├── scored_outputs/       # Every L4 scoring view, including Omi runtime
+│   ├── hypotheses/           # Normalized speaker/timestamp outputs
 │   └── ATTRIBUTION.md        # PriMock57 attribution and data licensing
 ├── results/
 │   ├── RESULTS.md            # Detailed comparison, generated from the snapshot
@@ -88,3 +90,7 @@ Use the frozen case list and audio hashes, export speaker/timestamp segments in 
 ## Matched speaker-policy tables
 
 Run `python scripts/verify_speaker_policies.py` to verify the paired tables. Both policies use the same automatic source output; the two-speaker view applies the public folding function before scoring. Controlled-pair scores are in `results/speaker_policy_snapshot.json`; `results/snapshot.json` contains the best-tested results shown first. Their timings are in `results/best_settings_receipt.json`.
+
+Each JSON in `data/scored_outputs/` maps a frozen recording ID to a list of
+`start`, `end` and anonymous `speaker` values. The snapshot links every view to
+its output file and SHA-256. No runtime code or configuration is needed to rescore.

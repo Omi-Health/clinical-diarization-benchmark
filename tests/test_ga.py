@@ -3,4 +3,4 @@ from scripts.verify_ga import verify
 
 
 def test_ga_public_evidence_recomputes():
-    assert verify() == 980
+    assert verify() == 7000

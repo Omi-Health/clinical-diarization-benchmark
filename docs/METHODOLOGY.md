@@ -88,7 +88,7 @@ Omi rows use unchanged model weights with a proprietary runtime. Runtime choices
 
 Automatic and constrained speaker policies remain explicit per row. Supplementary known-two and retrospective rows are not native automatic or causal live results. Headline Omi streaming scores use the revisions delivered during the stream.
 
-Nemotron 3 Diarization and Sortformer runtime outputs are private; public checks verify their aggregate arithmetic and timing. Community-1 runtime hypotheses are public and can be rescored. Implementation code and tuning details remain private.
+Saved speaker/timestamp outputs are public for every model and Omi runtime variant, so all reported scores can be checked. Omi’s implementation, tuning details and raw live traces remain private.
 
 Both strict and ±250 ms DER are reported, including cases where strict DER worsens. All measured configurations remain in the [settings log](../results/best_settings_receipt.json), identified without exposing proprietary settings. [Community-1 automatic timing](../results/community1_timing.json) includes all 15 per-recording totals for baseline and Omi.
 
@@ -112,7 +112,7 @@ Correct speaker count in a constrained run is not a measure of automatic countin
 
 ## What is independently checkable
 
-All named baseline rows include their normalized speaker/timestamp outputs, frozen references and per-case integer counts. `scripts/verify_snapshot.py` recomputes these scores and checks every exported data hash. Nemotron 3 and Sortformer Omi runtime rows expose aggregates only.
+All named baseline rows include their normalized speaker/timestamp outputs, frozen references and per-case integer counts. `scripts/verify_snapshot.py` recomputes these scores and checks every exported data hash. The L4 run verifier also rescores every saved Omi runtime view from sanitized speaker/timestamp outputs.
 
 The Sortformer and Nemotron 3 Diarization results come from GPU inference with the included code and presets; see [run instructions](../inference/README.md). Exact Sortformer checkpoint pins, the container image and NeMo source revision are public. Runtime receipts record code/configuration hashes and native outputs; Omi runtime raw receipts remain private. Vendor results are exported API outputs, and their inference clients are not bundled. Displayed names identify the evaluated versions, not necessarily the latest products.
 

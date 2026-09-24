@@ -28,7 +28,7 @@ Local L4 processing and hosted API round trips have different timing scopes. Sta
 | Sortformer v2.1 | 7.974% → 7.487% | -0.487 pp | 3/15 → 3/15 | 1.077 → 0.854 | 1.26× |
 | Pyannote Community-1 | 6.620% → 5.435% | -1.186 pp | 9/15 → 14/15 | 18.691 → 0.778 | 24.02× |
 
-Same model weights with Omi’s proprietary runtime; no retraining. Nemotron 3 Diarization and Sortformer runtime outputs are private; Community-1 runtime outputs are public. Strict DER can worsen while collared DER improves; both scores remain in the full results.
+Same weights, no retraining. Saved speaker/timestamp outputs are public for every row; Omi’s runtime implementation stays private. Strict DER can worsen while collared DER improves; both scores remain in the full results.
 
 ## Streaming: automatic speaker counts
 
@@ -60,7 +60,7 @@ The same 20 intervals cover all 15 sources. Whole-file systems retain full-file 
 
 ## Nemotron 3 and Sortformer L4 run: full scoring details
 
-Every tested view is retained. `known2` forces at most two labels after inference; `top2` drops extra channels. Those are supplementary processing experiments, not automatic model results. Windowed v1 count errors include stitching artifacts. Omi outputs are aggregate-only; baseline outputs can be rescored.
+Every tested view is retained. `known2` forces at most two labels after inference; `top2` drops extra channels. Those are supplementary processing experiments, not automatic model results. Windowed v1 count errors include stitching artifacts. All saved outputs can be rescored; Omi’s implementation remains private.
 
 | Run | Output view | Whole DER zero | Whole DER ±250 ms | Common DER zero | Common DER ±250 ms | Whole count accuracy |
 |---|---|---:|---:|---:|---:|---:|

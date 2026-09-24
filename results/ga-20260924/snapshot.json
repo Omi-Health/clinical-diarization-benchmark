@@ -200,7 +200,10 @@
      }
     }
    },
-   "public_native_output": null
+   "public_native_output": null,
+   "public_view_outputs": {
+    "delivered_causal": "data/scored_outputs/ga-20260924/ga_live_graph/delivered_causal.json"
+   }
   },
   "ga_off_bf16": {
    "receipt": {
@@ -870,7 +873,18 @@
      }
     }
    },
-   "public_native_output": "data/hypotheses/ga-20260924/ga_off_bf16"
+   "public_native_output": "data/hypotheses/ga-20260924/ga_off_bf16",
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/ga_off_bf16/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/ga_off_bf16/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/ga_off_bf16/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/ga_off_bf16/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/ga_off_bf16/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/ga_off_bf16/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/ga_off_bf16/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/ga_off_bf16/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/ga_off_bf16/tuned_top2_merge.json"
+   }
   },
   "ga_off_fp32": {
    "receipt": {
@@ -1540,7 +1554,18 @@
      }
     }
    },
-   "public_native_output": "data/hypotheses/ga-20260924/ga_off_fp32"
+   "public_native_output": "data/hypotheses/ga-20260924/ga_off_fp32",
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/ga_off_fp32/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/ga_off_fp32/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/ga_off_fp32/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/ga_off_fp32/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/ga_off_fp32/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/ga_off_fp32/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/ga_off_fp32/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/ga_off_fp32/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/ga_off_fp32/tuned_top2_merge.json"
+   }
   },
   "ga_omi_graph": {
    "receipt": {
@@ -2193,7 +2218,18 @@
      }
     }
    },
-   "public_native_output": null
+   "public_native_output": null,
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/ga_omi_graph/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/ga_omi_graph/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/ga_omi_graph/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/ga_omi_graph/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/ga_omi_graph/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/ga_omi_graph/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/ga_omi_graph/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/ga_omi_graph/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/ga_omi_graph/tuned_top2_merge.json"
+   }
   },
   "ga_stream_bf16": {
    "receipt": {
@@ -2863,7 +2899,18 @@
      }
     }
    },
-   "public_native_output": "data/hypotheses/ga-20260924/ga_stream_bf16"
+   "public_native_output": "data/hypotheses/ga-20260924/ga_stream_bf16",
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/ga_stream_bf16/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/ga_stream_bf16/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/ga_stream_bf16/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/ga_stream_bf16/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/ga_stream_bf16/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/ga_stream_bf16/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/ga_stream_bf16/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/ga_stream_bf16/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/ga_stream_bf16/tuned_top2_merge.json"
+   }
   },
   "v1_omi_tf32": {
    "receipt": {
@@ -3205,7 +3252,13 @@
      }
     }
    },
-   "public_native_output": null
+   "public_native_output": null,
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/v1_omi_tf32/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/v1_omi_tf32/native_known2.json",
+    "omi_merge": "data/scored_outputs/ga-20260924/v1_omi_tf32/omi_merge.json",
+    "omi_merge_known2": "data/scored_outputs/ga-20260924/v1_omi_tf32/omi_merge_known2.json"
+   }
   },
   "v1_whole_bf16": {
    "receipt": {
@@ -3861,7 +3914,18 @@
      }
     }
    },
-   "public_native_output": "data/hypotheses/ga-20260924/v1_whole_bf16"
+   "public_native_output": "data/hypotheses/ga-20260924/v1_whole_bf16",
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/v1_whole_bf16/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/v1_whole_bf16/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/v1_whole_bf16/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/v1_whole_bf16/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/v1_whole_bf16/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/v1_whole_bf16/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/v1_whole_bf16/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/v1_whole_bf16/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/v1_whole_bf16/tuned_top2_merge.json"
+   }
   },
   "v1_win_fp32": {
    "receipt": {
@@ -4206,7 +4270,13 @@
      }
     }
    },
-   "public_native_output": "data/hypotheses/ga-20260924/v1_win_fp32"
+   "public_native_output": "data/hypotheses/ga-20260924/v1_win_fp32",
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/v1_win_fp32/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/v1_win_fp32/native_known2.json",
+    "omi_merge": "data/scored_outputs/ga-20260924/v1_win_fp32/omi_merge.json",
+    "omi_merge_known2": "data/scored_outputs/ga-20260924/v1_win_fp32/omi_merge_known2.json"
+   }
   },
   "v21_live_tf32": {
    "receipt": {
@@ -4398,7 +4468,10 @@
      }
     }
    },
-   "public_native_output": null
+   "public_native_output": null,
+   "public_view_outputs": {
+    "delivered_causal": "data/scored_outputs/ga-20260924/v21_live_tf32/delivered_causal.json"
+   }
   },
   "v21_off_fp32": {
    "receipt": {
@@ -5068,7 +5141,18 @@
      }
     }
    },
-   "public_native_output": "data/hypotheses/ga-20260924/v21_off_fp32"
+   "public_native_output": "data/hypotheses/ga-20260924/v21_off_fp32",
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/v21_off_fp32/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/v21_off_fp32/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/v21_off_fp32/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/v21_off_fp32/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/v21_off_fp32/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/v21_off_fp32/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/v21_off_fp32/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/v21_off_fp32/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/v21_off_fp32/tuned_top2_merge.json"
+   }
   },
   "v21_omi_tf32": {
    "receipt": {
@@ -5721,7 +5805,18 @@
      }
     }
    },
-   "public_native_output": null
+   "public_native_output": null,
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/v21_omi_tf32/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/v21_omi_tf32/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/v21_omi_tf32/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/v21_omi_tf32/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/v21_omi_tf32/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/v21_omi_tf32/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/v21_omi_tf32/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/v21_omi_tf32/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/v21_omi_tf32/tuned_top2_merge.json"
+   }
   },
   "v21_stream_fp32": {
    "receipt": {
@@ -6391,7 +6486,18 @@
      }
     }
    },
-   "public_native_output": "data/hypotheses/ga-20260924/v21_stream_fp32"
+   "public_native_output": "data/hypotheses/ga-20260924/v21_stream_fp32",
+   "public_view_outputs": {
+    "native": "data/scored_outputs/ga-20260924/v21_stream_fp32/native.json",
+    "native_known2": "data/scored_outputs/ga-20260924/v21_stream_fp32/native_known2.json",
+    "model_card": "data/scored_outputs/ga-20260924/v21_stream_fp32/model_card.json",
+    "model_card_known2": "data/scored_outputs/ga-20260924/v21_stream_fp32/model_card_known2.json",
+    "omi_automatic": "data/scored_outputs/ga-20260924/v21_stream_fp32/omi_automatic.json",
+    "omi_automatic_known2": "data/scored_outputs/ga-20260924/v21_stream_fp32/omi_automatic_known2.json",
+    "native_merge": "data/scored_outputs/ga-20260924/v21_stream_fp32/native_merge.json",
+    "native_merge_known2": "data/scored_outputs/ga-20260924/v21_stream_fp32/native_merge_known2.json",
+    "tuned_top2_merge": "data/scored_outputs/ga-20260924/v21_stream_fp32/tuned_top2_merge.json"
+   }
   }
  },
  "hashes": {
@@ -6539,7 +6645,107 @@
   "data/references/common_scoring_intervals/day5_consultation07.json": "2c21d0f05f113f567d5b5c3aadeabfd931166bddae46fe3a94dcbc166455fabc",
   "data/references/common_scoring_intervals/day1_consultation10__part02.json": "a950eb5c57333f3621c4e4a58e432c0cc62f7b00e74b3f480edf33efc991724d",
   "data/references/common_scoring_intervals/day2_consultation05__part01.json": "7de50b704d902e5a868e44cadf95f39d6344a9ea699571e39edddbee8523f3e9",
-  "data/references/common_scoring_intervals/day3_consultation09__part01.json": "9ec88e3f862ba0f152fb92ba14e3ed04bbdfe7f4f2e1610d43b164a1f7ab61c7"
+  "data/references/common_scoring_intervals/day3_consultation09__part01.json": "9ec88e3f862ba0f152fb92ba14e3ed04bbdfe7f4f2e1610d43b164a1f7ab61c7",
+  "data/scored_outputs/ga-20260924/ga_live_graph/delivered_causal.json": "b8fd41f0e12a54d4f22859778ec4f9f67256d276eb47c58a47ece18b08cdbf95",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/native.json": "1ab1dcf47cdbc6704bec6873cf792bf4106c6c29176982c5c5169656f856fc6a",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/native_known2.json": "fc2b54b6edaf4a8f7afd9a32b96b0db929aa1559c290b8d8e07efe24406461d1",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/model_card.json": "1ab1dcf47cdbc6704bec6873cf792bf4106c6c29176982c5c5169656f856fc6a",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/model_card_known2.json": "fc2b54b6edaf4a8f7afd9a32b96b0db929aa1559c290b8d8e07efe24406461d1",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/omi_automatic.json": "2cdc33221678e81cf1519f6d5ff7fb1a40691e65aade3ce231019d2a627d509b",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/omi_automatic_known2.json": "e08d8ef9dcd979df0c938b48008cd5dfb266dcb92cf26e478ef75fec832ba871",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/native_merge.json": "fe0fd4893ad142ab800fa6f59a574354753ecfe468394d7cb2e67674d7842640",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/native_merge_known2.json": "027797dfd77075b6d3af631fe642e335126e4d3bb661adaff283493568a0ae3a",
+  "data/scored_outputs/ga-20260924/ga_off_bf16/tuned_top2_merge.json": "3bea0c902443a6c8929fa4f8cbee6b2af83f584b1da0e5856e09a930dd20edfd",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/native.json": "e89b58ea5ac3692b825eb1a0a0a44da622540bf8a4badd1737debc04cd582860",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/native_known2.json": "bbb4f684dbe2e97268e0739b3ffa06714aab1c2d9fb5c8603d87969b182e4c0f",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/model_card.json": "e89b58ea5ac3692b825eb1a0a0a44da622540bf8a4badd1737debc04cd582860",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/model_card_known2.json": "bbb4f684dbe2e97268e0739b3ffa06714aab1c2d9fb5c8603d87969b182e4c0f",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/omi_automatic.json": "b6caf451c5f73ec5c55d3249ea63a1d500270aeaa27e8edaeb46856db09bd827",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/omi_automatic_known2.json": "d3151d8dc69585bcfe653da8837c2a5b52a4d212a7eaad259f2ba2401124fc8f",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/native_merge.json": "51ad7b0f83263094b5c33318178211d9c829f0fa00e209d0dd38ea17a8008120",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/native_merge_known2.json": "73e67592ced84987e3e34c50e148b08e259364baba9cb19ccacf2fcafbc5e272",
+  "data/scored_outputs/ga-20260924/ga_off_fp32/tuned_top2_merge.json": "37b727e60a516f47d28e1b4edec4bc068648cd66c74f40a805c1ff902be9fb3a",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/native.json": "268b20baf5730f1a6167b8ac768079ec59cc87ff6162793f917c81911d633369",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/native_known2.json": "76ec94a7da0edba0c8a222dba7632355841afd55013ad85441eb1c89e495330e",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/model_card.json": "268b20baf5730f1a6167b8ac768079ec59cc87ff6162793f917c81911d633369",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/model_card_known2.json": "76ec94a7da0edba0c8a222dba7632355841afd55013ad85441eb1c89e495330e",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/omi_automatic.json": "7e9e28ab0ec66e5340b0f062da8c2881e95d435533b2ee126d74caf6a65c6644",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/omi_automatic_known2.json": "11fcaa0bee19eecf01de2999ab9dbf8120456464c9b715bdeef22dc0cceb0d16",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/native_merge.json": "26c1c746657e45cfdea98f4a332953c66bdfa5a3dff4cc7457ad19c2d6d6edec",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/native_merge_known2.json": "eb87df199425ef11f2419504865464f039702a4d8a70e9e5df07c96ee0d30be2",
+  "data/scored_outputs/ga-20260924/ga_omi_graph/tuned_top2_merge.json": "a1a389ac6259270b78d78f4e21c8deb581781cee8f94142f9b6074bf09beffb9",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/native.json": "48f711ee1333fb0f1d5b63429a9876c63eecb317b50d2a69882690ff42408a1b",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/native_known2.json": "ff3bbbbbaa5d41eb4d2db7eed7e85ac85868c9417247d76733be27f5a41c1d5f",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/model_card.json": "48f711ee1333fb0f1d5b63429a9876c63eecb317b50d2a69882690ff42408a1b",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/model_card_known2.json": "ff3bbbbbaa5d41eb4d2db7eed7e85ac85868c9417247d76733be27f5a41c1d5f",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/omi_automatic.json": "1f94839ade2086df7bd2fb734db76866d2678fbfd1c748d87321d42160a09e6f",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/omi_automatic_known2.json": "72a520bf23d64e08522942b652acc32c0bcf6fa9935d8307e342f53f9ba748a6",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/native_merge.json": "ee1d54c1c88dc8dc48db97b83c6c07881353055facd336c2e9590c5fa4770d93",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/native_merge_known2.json": "74ec1f8ad1ed11ebc0995327a690ece633d1383974a53f86eaabe3eabb6a2d50",
+  "data/scored_outputs/ga-20260924/ga_stream_bf16/tuned_top2_merge.json": "7c0c074ac86f526721aa3188728ada5c9d15f1d0897e828fa62ae6ea2218ccba",
+  "data/scored_outputs/ga-20260924/v1_omi_tf32/native.json": "6937b8104c05039f57bd90a109cf3119d21cccf699a5d5059d21a54c1ec38b20",
+  "data/scored_outputs/ga-20260924/v1_omi_tf32/native_known2.json": "e62f89ecdaa968e4f1c479c78f4b774413a4662d92d82ca5c02aab0aafe60a3c",
+  "data/scored_outputs/ga-20260924/v1_omi_tf32/omi_merge.json": "43e646d69193d635fbdca3095fbb1ae283b746fa7a1519bda7019ef349913513",
+  "data/scored_outputs/ga-20260924/v1_omi_tf32/omi_merge_known2.json": "9a699d5ac267bd46daff94b2e9722c0f7ffa3b1570a64f21e966eae704262339",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/native.json": "02eb5e6d75f3d51965c0c4b7f35805fc2c6c38780a9c3b40b118c405abfdd56a",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/native_known2.json": "26e7f9f2a3d64c7d60237ebf18b7fa459577b770abd3960e27b3230d29142b2a",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/model_card.json": "02eb5e6d75f3d51965c0c4b7f35805fc2c6c38780a9c3b40b118c405abfdd56a",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/model_card_known2.json": "26e7f9f2a3d64c7d60237ebf18b7fa459577b770abd3960e27b3230d29142b2a",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/omi_automatic.json": "0759eefbb2a72c30d873cdeffba73d85eb4b4e8361cee197c9b06274e689a7e7",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/omi_automatic_known2.json": "d4f9b6a2d7448afbe00a5876783c7d0066322decd8ec385ac50d0dfc35d384ae",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/native_merge.json": "1bee3c5987c6a861a07a09ecaf2df2a2bfd2ae6103ab24ea027a699871ba938d",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/native_merge_known2.json": "4a3d01a4fe7b6d3a5e88355c3b838799f796496197079dde3f8ba08de1c91f16",
+  "data/scored_outputs/ga-20260924/v1_whole_bf16/tuned_top2_merge.json": "38e474e3eb57967a3fc9e49503739160580512b4bdcad741262446715d60a76a",
+  "data/scored_outputs/ga-20260924/v1_win_fp32/native.json": "c315dc440c81d224a9650dd71d16a5516ef038686c14df287b7660946f2eb5f5",
+  "data/scored_outputs/ga-20260924/v1_win_fp32/native_known2.json": "377a1c9f15a9f34bf61e23d26e23de403930c3969afbbf203bfffbb2f986e16e",
+  "data/scored_outputs/ga-20260924/v1_win_fp32/omi_merge.json": "9a9b8e091f14a1f7ad18103623b3f779512c96e3c6bc023b394223b319f31cc7",
+  "data/scored_outputs/ga-20260924/v1_win_fp32/omi_merge_known2.json": "1296ed560384f721f9ffa57c58c69c9f1a6352a726fd3187ba2a72aa78a597a6",
+  "data/scored_outputs/ga-20260924/v21_live_tf32/delivered_causal.json": "0628679899da4ac407776793eea7a928d13ab3e4b28dc09f76e453436d969703",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/native.json": "772bca82c1bbdbce92b3663cccebb709f7521992be195ab871c8336465800a2f",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/native_known2.json": "a9a66c2f04c6c03d723b0d48fe5af26d8be00e8a4da0db2d7e6b90e913d9a8c5",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/model_card.json": "772bca82c1bbdbce92b3663cccebb709f7521992be195ab871c8336465800a2f",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/model_card_known2.json": "a9a66c2f04c6c03d723b0d48fe5af26d8be00e8a4da0db2d7e6b90e913d9a8c5",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/omi_automatic.json": "58764cd7d050463cf28411a761a2d29ff2b1cf115a4eed859f05569c1bf903c4",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/omi_automatic_known2.json": "3740cbf79cb2087930228a1e910d970ef0684924c1fcc17d993da3b4b6c87cda",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/native_merge.json": "3dd41e512d34ce13e7fec80bc6ba648050f1c13dd06b722b378aad80ac6e7bd7",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/native_merge_known2.json": "3ac367ada882d433e6eb54b624b88d0f2f58ab0e098070d7ef787e89f90e1b58",
+  "data/scored_outputs/ga-20260924/v21_off_fp32/tuned_top2_merge.json": "ba2ad212d6c387c79495b26cab58fe95eb4f01e07775b96a3d037ca94baebaca",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/native.json": "ef3cf1396edfb47d77d73bc797c3edf9c7403bb04e3d6efb841f90d63350f9a5",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/native_known2.json": "c3ba52c9974381e07fb1efe0e70afbd1215c71c6e1c4795d603f9c34c48ebf70",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/model_card.json": "ef3cf1396edfb47d77d73bc797c3edf9c7403bb04e3d6efb841f90d63350f9a5",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/model_card_known2.json": "c3ba52c9974381e07fb1efe0e70afbd1215c71c6e1c4795d603f9c34c48ebf70",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/omi_automatic.json": "f5da6b507c78bcf86761d646db7292396930b38c68afc4dd567472f90326d8e2",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/omi_automatic_known2.json": "f49f292bdc859c25e4194bf6b57105bca14ece927e0b3d7111f37d341325191b",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/native_merge.json": "ee802616d29dfe656db4f5c2634666da4c1b9c0e510cf5930cdc58de5ec2d0db",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/native_merge_known2.json": "dd13ebd1a8b76ed362c60af4ed4bb8860eac53bd1e724beee840924c3cf575ec",
+  "data/scored_outputs/ga-20260924/v21_omi_tf32/tuned_top2_merge.json": "2c59edcdda50f5fc88b6ee148234754e438c90b53aa2fd5a742f24822c30757b",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/native.json": "01a61e7786dd642986ceb80328f6f3d76db35e02b6ef58cfc2625405097d07bf",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/native_known2.json": "37f53d197a42d4fa43426c60a101c07fc7d5a44be198401ffdcffd0f6512e279",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/model_card.json": "01a61e7786dd642986ceb80328f6f3d76db35e02b6ef58cfc2625405097d07bf",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/model_card_known2.json": "37f53d197a42d4fa43426c60a101c07fc7d5a44be198401ffdcffd0f6512e279",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/omi_automatic.json": "2406eb1382808a56090438fd6e7cc265545fc7e72a79e929529723450af1a55a",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/omi_automatic_known2.json": "6ef8194bb2b991f6d2150c6b85bf1bbcc94a102d22477439aa7ce4a782cc46d9",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/native_merge.json": "ebea22d59c27651ee4f848288ad579ad8c0039c5bdd882e98f9a0f27a5bf7811",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/native_merge_known2.json": "81b5568ed1cbd6959452e94eba79db5e0eed572f9c87883454ab3e4875083c5d",
+  "data/scored_outputs/ga-20260924/v21_stream_fp32/tuned_top2_merge.json": "573bb6eeddbdfa79d6adbd6455b3cb904600e42ed0f73595ad9b04652e754dc0",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_off_bf16.json": "061a0fdd503ecaaa55696ee68fd2238094ee5d54955964329f47f4164430fb43",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_off_fp32.json": "0ec087ee108c5e80ac51b8c65a42c38d445a8dabbbd9b3e612176e96269f732a",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_omi_graph.json": "f6b554b234cafd662810b8a7b30b64bca2a71ff65eb5352863b7ed3a1f893bfe",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_stream_bf16.json": "999493fbd6a806661bcf5a7c3df0d597024e251f48e5cd6e9a83d80579897cb8",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/v1_whole_bf16.json": "d6a13aa2cffabbc61d4228d34524405520ac48dde4d506b4e79c490d34efad77",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/v21_off_fp32.json": "1d913074d2e8f3499b1f52a92d7b500750924fc60d8541f04d617b6fffadd86c",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/v21_omi_tf32.json": "faad5c19c3caf3dc35082d0358cdecc813622ca618a3b134ad8dea111bff6727",
+  "data/scored_outputs/ga-20260924/supplemental/duration_fold/v21_stream_fp32.json": "035425cf8c763c8a6221c3e94a12b67ff1c1ebf3626be5e867c81cafb5f5cb6a",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_off_bf16.json": "027797dfd77075b6d3af631fe642e335126e4d3bb661adaff283493568a0ae3a",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_off_fp32.json": "73e67592ced84987e3e34c50e148b08e259364baba9cb19ccacf2fcafbc5e272",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_omi_graph.json": "eb87df199425ef11f2419504865464f039702a4d8a70e9e5df07c96ee0d30be2",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_stream_bf16.json": "e69d5f6d6d321e5285b98a709eefadc7dbfa1e05058e2114a31ff27f9ca507a5",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v1_omi_tf32.json": "9a699d5ac267bd46daff94b2e9722c0f7ffa3b1570a64f21e966eae704262339",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v1_whole_bf16.json": "bb67d1d1703d48a29a0437e3b07c91c173348e26cf4adf396e48371fee4239f4",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v1_win_fp32.json": "1296ed560384f721f9ffa57c58c69c9f1a6352a726fd3187ba2a72aa78a597a6",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v21_off_fp32.json": "dc7677873293811b5afae230f333100b5661457098950673a15afb2959aeb1aa",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v21_omi_tf32.json": "37de0cea6138cb1d93e1b793530ef6a24eab55f8148aebb48dedb302ede898cf",
+  "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v21_stream_fp32.json": "a94aeb0bf11b92b41bddec7dc60e1aaddad38565790ab6304d59b4c74ecc300a"
  },
  "supplemental": {
   "duration_fold": {
@@ -6608,7 +6814,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_off_bf16.json"
    },
    "ga_off_fp32": {
     "recipe": {
@@ -6675,7 +6882,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_off_fp32.json"
    },
    "ga_omi_graph": {
     "recipe": {
@@ -6742,7 +6950,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_omi_graph.json"
    },
    "ga_stream_bf16": {
     "recipe": {
@@ -6809,7 +7018,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/ga_stream_bf16.json"
    },
    "v1_whole_bf16": {
     "recipe": {
@@ -6876,7 +7086,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/v1_whole_bf16.json"
    },
    "v21_off_fp32": {
     "recipe": {
@@ -6943,7 +7154,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/v21_off_fp32.json"
    },
    "v21_omi_tf32": {
     "recipe": {
@@ -7010,7 +7222,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/v21_omi_tf32.json"
    },
    "v21_stream_fp32": {
     "recipe": {
@@ -7077,7 +7290,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/duration_fold/v21_stream_fp32.json"
    }
   },
   "fold_then_merge": {
@@ -7140,7 +7354,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_off_bf16.json"
    },
    "ga_off_fp32": {
     "recipe": {
@@ -7201,7 +7416,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_off_fp32.json"
    },
    "ga_omi_graph": {
     "recipe": {
@@ -7262,7 +7478,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_omi_graph.json"
    },
    "ga_stream_bf16": {
     "recipe": {
@@ -7323,7 +7540,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/ga_stream_bf16.json"
    },
    "v1_omi_tf32": {
     "recipe": {
@@ -7384,7 +7602,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v1_omi_tf32.json"
    },
    "v1_whole_bf16": {
     "recipe": {
@@ -7445,7 +7664,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v1_whole_bf16.json"
    },
    "v1_win_fp32": {
     "recipe": {
@@ -7506,7 +7726,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v1_win_fp32.json"
    },
    "v21_off_fp32": {
     "recipe": {
@@ -7567,7 +7788,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v21_off_fp32.json"
    },
    "v21_omi_tf32": {
     "recipe": {
@@ -7628,7 +7850,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v21_omi_tf32.json"
    },
    "v21_stream_fp32": {
     "recipe": {
@@ -7689,7 +7912,8 @@
        }
       }
      }
-    }
+    },
+    "public_output": "data/scored_outputs/ga-20260924/supplemental/fold_then_merge/v21_stream_fp32.json"
    }
   }
  }
